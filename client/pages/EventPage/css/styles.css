@@ -329,8 +329,8 @@
     display: flex;
     width: 100%;
     justify-content: center;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 5%;
+    padding-right: 5%;
   }
   .promoSection {
     justify-content: center;
@@ -349,17 +349,30 @@
 }
 
 @media (max-width: 480px) {
-  .detailsWrapper {
+.detailsWrapper {
     flex-direction: column;
+    justify-content: center;
+  }
+  .eventDetails {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .singleEventWrapper {
     padding: 10px;
   }
 
-  .promoSection {
-    padding: 10px;
+  .promoSectionWrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-left: 5%;
+    padding-right: 5%;
   }
-
+  .promoSection {
+    justify-content: center;
+    align-items: center;
+  }
   .joinButton,
   .shareButton {
     padding: 6px 10px;
