@@ -1,0 +1,11 @@
+.select {
+  &.multiple {
+    height: auto;
+    min-height: 45px;
+  }
+}
+
+.select.invalid :global(.content) {
+  border: 2px solid #FF9E59;
+  border-radius: 912px;
+}

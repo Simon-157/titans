@@ -1,0 +1,176 @@
+@import '../../../css/root';
+
+.FAQ {
+  height: 100%;
+  width: 100%;
+  background: url("/img/forest-bg.jpg") no-repeat center;
+  background-size: cover;
+  overflow: auto;
+}
+
+.header {
+  height: 56px;
+  width: 100%;
+  padding: 0 30px;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(0, 255, 255, 0.00) 0%, rgba(0, 255, 255, 0.10) 100%);
+  background-blend-mode: overlay;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.15);
+  display: flex;
+
+  @media (max-width: 899px) {
+    padding-top: 25px;
+    background: none;
+    border: none;
+  }
+}
+
+.logo {
+  height: 29px;
+  margin-left: -34px;
+  position: absolute;
+  left: 50%;
+
+  @media (max-width: 899px) {
+    display: none;
+  }
+}
+
+.FAQ :global button.tertiary {
+  height: 39px;
+  width: 110px;
+  color: #45E5E5;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 110%;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (max-width: 899px) {
+    height: 48px;
+    width: 135px;
+    font-size: 15px;
+
+    img {
+      width: 8px;
+    }
+  }
+}
+
+.title {
+  margin: 47px 30px 42px 30px;
+  color: #FFF;
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 120%;
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+.content {
+  width: 70%;
+  position: sticky;
+  background: linear-gradient(180deg, rgba(0, 255, 255, 0.1) 0%, rgba(0, 255, 255, 0.00) 100%);
+  background-blend-mode: overlay;
+  border: 1px solid rgba(8, 73, 94, .5);
+  border-radius: 14px;
+  top: 60px;
+
+  @media (max-width: 899px) {
+    display: none;
+  }
+}
+
+.section {
+  height: calc(100% - 56px);
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+
+  @media (max-width: 899px) {
+    overflow: unset;
+  }
+}
+
+.menu {
+  margin: 28px 35px;
+  color: #4ACFCF;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -0.36px;
+  text-transform: uppercase;
+
+  .menuItem {
+    margin-bottom: 27px;
+    cursor: pointer;
+  }
+}
+
+.menu .menuItem.selected {
+  color: #fff;
+
+  .menuItemName {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .menuItemName:before {
+    height: 30px;
+    width: calc(100% + 32px);
+    position: absolute;
+    background: rgba(255, 94, 0, 0.08);
+    border: 2px solid #FF934E;
+    border-radius: 50px;
+    box-shadow: 0 0 150px 20px rgba(0, 255, 255, 0.2);
+    content: '';
+    left: -16px;
+    top: -7px;
+    z-index: 1;
+  }
+
+  .menuItemName:after {
+    height: 38px;
+    width: calc(100% + 40px);
+    position: absolute;
+    background: rgba(0, 255, 255, 0.2);
+    border: 2px solid #80FFFF;
+    border-radius: 50px;
+    box-shadow: 0 0 6px #fff;
+    content: '';
+    left: -20px;
+    top: -11px;
+  }
+}
+
+.descriptionBlock {
+  width: 50%;
+  margin-left: 18%;
+  position: absolute;
+  top: 150px;
+  z-index: 3;
+
+  @media (max-width: 899px) {
+    width: calc(100% - 60px);
+    margin: 0 30px 30px 30px;
+    padding: 16px 13px 11px 13px;
+    position: static;
+    border: 2px solid rgba(8, 73, 94, 0.5);
+    border-radius: 24px;
+  }
+}
+
+.select {
+  width: calc(100% - 60px);
+  margin-bottom: 20px;
+  display: none;
+
+  @media (max-width: 899px) {
+    display: block;
+  }
+}

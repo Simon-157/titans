@@ -1,0 +1,47 @@
+.switch {
+  width: 56px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: 1px solid #51BDC0;
+  border-radius: 428px;
+  cursor: pointer;
+  min-width: 56px;
+  transition: border-color 0.3s ease;
+
+  &:before {
+    height: calc(100% - 4px);
+    width: calc(100% - 4px);
+    position: absolute;
+    background: linear-gradient(180deg, rgba(0, 255, 255, 0.30) 0%, rgba(0, 255, 255, 0.00) 100%);
+    backdrop-filter: blur(4px);
+    background-clip: padding-box;
+    border: 1px solid #049FA2;
+    border-radius: 428px;
+    content: "";
+    left: 2px;
+    top: 2px;
+    z-index: -1;
+  }
+
+  &.active {
+    &:before {
+      background: linear-gradient(180deg, rgba(0, 255, 255, 0.90) 0%, rgba(0, 255, 255, 0.45) 100%);
+      border-color: #01F1F1;
+    }
+
+    .blob {
+      transform: translateX(24px);
+    }
+  }
+}
+
+.blob {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  background: #fef6f0;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}

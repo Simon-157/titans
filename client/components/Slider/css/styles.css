@@ -1,0 +1,97 @@
+.container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  height: 29px;
+  padding: 5px 0;
+}
+
+.slider {
+  height: 20px;
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  height: 100%;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  display: block;
+  width: 26px;
+  height: 26px;
+}
+
+.styled {
+  height: 100%;
+  padding: 0 10px;
+}
+
+.styled,
+.trackWrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.trackWrap {
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin:auto;
+    background: #d3d3d3;
+    z-index: 1;
+  }
+}
+
+.track {
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  top: 0;
+  left: -200%;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: #F0C42A;
+  z-index: 2;
+}
+
+.thumbWrap {
+  height: 100%;
+  position: relative;
+  z-index: 3;
+  padding: 0 10px;
+}
+
+.thumb {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #F0C42A;
+  box-shadow: 0 1px 3px rgba(0,0,0, 0.2);
+  transform: translateX(-10px);
+}

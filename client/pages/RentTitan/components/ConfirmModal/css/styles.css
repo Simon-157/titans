@@ -1,0 +1,98 @@
+@import '../../../../../css/root';
+
+.modalContent {
+  padding: 40px;
+}
+
+.characterDesc {
+  display: flex;
+  gap: 5%;
+
+  @media (max-width: 599px) {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.characterImage {
+  width: 95px;
+  height: 95px;
+  background: #80FFFF no-repeat center / cover;
+  border-radius: 10%;
+  min-width: 95px;
+}
+
+.characterName {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.rentInfo {
+  font-size: 16px;
+  font-weight: 900;
+
+  & span {
+    color: $orange;
+  }
+}
+
+.rentButton {
+  margin-top: 1em;
+  width: 100%;
+  height: 48px;
+}
+
+.rentSubject {
+  color: #00E5E5;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0.5em 0 1em 0;
+}
+
+.rentRewards {
+  margin-top: 20px;
+  color: $orange;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.termAndConditions {
+  margin-top: 0.5em;
+  color: $neutral300;
+  text-align: center;
+  font-size: 14px;
+
+  & a {
+    color: $neutral100;
+    margin:0 0.5em;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+.rentUntilDate {
+  margin-top: 8px;
+  color: #FFF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: capitalize;
+
+  .date {
+    color: #FF7A00;
+  }
+}
+
+.warning {
+  margin-top: 8px;
+  color: #FF7A00;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}

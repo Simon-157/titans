@@ -1,0 +1,47 @@
+@import '../../../css/root';
+
+.warning {
+  margin-top: 40px;
+  color: #FF7A00;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.confirmButton {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.rentSubject {
+  margin: 0.5em 0 1em 0;
+  color: #00E5E5;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.rentRewards {
+  margin-top: 20px;
+  color: $orange;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.termAndConditions {
+  margin-top: 0.5em;
+  color: $neutral300;
+  font-size: 14px;
+  text-align: center;
+
+  a {
+    margin: 0 0.5em;
+    color: $neutral100;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}

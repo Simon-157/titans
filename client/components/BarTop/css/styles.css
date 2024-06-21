@@ -1,0 +1,71 @@
+@import '../../../css/root';
+
+.barTop {
+  position: relative;
+  padding: 15px 0 20px;
+  background: url('/img/topBanner.jpg') no-repeat center / cover;
+}
+
+.topLeft {
+  max-width: 405px;
+  margin-right: 15px;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: right;
+}
+
+.topRight {
+  display: flex;
+  flex-direction: column;
+}
+
+.topText {
+  max-width: 405px;
+  margin-left: 15px;
+  line-height: 17px;
+}
+
+.faqButton {
+  width: 120px;
+  margin-left: 15px;
+  background-color: transparent;
+  border: 2px solid #FDFDFD;
+
+  &:hover {
+    background-color: #FDFDFD;
+    color: #13151C;
+  }
+}
+
+.logoCircle {
+  margin-top: 25px;
+  top: 100%;
+}
+
+@media only screen and (max-width: 900px) {
+  .topLeft {
+    margin-right: 0;
+    padding-bottom: 15px;
+    text-align: center;
+  }
+
+  :global(.flex) {
+    flex-direction: column;
+  }
+
+  .faqButton {
+    margin-left: 0;
+  }
+
+  .topText {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .barTop {
+    &:after {
+      height: 40px;
+    }
+  }
+}

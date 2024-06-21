@@ -1,0 +1,441 @@
+@import '../../../css/root';
+
+.bg {
+  background: url('/img/event-bg.jpg') no-repeat center top / contain;
+  background-size: contain;
+}
+
+.container {
+  display: flex;
+  margin: 15px auto;
+  z-index: 3;
+}
+
+.bookingInfoWrap {
+  width: 784px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bookingImg {
+  background: no-repeat center / cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.bookingInfo {
+  width: 784px;
+  padding: 20px;
+  background: linear-gradient(152.97deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 0 0 10px 10px;
+}
+
+.gameName {
+  margin-bottom: 4px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  text-transform: uppercase;
+  color: $primary100;
+}
+
+.title {
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 48px;
+  text-transform: uppercase;
+}
+
+.desc {
+  margin-top: 15px;
+}
+
+.details {
+  margin-top: 15px;
+  display: flex;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 18px;
+  flex-shrink: 0;
+  color: $warning200;
+}
+
+.textMedium {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.infoTitle {
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+.bookingDate {
+  margin-bottom: 0;
+  font-weight: 300;
+}
+
+.bar {
+  margin-left: 12px;
+  font-weight: 300;
+  text-decoration: underline;
+}
+
+.bookingInfoMap {
+  width: 720px;
+  height: 360px;
+  margin-top: 16px;
+  border-radius: 8px;
+}
+
+.joinBlock {
+  width: 374px;
+  height: fit-content;
+  margin-left: 32px;
+  margin-bottom: 20px;
+  padding: 20px;
+  position: sticky;
+  top: 122px;
+  background: linear-gradient(152.97deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 8px;
+}
+
+.joinTop {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.joinText {
+  margin-bottom: 0;
+  font-weight: 300;
+
+  & span {
+    font-weight: 700;
+  }
+}
+
+button.joinBtn {
+  width: 100%;
+  height: 48px;
+  color: $neutral100 !important;
+  font-size: 16px;
+
+  &:not(:first-child) {
+    margin-top: 10px;
+  }
+
+  &.joined {
+    background-color: $success200;
+  }
+}
+
+.joinBtnIcon {
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+}
+
+.shareButton {
+  & button {
+    width: 100%;
+    height: 48px;
+    font-size: 16px
+  }
+}
+
+.btns {
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn {
+  height: 48px;
+  margin: 10px 10px 0 0;
+}
+
+.promoBtn {
+  display: none;
+}
+
+.promoBlock {
+  & .joinText {
+    margin-top: 15px;
+  }
+}
+
+.joinPromoImg {
+  width: 335px;
+  height: 185px;
+  margin-top: 15px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.moreEvents {
+  padding: 50px 0;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0) 100%);
+}
+
+.moreTitle {
+  text-align: center;
+}
+
+.attendEventDialog {
+  background: #000;
+
+  & > div {
+    max-width: 784px;
+    height: fit-content !important;
+    border-radius: 10px;
+  }
+}
+
+.attendEventDialogWrap {
+  padding: 40px 95px;
+}
+
+.attendJoined {
+  margin-bottom: 4px;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: $warning200;
+}
+
+.promoInfo {
+  width: 320px;
+  margin-left: 20px;
+}
+
+.promoQR {
+  width: 144px;
+  height: 144px;
+  background-color: $neutral100;
+}
+
+.promoCode {
+  text-align: center;
+}
+
+.promoButton {
+  width: 280px;
+  height: 48px;
+  margin-top: 16px;
+}
+
+.dialog {
+  & > div {
+    max-width: 784px;
+    height: auto !important;
+    border-radius: 10px;
+
+    & > div {
+      overflow: visible;
+    }
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .bookingInfoWrap {
+    width: 743px;
+  }
+
+  .bookingInfo {
+    width: 743px;
+  }
+
+  .bookingInfoMap {
+    width: 679px;
+  }
+
+  .joinBlock {
+    width: 359px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .bookingInfoWrap {
+    width: 452px;
+  }
+
+  .bookingInfo {
+    width: 452px;
+    padding: 20px 15px;
+  }
+
+  .bookingInfoMap {
+    width: 420px;
+  }
+
+  .joinBlock {
+    width: 359px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  :global(.flex) {
+    flex-direction: row;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .bookingInfoWrap {
+    width: auto;
+  }
+
+  .bookingInfo {
+    width: auto;
+  }
+
+  .bookingInfoMap {
+    width: auto;
+  }
+
+  .joinBlock {
+    width: auto;
+    margin-top: 15px;
+    margin-left: 0;
+    margin-bottom: 0;
+    position: static;
+
+    :global(.flex) {
+      flex-direction: column;
+    }
+  }
+
+  .joinPromoImg {
+    width: 100%;
+    height: 159.5px;
+  }
+
+  .barInfoDialog {
+    & > div {
+      max-width: 648px;
+      height: 90% !important;
+      border-radius: 10px;
+    }
+  }
+
+  .barInfoDialogWrap {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .barInfoLeft {
+    width: auto;
+    margin-right: 0;
+  }
+
+  .barInfoRight {
+    width: auto;
+  }
+
+  .barInfoMap {
+    width: auto;
+  }
+
+  .attendEventDialog {
+    & > div {
+      max-width: 648px;
+      height: 90%;
+      border-radius: 10px;
+    }
+  }
+
+  .attendEventDialogWrap {
+    padding: 40px 20px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .barInfoDialog {
+    & > div {
+      max-width: 384px;
+      height: 90% !important;
+      border-radius: 10px;
+    }
+  }
+
+  .barInfoDialogWrap {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .joinTop {
+    display: none;
+  }
+
+  .joinBlock {
+    width: 100%;
+    max-height: calc(100% - 64px);
+    position: fixed;
+    top: auto;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgb(145, 147, 157) 0%, rgba(0, 0, 0, 0) 135%), radial-gradient(100% 75% at 85% 100%, #4B6EC7 0%, rgb(19, 21, 28) 100%);
+    border-radius: 5px 5px 0 0;
+    z-index: 4;
+  }
+
+  .halfs {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .half {
+    flex-basis: 100%;
+
+    &:not(:first-child) {
+      margin-left: 15px;
+    }
+  }
+
+  .promoBlock {
+    display: none;
+
+    &.active {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  .promoBtn {
+    display: flex;
+    margin-top: 15px;
+
+    &.active {
+      color: $primary100;
+      border-color: $primary100;
+    }
+  }
+
+  .promoQrWrap {
+    flex-direction: column;
+  }
+
+  .promoCode {
+    text-align: start;
+  }
+
+  .promoInfo {
+    width: auto;
+    margin-left: 0;
+  }
+
+  .promoButton {
+    width: 100%;
+  }
+}

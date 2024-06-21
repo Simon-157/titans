@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <!--[if gte mso 9]><xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+  </xml><![endif]-->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <!--[if !mso]><!-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!--<![endif]-->
+  <title>{{- @platformName }}</title>
+  <!--[if !mso]><!-->
+  <link href="https://fonts.googleapis.com/css?family=Helvetica" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Space+Grotesk" rel="stylesheet" type="text/css" />
+  <!--<![endif]-->
+
+  <style type="text/css" id="media-query">
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      margin:0;
+      padding:0;
+      color: #FEF5ED !important;
+      font-family: Space Grotesk,Helvetica,Arial,sans-serif;
+      font-size: 16px;
+    }
+
+    a {
+      color: inherit !important;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border: 0 none;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+    }
+
+    a img {
+      border: 0 none;
+    }
+
+    table, td {
+      border-collapse: collapse;
+      vertical-align: middle;
+    }
+
+    table {
+      width: 100% !important;
+      margin:0;
+      padding:0;
+    }
+
+    .main-table {
+      min-width: 320px;
+      max-width: 650px;
+      margin: auto;
+      background: #E5E5E5;
+      color: #13151C;
+    }
+
+    .header {
+      height: 80px;
+      background: #13151C;
+      text-align: center;
+    }
+
+    .logo {
+      width: 95px;
+    }
+
+    .content {
+      padding: 20px 40px 40px;
+    }
+
+    .header-text {
+      margin-top: 20px;
+      font-size: 24px;
+      font-style: italic;
+      font-weight: 700;
+      line-height: 24px;
+      text-transform: uppercase;
+    }
+
+    .body-text {
+      margin-top: 20px;
+      line-height: 24px;
+    }
+
+    .footer {
+      padding: 25px;
+      background: #01e0f1;
+      color: #FDFDFD;
+      text-align: center;
+    }
+
+    .footer-logo {
+      width: 95px;
+    }
+
+    .copy {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .copy a {
+      color: #fff !important;
+    }
+
+    .block {
+      display: block;
+    }
+
+    .button {
+      width: 215px;
+      height: 39px;
+      margin: 20px auto 0;
+      background: url("https://{{- @hostname }}/img/email/button.png") no-repeat center / contain;
+      color: #FDFDFD !important;
+      font-size: inherit;
+      font-weight: 700;
+      line-height: 39px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .grey {
+      color: #566673;
+    }
+
+    .helvetica {
+      font-family: Helvetica,Arial,sans-serif;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .content {
+        padding: 20px;
+      }
+
+      .header-text {
+        margin-top: 20px;
+        font-size: 20px;
+        line-height: 20px;
+      }
+    }
+
+    {{ content 'style' }}
+  </style>
+</head>
+
+{{ block 'header-text' : }}
+  {{ if @headerText : }}
+    <div class="header-text helvetica">{{- @headerText }}</div>
+  {{ end }}
+{{ end }}
+
+<body>
+<table class="main-table">
+  <tbody>
+
+  <tr>
+    <td class="header">
+      <a
+        href="https://{{- @hostname }}"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <img
+          class="logo"
+          src="https://{{- @hostname }}/img/email/logo.png"
+        />
+      </a>
+    </td>
+  </tr>
+
+  {{ if @bannerImage : }}
+    <tr>
+      <td>
+        <img class="block" src="{{- @bannerImage }}" />
+      </td>
+    </tr>
+  {{ end }}
+
+  <tr>
+    <td class="content">
+
+      {{ content 'header-text' }}
+
+      {{ if @bodyTextBlock1 : }}
+        <div class="body-text">{{- @bodyTextBlock1 }}</div>
+      {{ end }}
+
+      {{ if @bodyTextBlock2 : }}
+        <div class="body-text">{{- @bodyTextBlock2 }}</div>
+      {{ end }}
+
+      {{ if @bodyTextBlock3 : }}
+        <div class="body-text">{{- @bodyTextBlock3 }}</div>
+      {{ end }}
+
+      {{ if @bodyTextBlock4 : }}
+        <div class="body-text">{{- @bodyTextBlock4 }}</div>
+      {{ end }}
+
+      {{ if @bodyTextBlock5 : }}
+        <div class="body-text">{{- @bodyTextBlock5 }}</div>
+      {{ end }}
+
+      {{ content }}
+
+      {{ if @buttonText : }}
+        <a
+          class="block button helvetica"
+          href="{{- @buttonUrl }}"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          {{- @buttonText }}
+        </a>
+      {{ end }}
+
+    </td>
+
+  </tr>
+
+  <tr>
+    <td class="footer">
+
+      <a
+        href="https://{{- @hostname }}"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <img
+          class="footer-logo"
+          src="https://{{- @hostname }}/img/email/logo.png"
+        />
+      </a>
+
+      <div class="copy">
+        © 2023 REIGN OF TITANS. ALL RIGHTS RESERVED
+      </div>
+
+      {{ if @username : }}
+        <div class="copy">
+          Don't want future emails? <a href="{{- @unsubscribeLink }}" rel="noopener noreferrer" target="_blank">Unsubscribe</a>
+        </div>
+      {{ end }}
+
+    </td>
+  </tr>
+
+  </tbody>
+</table>
+</body>
+</html>

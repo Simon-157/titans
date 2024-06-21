@@ -1,0 +1,229 @@
+.leftBlock {
+  height: 100%;
+  width: 55%;
+  padding-left: 360px;
+  padding-right: 80px;
+  position: relative;
+  align-items: center;
+  color: #D4F9FA;
+  display: flex;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 160%;
+
+  @media (max-width: 1599px) {
+    padding: 5% 80px 5% 240px;
+    font-size: 18px;
+  }
+
+  @media (max-width: 1199px) {
+    padding: 5% 80px 5% 165px;
+    font-size: 13px;
+  }
+
+  @media (max-width: 899px) {
+    height: 30%;
+    width: 100%;
+    padding: 40px 0 0 23px;
+    font-size: 16px;
+    max-height: 30%;
+
+    .leftBlockText {
+      height: 100%;
+      overflow: auto;
+    }
+  }
+}
+
+.leftBlockText {
+  max-height: 100%;
+  overflow: auto;
+}
+
+.leftBlockLastChapter {
+   display: flex;
+   flex-direction: column;
+   overflow: unset;
+ }
+
+.leftBlockTexLastChapter {
+  overflow: auto;
+}
+
+.rightBlock {
+  width: 45%;
+  padding-right: 5%;
+  color: #D4F9FA;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 164%;
+  letter-spacing: -0.72px;
+
+  &.paper {
+    padding: 5% 30px 5% 0;
+    background: url("/img/explore/paper.png") no-repeat 50%/contain;
+    background-origin: content-box;
+
+
+    @media (max-width: 899px) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 899px) {
+    height: calc(70% - 46px);
+    width: 100%;
+    margin-top: 33px;
+    margin-bottom: 13px;
+    background: linear-gradient(90deg, rgba(0, 255, 255, 0.15) 0%, rgba(0, 255, 255, 0.00) 100%);
+    background-blend-mode: overlay;
+    border-top: 2px solid rgba(0, 255, 255, 0.10);
+    border-bottom: 2px solid rgba(0, 255, 255, 0.10);
+    min-height: calc(70% - 46px);
+  }
+}
+
+.description {
+  margin-top: 50px;
+  color: #FFF;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  overflow: auto;
+
+  @media (max-width: 1599px) {
+    font-size: 22px;
+  }
+
+  @media (max-width: 1199px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 899px) {
+    margin: 33px 0 0 23px;
+    font-size: 24px;
+  }
+}
+
+.author {
+  color: #42CDDE;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%;
+  text-transform: uppercase;
+  margin-top: 60px;
+
+  @media (max-width: 1599px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 1199px) {
+    font-size: 11px;
+  }
+
+  @media (max-width: 899px) {
+    margin-top: 40px;
+    font-size: 14px;
+  }
+}
+
+.buttonBlock {
+  width: 210px;
+
+  :global(button.tertiary) {
+    height: 84px;
+    width: 100%;
+    margin: 50px 0;
+    border-color: #196A6B;
+
+    &:before {
+      border-color: #249595;
+    }
+
+    img {
+      width: 12px;
+    }
+
+    @media (max-width: 1599px) {
+      height: 60px;
+
+      img {
+        width: 10px;
+      }
+    }
+
+    @media (max-width: 1199px) {
+      height: 47px;
+      width: 118px;
+
+      img {
+        width: 7px;
+      }
+    }
+
+    @media (max-width: 899px) {
+      height: 57px;
+      margin: 38px 0 28px 23px;
+
+      img {
+        width: 9px;
+      }
+    }
+  }
+
+  @media (max-width: 1599px) {
+    width: 160px;
+  }
+
+  @media (max-width: 899px) {
+    width: 142px;
+  }
+}
+
+.leftBlock button.meetTitansButton {
+  width: 340px;
+  margin-top: 60px;
+
+  @media (max-width: 1199px) {
+    position: relative;
+    left: -70px;
+  }
+
+  @media (max-width: 899px) {
+    position: relative;
+    left: -40px;
+  }
+}
+
+.quote {
+  height: 57px;
+  margin-bottom: 10px;
+  opacity: 0.1;
+
+  @media (max-width: 899px) {
+    img {
+      width: 70px;
+    }
+  }
+}
+
+.light {
+  height: 80%;
+  width: 50%;
+  position: absolute;
+  background: linear-gradient(90deg, rgba(0, 255, 255, 0.1) 0%, rgba(0, 255, 255, 0.00) 100%);
+  background-blend-mode: overlay;
+  left: 0;
+
+  @media (max-width: 899px) {
+    display: none;
+  }
+}

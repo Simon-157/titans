@@ -1,0 +1,158 @@
+.button {
+  display: none;
+
+  @media (max-width: 1199px) {
+    height: 48px;
+    width: 48px;
+    display: flex;
+  }
+}
+
+.filtersModalWrap {
+  background: rgba(2, 37, 40, 0.95);;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.filtersModal {
+  height: 100%;
+  width: 100%;
+}
+
+.filters {
+  height: 100%;
+}
+
+.footer {
+  height: 80px;
+  width: 100%;
+  position: absolute;
+  align-items: center;
+  background: linear-gradient(0deg, rgba(5, 36, 39, 0.45) 0%, rgba(5, 36, 39, 0.45) 100%), linear-gradient(180deg, rgba(0, 255, 255, 0.01) 0%, rgba(0, 255, 255, 0.5) 100%);
+  background-blend-mode: normal, overlay;
+  backdrop-filter: blur(7px);
+  bottom: 0;
+  border-top: 1px solid #054144;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.filterTitle {
+  height: 32px;
+  width: 100%;
+  margin: 40px 0 4px 0;
+  background: linear-gradient(180deg, rgba(0, 255, 255, 0.00) 0%, rgba(0, 255, 255, 0.1) 100%);
+  background-blend-mode: overlay;
+  color: #FFF;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.title {
+  height: 56px;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(0, 255, 255, 0) 0%, rgba(0, 255, 255, 0.05) 100%),
+  linear-gradient(90deg, rgba(0, 255, 255, 0) 0%, rgba(0, 255, 255, 0.05) 100%);
+  background-blend-mode: overlay;
+  border-bottom: 2px solid #064A50;
+  color: #FFF;
+  display: flex;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 900;
+  justify-content: center;
+  line-height: 110%;
+  text-align: center;
+}
+
+.content {
+  height: calc(100% - 136px);
+  padding: 0 35px;
+  overflow: auto;
+
+  @media (min-width: 900px) {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+
+    .filter {
+      width: 200px;
+    }
+  }
+}
+
+.content {
+  .filter .filterItems {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @media (min-width: 900px) {
+      grid-template-columns: 1fr 1fr;
+
+      .filterOption:first-of-type {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+    }
+  }
+
+  .filter:first-of-type .filterItems {
+    grid-template-columns: 1fr 1fr;
+
+    .filterOption:first-of-type {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    @media (min-width: 900px) {
+      grid-template-columns: 1fr;
+
+      .filterOption:first-of-type {
+        grid-column-start: 1;
+        grid-column-end: 1;
+      }
+    }
+  }
+
+  .filter:last-of-type .filterItems {
+    grid-template-columns: 1fr 1fr;
+
+    @media (min-width: 900px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.filterOption {
+  height: 48px;
+  margin-top: 4px;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(0, 255, 255, 0.05) 0%, rgba(0, 255, 255, 0.00) 100%);
+  backdrop-filter: blur(8px);
+  border-radius: 5px;
+  color: #088A8C;
+  display: flex;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 800;
+  justify-content: center;
+  line-height: 110%;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.filterOption.active {
+  background: linear-gradient(180deg, rgba(0, 255, 255, 0.30) 0%, rgba(0, 255, 255, 0.00) 100%);
+  border: 2px solid rgba(0, 255, 255, 0.90);
+  color: #FFF;
+}
+
+.filterItems {
+  column-gap: 4px;
+  display: grid;
+  row-gap: 4px;
+}

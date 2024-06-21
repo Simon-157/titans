@@ -1,0 +1,6 @@
+.loader {
+  width: 64px;
+  height: 64px;
+  margin: auto;
+  background: url('/img/preloader-dark.gif') no-repeat center / contain;
+}

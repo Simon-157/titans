@@ -1,0 +1,53 @@
+.dialogContent {
+  :global(.children) {
+    height: 700px;
+    display: flex;
+  }
+}
+
+.leftArea {
+  background: #fef5ed url('/img/addBarBg.jpg') no-repeat center / cover;
+  border-right: 4px solid #fef5ed;
+}
+
+.rightArea {
+  position: relative;
+  width: 53.54%;
+  color: #fef5ed;
+  overflow: auto;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 40px 40px 10px;
+}
+
+.label {
+  color: #ff1c48;
+}
+
+@media only screen and (max-width: 900px) {
+  .leftArea {
+    display: none;
+  }
+
+  div.rightArea {
+    width: 100%;
+  }
+
+  .dialogContent {
+    align-items: flex-end;
+
+    :global(.children) {
+      height: calc(100vh - 104px);
+    }
+
+    :global(.content) {
+      border: 0;
+      border-top: 4px solid #fef5ed;
+      width: 100%;
+    }
+  }
+}

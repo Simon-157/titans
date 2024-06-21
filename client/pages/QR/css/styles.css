@@ -1,0 +1,29 @@
+.qr {
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 10px;
+  text-align: left;
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.scaner {
+  width: 64px;
+  height: 64px;
+  margin: auto;
+  background: url('/img/qr-code-scan.svg') no-repeat center / contain;
+}
+
+.input {
+  margin-bottom: 24px !important;
+}
+
+.submit {
+  display: block;
+  margin: 10px auto 0;
+}

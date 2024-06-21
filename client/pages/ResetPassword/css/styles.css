@@ -1,0 +1,23 @@
+.reset {
+  height: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.pass {
+  width: auto;
+  margin: 20px auto 0;
+  text-align: left;
+}
+
+.submit {
+  width: 360px !important;
+  margin: 20px auto 0;
+}

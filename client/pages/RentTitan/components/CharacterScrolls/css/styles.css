@@ -1,0 +1,21 @@
+.container {
+  min-height: 550px;
+  margin-bottom: 130px;
+
+  @media (max-width: 1599px) {
+    min-height: 450px;
+  }
+
+  @media (max-width: 1199px) {
+    min-height: 420px;
+  }
+
+  @media (max-width: 599px) {
+    min-height: 400px;
+  }
+}
+
+.mobileContainer {
+  padding-top: 25px;
+  flex-wrap: wrap;
+}

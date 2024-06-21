@@ -1,0 +1,144 @@
+@import '../../../css/root';
+
+.profile {
+  height: 100%;
+  width: 100%;
+  padding: 50px;
+  background: url('/img/profile/bg.png') no-repeat center;
+  background-size: cover;
+  overflow: auto;
+
+  @media (max-width: 1199px) {
+    height: auto;
+    padding: 88px 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+
+  @media (max-width: 899px) {
+    overflow: unset;
+  }
+}
+
+.contentBlock {
+  width: 100%;
+  background: linear-gradient(180deg, rgba(0, 255, 255, 0.05) 0%, rgba(0, 255, 255, 0.02) 100%);
+  background-blend-mode: overlay;
+  border: 1px solid #0B4454;
+  border-radius: 14px;
+  display: flex;
+  min-height: 100%;
+
+  @media (max-width: 1199px) {
+    width: auto;
+    align-items: center;
+    background: none;
+    border: none;
+    flex-direction: column;
+  }
+}
+
+.menu {
+  width: 240px;
+  padding-top: 68px;
+  border-right: 1px solid #0B4454;
+  color: #45E5E5A6;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 110%;
+  min-height: 100%;
+  text-transform: uppercase;
+
+  @media (max-width: 1199px) {
+    width: 320px;
+    border: none;
+    min-height: auto;
+  }
+}
+
+.content {
+  width: calc(100% - 240px);
+  position: relative;
+  display: flex;
+
+  @media (max-width: 1199px) {
+    width: 320px;
+    position: static;
+  }
+}
+
+.menuItem {
+  height: 56px;
+  padding-left: 40px;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+}
+
+:global(.button.secondary.circle).close {
+  height: 53px;
+  width: 53px;
+  padding: 0;
+  position: absolute;
+  min-width: 53px;
+  right: 10px;
+  top: 10px;
+
+  &:before {
+    height: calc(100% - 6px);
+    width: calc(100% - 6px);
+  }
+}
+
+.selected {
+  background: linear-gradient(90deg, rgba(0, 255, 255, 0.1) 0%, rgba(0, 255, 255, 0.05) 100%);
+  background-blend-mode: overlay;
+
+  .menuItemName {
+    width: calc(100% - 40px);
+    position: relative;
+    color: #45E5E5;
+    cursor: pointer;
+  }
+
+  .menuItemName:before {
+    height: 30px;
+    width: calc(100% + 32px);
+    position: absolute;
+    background: rgba(255, 94, 0, 0.08);
+    border: 2px solid #FF934E;
+    border-radius: 50px;
+    box-shadow: 0 0 150px 20px rgba(0, 255, 255, 0.2);
+    content: '';
+    left: -16px;
+    top: -6px;
+    z-index: 1;
+  }
+
+  .menuItemName:after {
+    height: 38px;
+    width: calc(100% + 40px);
+    position: absolute;
+    background: rgba(0, 255, 255, 0.2);
+    border: 2px solid #80FFFF;
+    border-radius: 50px;
+    box-shadow: 0 0 6px #fff;
+    content: '';
+    left: -20px;
+    top: -10px;
+  }
+}
+
+.avatarBlock {
+  width: 100%;
+  display: none;
+
+  @media (max-width: 1199px) {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+}

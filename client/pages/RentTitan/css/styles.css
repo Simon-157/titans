@@ -1,0 +1,323 @@
+@import '../../../css/root';
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.backContainer {
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 800;
+
+  & img {
+    width: 8px;
+    height: 12px;
+    margin-right: 0.5em;
+  }
+
+  & span {
+    cursor: pointer;
+
+    &:hover{
+      color:$blue3;
+    }
+  }
+}
+
+.contentWrapper {
+  width: 1080px;
+  margin: 40px auto;
+
+  @media (max-width: 1599px) {
+    width: 1012px;
+  }
+
+  @media (max-width: 1199px) {
+    width: 740px;
+  }
+
+  @media (max-width: 899px) {
+    width: 100%;
+  }
+}
+
+.characterDescWrapper {
+  margin-bottom: 40px;
+}
+
+.rentTitanDetailsTabs :global {
+  & .menu{
+    border-bottom: 1px solid $blue4;
+
+    @media (max-width: 899px) {
+      flex-wrap: wrap;
+      flex-direction: row !important;
+    }
+  }
+
+  & button.nav {
+    flex-grow: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 18px;
+
+    &:before{
+      display: none;
+    }
+
+    &.current{
+      color: $neutral100 !important;
+      background: linear-gradient(180deg, rgba(0, 255, 255, 0.00) 0%, rgba(0, 255, 255, 0.35) 100%);
+    }
+
+    @media (max-width: 899px) {
+      width:50%;
+      margin: 0 !important;
+      font-size: 16px;
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  height: 88px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(0deg, rgba(5, 36, 39, 0.85) 0%, rgba(5, 36, 39, 0.85) 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.01) 0%, #FFF 100%);
+  background-blend-mode: normal, overlay;
+  backdrop-filter: blur(7px);
+  z-index: 1;
+
+  @media (max-width: 1199px) {
+    height: 72px;
+  }
+
+  &.requestFooter {
+    @media (max-width: 899px) {
+      height: 128px;
+    }
+  }
+
+  @media (max-width: 899px) {
+    height: 64px;
+  }
+
+  & .footerContentWrapper {
+    width: 1080px;
+    height: 100%;
+    margin: auto;
+
+    @media (max-width: 1599px) {
+      width: 1012px;
+    }
+
+    @media (max-width: 1199px) {
+      width: 740px;
+    }
+
+    @media (max-width: 899px) {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & button {
+      width: 310px;
+      height: 48px;
+
+      &.requestButton {
+        width: 240px;
+
+        @media (max-width: 1199px) {
+          width: 145px;
+        }
+      }
+
+      &:not(.borderNone) {
+        border-color: $orange;
+      }
+
+      @media (max-width: 1199px) {
+        font-size: 16px;
+      }
+
+      @media (max-width: 899px) {
+        width: 150px;
+      }
+    }
+
+    & span{
+      font-size: 20px;
+      font-weight: 900;
+
+      @media (max-width: 1199px) {
+        font-size: 16px;
+      }
+    }
+
+    .rentedUntilDate {
+      margin: 0 10px;
+      color: #AFAFAF;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 20px;
+      text-align: center;
+    }
+  }
+}
+
+.confirmModal {
+  width: 550px;
+  border-radius: 20px;
+  border: 1px solid  $blue4;
+  background: linear-gradient(180deg, rgba(0, 255, 255, 0.35) 0%, rgba(0, 255, 255, 0.10) 100%);
+
+  @media (max-width: 599px) {
+    width: 90%;
+  }
+
+  & :global(.close) {
+    top: 2% !important;
+    right: 2% !important;
+  }
+}
+
+.confirmModalWrap {
+  background: rgba(2, 37, 40, 0.93);
+}
+
+.blured {
+  filter: blur(7px);
+}
+
+.characterImage {
+  height: 48px;
+  width: 48px;
+  margin-right: 20px;
+  background: #80FFFF no-repeat center / cover;
+  border-radius: 10px;
+}
+
+.level {
+  height: 24px;
+  width: 50px;
+  align-items: center;
+  background: linear-gradient(0deg, rgba(58, 60, 61, 0.80) 0%, rgba(58, 60, 61, 0.80) 100%), linear-gradient(180deg, rgba(0, 255, 255, 0.35) 0%, rgba(0, 255, 255, 0.10) 100%);
+  border: 1px solid  $blue4;
+  border-radius: 5px;
+  color: #FFF;
+  display: flex;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 800;
+  justify-content: center;
+  line-height: 110%;
+  text-align: center;
+}
+
+.element {
+  height: 28px;
+  aspect-ratio: 1/1;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.characterName {
+  color: #FFF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.elementLevelBlock {
+  align-items: center;
+  display: flex;
+  gap: 4px;
+}
+
+.infoBlock {
+  margin-right: 10px;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.request {
+  display: flex;
+
+  @media (max-width: 899px) {
+    flex-direction: column;
+  }
+}
+
+.requesterUserName {
+  color: #FFF;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 28px;
+
+  @media (max-width: 1199px) {
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+.requesterIcon {
+  height: 48px;
+  width: 48px;
+  margin-right: 8px;
+  background: url('/img/user-icon.png') no-repeat center / cover;
+  border-radius: 50%;
+
+  @media (max-width: 1199px) {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.requestedBy {
+  margin-bottom: 4px;
+  color: #FFF;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
+
+  @media (max-width: 1199px) {
+    font-size: 10px;
+  }
+}
+
+.requesterButtons {
+  margin-left: 28px;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+
+  @media (max-width: 899px) {
+    margin: 0;
+  }
+}
+
+.requesterInfo {
+  align-items: center;
+  display: flex;
+
+  @media (max-width: 899px) {
+    margin-bottom: 12px;
+  }
+}

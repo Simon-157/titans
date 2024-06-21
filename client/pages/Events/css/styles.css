@@ -1,0 +1,154 @@
+@import '../../../css/root';
+
+.eventsList {
+  position: relative;
+  padding-bottom: 40px;
+  background: url('/img/events-bg.jpg') no-repeat center top / contain;
+  border-bottom: 1px solid #fff;
+
+  &:after {
+    content: '';
+    max-width: 1298px;
+    height: 12px;
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 8px;
+    margin: auto;
+    background: url('/img/arrows.svg') no-repeat center / cover;
+  }
+
+  &.featured {
+    padding-bottom: 80px;
+  }
+
+  & > :global(.container) {
+    margin-top: 40px;
+  }
+}
+
+.past {
+  position: relative;
+  padding-top: 40px;
+}
+
+.bricks {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: url('/img/bricks.png') no-repeat top left;
+  transform: rotateY(180deg);
+  opacity: 0.2;
+
+  &.bricksRight {
+    left: 0;
+    right: auto;
+    transform: rotate(180deg);
+  }
+}
+
+.container {
+  max-width: 100%;
+  margin: auto;
+}
+
+.header {
+  position: relative;
+  padding-right: 210px;
+  display: flex;
+  align-items: center;
+}
+
+.logoTitle {
+  display: flex;
+  align-items: center;
+}
+
+div.logoCircle {
+  position: static;
+  margin-right: 40px;
+  flex-shrink: 0;
+}
+
+.title {
+  font-style: oblique;
+}
+
+.filters {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  z-index: 5;
+}
+
+.select {
+  width: auto;
+
+  &:not(:first-child) {
+    margin-left: 15px;
+  }
+
+  & :global(.result) {
+    background: $neutral700;
+  }
+}
+
+.yellow {
+  margin-left: 5px;
+  color: #f0c42a;
+}
+
+.grid {
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.region {
+  width: 180px;
+  margin: 20px auto 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .header {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .eventsList {
+    & > :global(.container) {
+      margin-top: 20px;
+    }
+  }
+
+  .header {
+    padding-right: 0;
+    flex-direction: column;
+  }
+
+  div.logoCircle {
+    display: block;
+  }
+
+  .filters {
+    position: static;
+    margin-top: 30px;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .select {
+    &.city {
+      display: none;
+    }
+  }
+}

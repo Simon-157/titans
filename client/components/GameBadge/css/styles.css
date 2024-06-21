@@ -1,0 +1,51 @@
+.badge {
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  top: 0;
+  left: 30px;
+  background: #F54359;
+  border: 2px solid #FDFDFD;
+  border-radius: 5px;
+}
+
+.game {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  bottom: 4px;
+  right: 4px;
+  background: url('/img/cooldown.svg') no-repeat center / contain;
+
+  &.cod, &.call-of-duty {
+    background-image: url('/img/cod.svg');
+  }
+
+  &.csgo {
+    background-image: url('/img/csgo.svg');
+  }
+
+  &.dota-2 {
+    background-image: url('/img/dota-2.svg');
+  }
+
+  &.fifa {
+    background-image: url('/img/fifa.svg');
+  }
+
+  &.free-fire {
+    background-image: url('/img/free-fire.svg');
+  }
+
+  &.league-of-legends {
+    background-image: url('/img/league-of-legends.svg');
+  }
+
+  &.overwatch {
+    background-image: url('/img/overwatch.svg');
+  }
+
+  &.pubg {
+    background-image: url('/img/pubg.svg');
+  }
+}

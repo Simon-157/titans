@@ -1,0 +1,104 @@
+@import '../../../../../css/root';
+
+.mainContainer{
+  width:630px;
+  margin:16px 0;
+  position: relative;
+  
+  @media (max-width: 899px) {
+    width: 320px;
+  }
+}
+
+.sliderContainer{
+  overflow-x: hidden ;
+  width:100%;
+  position: relative;
+}
+
+.tournamentsContainer{
+  display: flex;
+  gap:16px;
+  transition:  transform 0.4s ease;
+}
+
+.mobileTournamentsContainer{
+  display: flex;
+  transition:  transform 0.4s ease;
+}
+
+.mobileTournamentGroup{
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 0 320px;
+  height: 320px;
+  gap:16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.tournament {
+  width: 144px;
+  height:144px;
+  flex:0 0 144px;
+  border: 1px solid white;
+  position: relative;
+  align-items: center;
+  aspect-ratio: 1/1;
+  background: linear-gradient(180deg, rgba(0, 255, 255, 0.05) 0%, rgba(0, 255, 255, 0.00) 100%);
+  backdrop-filter: blur(7.91015625px);
+  border-radius: 22px;
+  cursor: pointer;
+  display: flex;
+
+  &.active{
+    background:  linear-gradient(180deg, rgba(0, 255, 255, 0.30) 0%, rgba(0, 255, 255, 0.00) 100%);
+    border: 3px solid $blue4;
+  }
+
+  &:hover{
+    background: linear-gradient(180deg, rgba(0, 255, 255, 0.35) 0%, rgba(0, 255, 255, 0.10) 100%);
+  }
+}
+
+.tournamentIcon {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.arrow{
+  position: absolute;
+  top: 0;
+  bottom:0;
+  margin : auto 0;
+  width:50px;
+  height:50px;
+  cursor: pointer;
+  background: url("/img/sliderArrow.svg") no-repeat center / 40%;
+
+  &.left{
+    left:-50px;
+  }
+
+  &.right{
+    right:-50px;
+    transform: rotate(180deg);
+  }
+  &.disabled{
+    opacity: 0.3;
+    pointer-events: none;
+  }
+}
+
+.sliderDotsContainer{
+  display:flex;
+  justify-content: center;
+  position: relative;
+  top:16px;
+}

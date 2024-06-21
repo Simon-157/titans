@@ -1,0 +1,22 @@
+.logoCircle {
+  width: 96px;
+  height: 96px;
+  position: absolute;
+  right: 65px;
+  background: url('/img/logo-circle.svg') no-repeat center / contain;
+  color: #fff;
+  z-index: 1;
+}
+
+@media only screen and (min-width: 1600px) {
+  .logoCircle {
+    width: 128px;
+    height: 128px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .logoCircle {
+    display: none;
+  }
+}

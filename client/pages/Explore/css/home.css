@@ -1,0 +1,199 @@
+@import '../../../css/root';
+
+.homePage {
+  height: 100%;
+  position: relative;
+  align-items: center;
+  background-image: url("/img/explore/forest-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  scroll-snap-align: start;
+  z-index: 1;
+}
+
+.ellipse {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: url("/img/explore/home-page-ellipse.png") no-repeat center;
+  background-size: 90%;
+
+  @media (max-width: 899px) {
+    background-size: cover;
+  }
+}
+
+.homePageHeader {
+  padding-top: 60px;
+  z-index: 3;
+
+  @media (max-width: 1199px) {
+    padding-top: 44px;
+
+    img {
+      width: 88px;
+    }
+  }
+}
+
+.homePageContent {
+  width: 100%;
+  color: #fff;
+  font-size: 120px;
+  font-weight: 800;
+  line-height: 110%;
+  letter-spacing: -3.6px;
+  text-align: center;
+  text-shadow: 10px 10px rgba(0, 0, 0, 0.25);
+  z-index: 3;
+
+  @media (max-width: 1199px) {
+    font-size: 56px;
+  }
+
+  @media (max-width: 899px) {
+    font-size: 67px;
+  }
+}
+
+.homePageFooter {
+  padding-bottom: 30px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: 900;
+  justify-content: flex-end;
+  line-height: 110%;
+  text-transform: uppercase;
+  z-index: 3;
+
+  @media (max-width: 1199px) {
+    img {
+      width: 18px;
+    }
+  }
+}
+
+.worldOfEreo {
+  position: relative;
+  color: $yellow2;
+  text-wrap: nowrap;
+
+  @media (max-width: 899px) {
+    padding: 0 30px;
+    /*background: linear-gradient(90deg, rgba(255, 240, 101, 0.00) 0%, rgba(255, 240, 101, 0.10) 100%);*/
+    display: block;
+    text-wrap: wrap;
+  }
+}
+
+.arrows {
+  margin-top: 10px;
+
+  @media (max-width: 1199px) {
+    margin-top: 2px;
+  }
+}
+
+.scrollDownText {
+  margin-top: 12px;
+
+  @media (max-width: 1199px) {
+    margin-top: 6px;
+    font-size: 12px;
+  }
+}
+
+.arrow {
+  height: 12px;
+  margin: 6px 0 0 -6px;
+  transform: rotate(90deg);
+
+  span {
+    width: 10px;
+    position: relative;
+    background-color: $blue8;
+    box-shadow: 0 0 6px $blue5;
+    display: block;
+    min-height: 2px;
+
+    &:first-of-type {
+      top: -2px;
+      transform: rotate(45deg);
+
+      @media (max-width: 1199px) {
+        top: -1px;
+      }
+    }
+
+    &:last-of-type {
+      top: 2px;
+      transform: rotate(-45deg);
+
+      @media (max-width: 1199px) {
+        top: 0px;
+      }
+    }
+
+    @media (max-width: 1199px) {
+      width: 6px;
+    }
+  }
+
+  &:nth-child(1) {
+    opacity: 0.3;
+  }
+
+  &:nth-child(2) {
+    opacity: 0.5;
+  }
+
+  @media (max-width: 1199px) {
+    height: 6px;
+  }
+}
+
+.ereo {
+  position: relative;
+  display: inline-block;
+}
+
+.ereo .backlight {
+  height: 78px;
+  width: 963px;
+  position: absolute;
+  background: linear-gradient(90deg, rgba(255, 240, 101, 0.00) 0%, rgba(255, 240, 101, 0.10) 100%);
+  left: -955px;
+  top: 26px;
+  z-index: -1;
+
+  @media (max-width: 1199px) {
+    height: 36px;
+    top: 12px;
+  }
+
+  @media (max-width: 899px) {
+    display: none;
+  }
+}
+
+.worldOfEreo > .backlight {
+  display: none;
+
+  @media (max-width: 899px) {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: linear-gradient(90deg, rgba(255, 240, 101, 0.00) 0%, rgba(255, 240, 101, 0.10) 100%);
+    display: block;
+    left: 0px;
+    top: 2px;
+    z-index: -1;
+  }
+}

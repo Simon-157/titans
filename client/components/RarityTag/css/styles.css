@@ -1,0 +1,26 @@
+.tag {
+  width: 80px;
+  height: 20px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-image: url(/img/tag.png);
+  font-weight: 900;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+  text-transform: uppercase;
+
+  &.common{
+    color:#B1B1B1;
+  }
+  &.rare{
+    color:#96EF00;
+  }
+  &.epic{
+    color:#00C3EE;
+  }
+  &.legendary{
+    color:#E363FF;
+  }
+}

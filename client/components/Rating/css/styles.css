@@ -1,0 +1,26 @@
+@import '../../../css/root';
+
+.rating {
+  margin: 3px 0 0 10px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.rate {
+  display: inline-block;
+  line-height: 24px;
+  user-select: none;
+}
+
+.star {
+  width: 24px;
+  height: 24px;
+  color: $primary100;
+  vertical-align: middle;
+
+  &.empty {
+    color: $neutral300;
+  }
+}

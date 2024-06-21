@@ -1,0 +1,286 @@
+@import 'mixins';
+@import 'root';
+@import 'fonts';
+@import 'buttons';
+
+*, *:before, *:after {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html,
+body,
+:global(#app) {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #1a1a1a;
+  color: $neutral100;
+  font-family: Gilroy, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.25px;
+}
+
+:global(#app) {
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 899px) {
+    display: block;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+textarea,
+button {
+  color: $neutral100;
+  outline: none;
+  font-size: inherit;
+  font-family: inherit;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+input,
+textarea {
+  width: 100%;
+  border: none;
+  background: transparent;
+  box-shadow: 0 0 0 4px #070707 inset;
+  text-align: inherit;
+  border-color: #269399;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 16px;
+}
+
+input:read-only,
+textarea:read-only {
+  cursor: not-allowed;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+input:focus:-moz-placeholder {
+  color: transparent;
+} /* FF 4-18 */
+input:focus::-moz-placeholder {
+  color: transparent;
+} /* FF 19+ */
+input:focus:-ms-input-placeholder {
+  color: transparent;
+} /* IE 10+ */
+
+input[type='file'] {
+  background: transparent;
+}
+
+textarea {
+  resize: none;
+}
+
+select {
+  padding: 10px;
+  background: transparent;
+  border: none;
+  box-shadow: 0 0 0 1px #000 inset, 0 0 0 2px #a89440 inset, 0 0 0 3px #f8e478 inset;
+  color: inherit;
+  font-size: inherit;
+  outline: none;
+  cursor: pointer;
+}
+
+option {
+  padding: 10px;
+  background: #dedede;
+  color: #000;
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  margin: 10px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: 10px;
+}
+
+:global(.page) {
+  position: relative;
+  min-width: 320px;
+  min-height: 100%;
+  overflow: auto;
+}
+
+:global(.bold) {
+  font-weight: 700;
+}
+
+:global(.err) {
+  color: rgba(255, 59, 48, 0.95);
+}
+
+:global(.pointer) {
+  cursor: pointer;
+  user-select: none;
+}
+
+:global(.half) {
+  width: 50%;
+  float: left;
+}
+
+:global(.container) {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 15px;
+  position: relative;
+  justify-content: center;
+  z-index: 2;
+}
+
+:global(.aspectWrap) {
+  width: 100%;
+  position: relative;
+  padding-top: 56.25%;
+}
+
+:global(.aspect) {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+:global(.flex) {
+  display: flex;
+
+  &:global(.center) {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+:global(.green) {
+  color: $success300;
+}
+
+:global(.grey) {
+  color: $neutral300;
+}
+
+:global {
+  .filepond--wrapper {
+    cursor: pointer;
+  }
+
+  .filepond--root {
+    margin-bottom: 0 !important;
+    z-index: 0 !important;
+  }
+
+  div.filepond--drop-label {
+    height: 100%;
+    color: $neutral100;
+
+    & label {
+      color: $neutral100;
+      cursor: pointer;
+    }
+  }
+
+  div.filepond--panel {
+    background: $neutral600;
+  }
+
+  div.filepond--drip {
+    background: $neutral600;
+    border-radius: 5px;
+    opacity: 1;
+  }
+
+  button.filepond--file-action-button {
+    cursor: pointer;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f8e478;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px #000 inset, 0 0 0 2px #a89440 inset, 0 0 0 3px #f8e478 inset;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+div:global(.filepond--root) {
+  margin-bottom: 0;
+}
+
+:global(.warning) {
+  width: 100%;
+  margin-top: 8px;
+  align-items: center;
+  background: linear-gradient(180deg, #FF9E59 0%, #F73 100%);
+  background-clip: text;
+  justify-content: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  & > img {
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+}
+
+:global(.aspectWrap) {
+  width: 100%;
+  position: relative;
+  padding-top: 56.25%;
+}
+
+:global(.aspect) {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

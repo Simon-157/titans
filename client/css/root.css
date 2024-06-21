@@ -1,0 +1,51 @@
+$neutral100: #fff;
+$neutral200: #D8E0E5;
+$neutral300: #7F919E;
+$neutral400: #566673;
+$neutral500: #2F3F4A;
+$neutral600: #242A34;
+$neutral700: #1A1A1A;
+
+$primary100: #F54359;
+$primary200: #CC2941;
+
+$success100: #ECFDF5;
+$success200: #34D399;
+$success300: #10B981;
+$success400: #047857;
+
+$warning100: #FFFBEB;
+$warning200: #FBBF24;
+$warning300: #F59E0B;
+$warning400: #D97706;
+
+$error100: #EF4444;
+$error200: #DC2626;
+
+$blue100: #5173FD;
+$orange100: #F2994A;
+$purple100: #9B51E0;
+
+$gradient: linear-gradient(172deg, rgba(145, 147, 157, 0.5) 9%, rgba(0, 0, 0, 0) 140%), radial-gradient(96% 77.5% at 85% 93%, rgba(190, 63, 63, 0.8) 0, rgba(19, 21, 28, 0.7) 100%);
+$gradientBlue: linear-gradient(to right, #5136FA 0%, #50A1FF 100%);
+$gradientBlueGlass: linear-gradient(180deg, rgba(145, 147, 157, 0.5) 0%, rgba(0, 0, 0, 0) 140%), radial-gradient(100% 75% at 85% 90%, #4B6EC7 0%, rgba(19, 21, 28, 0.7) 100%);
+$gradientRed: linear-gradient(to right, #FF1C48 0%, #FF5753 100%);
+
+$gray: #FAFAFA;
+
+$orange: #FF7A00;
+$orange2: #FF7733;
+
+$blue: #33A6A6;
+$blue2: #025258;
+$blue3: #84FFFF;
+$blue4: #80FFFF;
+$blue5: #BDFFFD;
+$blue6: #45E5E5;
+$blue7: #3CAEB0;
+$blue8: #7DFEFE;
+$blue9: #1C7475;
+$blue10: #56F9FC;
+
+$yellow: #FFF176;
+$yellow2: #FFF065;

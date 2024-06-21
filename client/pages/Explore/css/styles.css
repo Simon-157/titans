@@ -1,0 +1,12 @@
+@import '../../../css/root';
+
+.container {
+  height: 100vh;
+  width: 100%;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+
+  @media (max-width: 899px) {
+    overflow-y: initial;
+  }
+}

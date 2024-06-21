@@ -1,0 +1,423 @@
+@import '../../../css/root';
+
+.categoriesPage {
+  height: 100%;
+  position: relative;
+  align-items: center;
+  background-image: url("/img/explore/forest-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  scroll-snap-align: start;
+  z-index: 1;
+}
+
+.logo {
+  width: 117px;
+  margin-top: 50px;
+
+  @media (max-width: 1199px) {
+    width: 82px;
+    margin-top: 44px;
+  }
+}
+
+.categoriesPageTitle {
+  margin-bottom: auto;
+  margin-top: 40px;
+  color: #fff;
+  font-size: 80px;
+  font-weight: 800;
+  justify-self: flex-start;
+  min-height: 136px;
+  line-height: 100%;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.categoriesPageItems {
+  height: 100%;
+  width: 100%;
+  margin-top: 60px;
+  padding-bottom: 60px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  :global(button.secondary.circle) {
+    height: 96px;
+    width: 96px;
+    position: absolute;
+    backdrop-filter: blur(5px);
+    border-color: rgba(0, 255, 255, 0.75);
+    bottom: -48px;
+    box-shadow: none;
+    padding: 0;
+    z-index: 1;
+    transition: all 0.5s ease;
+
+    &:before {
+      width: 100%;
+      height: 100%;
+      margin-top: 1px;
+      background-image: url("/img/explore/play-button.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      border: none;
+      box-shadow: none;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+
+      @media (max-width: 1199px) {
+        background-size: 43px;
+      }
+    }
+
+    @media (max-width: 1199px) {
+      width: 47px;
+      height: 47px;
+      bottom: -25px;
+    }
+  }
+
+  @media (max-width: 1199px) {
+    top: -60%;
+  }
+}
+
+.categoriesPageItem {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 3px solid #CEFF6C;
+  border-radius: 28px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: all 0.5s ease;
+
+  @media (max-width: 1199px) {
+    border-radius: 15px;
+    border-width: 2px;
+  }
+}
+
+.wrapper {
+  height: 80%;
+  padding: 13px;
+  position: relative;
+  aspect-ratio: 1 / 1.5;
+  border: 2px solid rgba(255, 255, 255, .2);
+  border-radius: 40px;
+  top: 0;
+  transition: all 0.5s ease;
+
+  @media (max-width: 1199px) {
+    padding: 6px;
+    position: absolute;
+    aspect-ratio: 1 / 1.5;
+    border-width: 2px;
+    border-radius: 21px;
+  }
+}
+
+.wrapper:hover {
+  border-color: $blue4;
+  box-shadow: 0 0 15px $blue4;
+
+  .titanImages {
+    img {
+      min-width: 80%;
+    }
+
+    img:first-of-type {
+      left: -20%;
+      top: 0;
+    }
+
+    img:last-of-type {
+      right: 40%;
+      top: -20%;
+    }
+  }
+
+  .categoriesPageItem {
+    box-shadow: 0 0 20px $blue4;
+    border-color: #FFD85E;
+    transition: all 0.5s ease;
+
+    :global(button.secondary.circle) {
+      width: 106px;
+      height: 106px;
+      border: 3px solid $blue4;
+      bottom: -53px;
+
+      &:before {
+        background-image: url("/img/explore/play-button-active.png");
+        background-position: center;
+        background-repeat: no-repeat;
+
+        @media (max-width: 1199px) {
+          background-size: 52px;
+        }
+      }
+
+      @media (max-width: 1199px) {
+        width: 56px;
+        height: 56px;
+        bottom: -28px;
+        border-width: 2px;
+      }
+    }
+  }
+
+  &.wrapperLands, &.wrapperLore {
+    top: 30px;
+  }
+
+  &.wrapperTitans {
+    top: -20px;
+  }
+
+  &.wrapperLands, &.wrapperTitans, &.wrapperLore {
+    @media (max-width: 1199px) {
+      top: 1360px;
+    }
+  }
+}
+
+.wrapperLands {
+  margin-right: 6%;
+  top: 50px;
+  transform: rotate(-10deg);
+
+  @media (max-width: 1199px) {
+    margin: 0;
+    top: 1380px;
+    transition: all 0.5s ease;
+    transform: rotate(-12deg) translateY(-1380px) rotate(2deg);
+  }
+}
+
+.wrapperTitans {
+  margin-right: 6%;
+
+  @media (max-width: 1199px) {
+    margin: 0;
+    top: 1380px;
+    transition: transform 0.5s ease-in-out, top 0.5s ease-in-out;
+    transform: rotate(0deg) translateY(-1380px) rotate(0deg);
+  }
+}
+
+.wrapperLore {
+  top: 50px;
+  transform: rotate(10deg);
+
+  @media (max-width: 1199px) {
+    top: 1380px;
+    transition: transform 0.5s ease-in-out, top 0.5s ease-in-out;
+    transform: rotate(12deg) translateY(-1380px) rotate(-2deg);
+  }
+}
+
+.lands {
+  background-image: url("/img/explore/lands.jpg");
+}
+
+.titans {
+  background-image: url("/img/explore/titans.jpg");
+  justify-content: space-between;
+}
+
+.lore {
+  background-image: url("/img/explore/lore.jpg");
+}
+
+.categoryCaption {
+  margin-bottom: 80px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 100%;
+  text-transform: capitalize;
+  text-align: center;
+  z-index: 2;
+
+  @media (max-width: 1199px) {
+    margin-bottom: 40px;
+    font-size: 21px;
+  }
+}
+
+.titanImages {
+  height: 75%;
+  position: relative;
+  border-radius: 28px;
+  display: flex;
+  max-height: 75%;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+
+  img {
+    position: relative;
+    min-width: 70%;
+    object-fit: contain;
+    transition: all 0.5s ease-in-out;
+    z-index: 1;
+  }
+
+  img:first-of-type {
+    left: -10%;
+    top: 10%;
+    z-index: 2;
+  }
+
+  img:last-of-type {
+    right: 30%;
+    top: -10%;
+  }
+}
+
+.overflowUnset {
+  overflow: unset;
+}
+
+.switcherBlock {
+  width: 80%;
+
+  input[type=range] {
+    width: 100%;
+    margin: 10px 0;
+    background: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+  }
+
+  input[type=range]:focus {
+    outline: none;
+  }
+
+  input[type=range]::-webkit-slider-runnable-track {
+    height: 4px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    background-blend-mode: soft-light;
+    border-radius: 999px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.50) inset, 0 -5px 10px 2px rgba(255, 255, 255, 0.25);
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    background: url("/img/explore/slider-thumb.svg") no-repeat center;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.35), 0 4px 4px 0 rgba(0, 0, 0, 0.25), 0 0px 10px 0 #FFF inset, 0 0 5px 0 #FFF inset, 2px 0 0 0 #5CECF4;
+    cursor: pointer;
+    top: -14px;
+    -webkit-appearance: none;
+  }
+
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: rgba(0, 0, 0, 0.25);
+  }
+
+  input[type=range]::-moz-range-track {
+    height: 4px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    background-blend-mode: soft-light;
+    border-radius: 999px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.50) inset, 0 -5px 10px 2px rgba(255, 255, 255, 0.25);
+  }
+
+  input[type=range]::-moz-range-thumb {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    background: url("/img/explore/slider-thumb.svg") no-repeat center;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.35), 0 4px 4px 0 rgba(0, 0, 0, 0.25), 0 0px 10px 0 #FFF inset, 0 0 5px 0 #FFF inset, 2px 0 0 0 #5CECF4;
+    cursor: pointer;
+    top: -14px;
+  }
+}
+
+.slider {
+  height: 57px;
+  width: 302px;
+  margin-bottom: 30px;
+  position: relative;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(23, 183, 187, 0.65) 0%, rgba(23, 183, 187, 0.00) 100%);
+  border: 1px solid #2FFFFF;
+  border-radius: 999px;
+  display: none;
+  justify-content: space-between;
+
+  @media (max-width: 899px) {
+    display: flex;
+  }
+}
+
+.position1 {
+  position: relative;
+
+  .wrapperTitans {
+    transform: rotate(12deg) translateY(-1380px) rotate(-2deg);
+  }
+
+  .wrapperLands {
+    transform: rotate(-0deg) translateY(-1380px) rotate(0deg);
+  }
+
+  .wrapperLore {
+    transform: rotate(24deg) translateY(-1380px) rotate(-4deg);
+  }
+}
+
+.position3 {
+  position: relative;
+
+  .wrapperTitans {
+    transform: rotate(-12deg) translateY(-1380px) rotate(2deg);
+  }
+
+  .wrapperLands {
+    transform: rotate(-24deg) translateY(-1380px) rotate(4deg);
+  }
+
+  .wrapperLore {
+    transform: rotate(-0deg) translateY(-1380px) rotate(0deg);
+  }
+}
+
+.ellipse {
+  height: 80%;
+  width: 100%;
+  position: absolute;
+  background: url("/img/explore/categories-page-ellipse.png") no-repeat bottom;
+  bottom: 0;
+  z-index: -1;
+
+  @media (max-width: 1199px) {
+    height: 375px;
+    bottom: -60px;
+  }
+}

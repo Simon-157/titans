@@ -1,0 +1,114 @@
+@import '../../../css/root';
+
+.accordion {
+  margin-bottom: 5px;
+  background: linear-gradient(180deg, rgba(0, 255, 255, 0.00) 0%, rgba(0, 255, 255, 0.10) 100%);
+  background-blend-mode: overlay;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(8, 73, 94, .5);
+  border-radius: 14px;
+  color: #84FFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: -0.28px;
+}
+
+.accordion.opened {
+  color: #fff;
+  border: 1px solid #80FFFF;
+  box-shadow: 0 0 3px #80FFFF;
+
+  .label {
+    background-clip: padding-box;
+    background: linear-gradient(90deg, rgba(0, 255, 255, 0.2) 0%, rgba(0, 255, 255, 0.2) 100%);
+    background-blend-mode: overlay;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .content {
+    padding: 21px 21px 21px 85px;
+    background: linear-gradient(180deg, rgba(0, 255, 255, 0.01) 0%, rgba(0, 255, 255, 0.01) 100%);
+    background-blend-mode: overlay;
+    backdrop-filter: blur(7px);
+    background-clip: padding-box;
+    border-radius: 0 0 12px 12px;
+
+    @media (max-width: 899px) {
+      padding: 24px
+    }
+  }
+
+  button.toggleButton {
+    &:global(.secondary.circle) {
+      background-image: linear-gradient(180deg, rgba(0, 255, 255, 0) 0%, rgba(0, 255, 255, 0.1) 100%), url("/img/accordeon/arrow-up.svg");
+    }
+  }
+}
+
+.label {
+  padding: 22px 24px;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  gap: 24px;
+
+  @media (max-width: 899px) {
+    justify-content: space-between;
+
+    button {
+      order: 2;
+    }
+  }
+}
+
+.icon {
+  height: 24px;
+  width: 24px;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  right: 15px;
+  top: 0;
+  transform: rotate(-90deg);
+  transition: transform 0.3s ease;
+
+  &.opened {
+    transform: rotate(90deg);
+  }
+}
+
+button.toggleButton {
+  &:global(.secondary.circle) {
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    background-image: linear-gradient(180deg, rgba(0, 255, 255, 0) 0%, rgba(0, 255, 255, 0.1) 100%), url("/img/accordeon/arrow-down.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 40px;
+    min-width: 40px;
+
+    &:before {
+      height: calc(100% - 8px);
+      width: calc(100% - 8px);
+      border-width: 1px;
+    }
+  }
+}
+
+.content {
+  width: 100%;
+  color: #84FFFF;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: -0.52px;
+}
+
+

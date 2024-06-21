@@ -1,0 +1,379 @@
+@import '../../../css/root';
+
+.header {
+  height: 110px;
+  color: $neutral100;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 36px 7%;
+
+  @media (max-width: 1199px) {
+    padding-top: 18px;
+  }
+
+  @media (max-width: 899px) {
+    height: auto;
+    padding: 14px 5% 0 5%;
+  }
+}
+
+.leftHeaderBlock {
+  flex: 1;
+}
+
+.discord {
+  width: 28px;
+  height: 22px;
+}
+
+.rightHeaderBlock {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+
+  :global(.filled) {
+    width: 200px;
+
+    @media (max-width: 1199px) {
+      width: 175px;
+    }
+  }
+}
+
+.menuBurger {
+  width: 84px;
+  height: 84px;
+  margin-right: 16px;
+  flex-flow: column;
+  gap: 3px;
+  z-index: 4;
+
+  span {
+    width: 22px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 12px;
+    display: block;
+    min-height: 3px;
+    top: 0;
+    transition: all .2s cubic-bezier(.77,0,.175,1);
+
+    &:first-of-type, &:last-of-type {
+      width: 13px;
+
+      @media (max-width: 1199px) {
+        width: 11px;
+        min-height: 2px;
+      }
+
+      @media (max-width: 899px) {
+        width: 12px;
+      }
+    }
+
+    @media (max-width: 1199px) {
+      width: 19px;
+      min-height: 2px;
+    }
+
+    @media (max-width: 899px) {
+      width: 18px;
+    }
+  }
+
+  @media (max-width: 899px) {
+    gap: 3px;
+  }
+}
+
+.menuOpened {
+  .menuBurger span {
+    opacity: 0;
+  }
+
+  .menuBurger span:first-child {
+    width: 28px;
+    opacity: 1;
+    top: 6px;
+    transform: rotate(45deg);
+
+    @media (max-width: 1199px) {
+      width: 14px;
+      top: 5px;
+    }
+
+    @media (max-width: 899px) {
+      width: 16px;
+      top: 5px;
+    }
+  }
+
+  .menuBurger span:last-child {
+    width: 28px;
+    opacity: 1;
+    top: -6px;
+    transform: rotate(-45deg);
+
+    @media (max-width: 1199px) {
+      width: 14px;
+      top: -5px;
+    }
+
+    @media (max-width: 899px) {
+      width: 16px;
+      top: -5px;
+    }
+  }
+
+  .logo {
+    opacity: 0.2;
+  }
+}
+
+.logout {
+  background: $neutral100;
+}
+
+.loginText {
+  display: block;
+
+  @media (max-width: 899px) {
+    display: none;
+  }
+}
+
+.loginIcon {
+  width: 21px;
+  display: none;
+
+  @media (max-width: 899px) {
+    display: block;
+  }
+}
+
+.header div.loginButton {
+  @media (max-width: 899px) {
+    width: 52px;
+    padding: 0;
+  }
+}
+
+.userMenuBlock {
+  height: 84px;
+  width: 84px;
+  position: relative;
+  border-radius: 50%;
+  float: right;
+
+  @media (max-width: 1199px) {
+    height: 40px;
+    width: 40px;
+  }
+
+  @media (max-width: 899px) {
+    height: 52px;
+    width: 52px;
+  }
+}
+
+.userIconBlock {
+  height: 64px;
+  width: 64px;
+  align-items: center;
+  border: 1px solid #9BFF70;
+  border-radius: 42px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 1199px) {
+    height: 56px;
+    width: 56px;
+  }
+
+  @media (max-width: 899px) {
+    height: 52px;
+    width: 52px;
+  }
+}
+
+.userIcon {
+  height: 53px;
+  width: 53px;
+  background: url('/img/user-icon.png') no-repeat center / cover;
+  border: 1px solid #AFDD40;
+  border-radius: 35px;
+
+  & img {
+    width: 100px;
+  }
+
+  @media (max-width: 1199px) {
+    height: 45px;
+    width: 45PX;
+  }
+
+  @media (max-width: 899px) {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.userMenu {
+  width: 224px;
+  position: absolute;
+  align-items: center;
+  background: linear-gradient(90deg, #07636A 0%, #082D38 100%);
+  border: 1px solid #01EDEE;
+  border-radius: 10px;
+  display: none;
+  justify-content: flex-end;
+  left: -140px;
+  top: 98px;
+
+  &.opened {
+    display: flex;
+  }
+
+  a, span {
+    color: #FFF;
+    cursor: pointer;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 100%;
+    letter-spacing: -0.48px;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 1199px) {
+    left: -180px;
+    top: 68px;
+  }
+
+  @media (max-width: 899px) {
+    left: -175px;
+    top: 78px;
+  }
+}
+
+.userMenuContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.userMenuitem {
+  height: 56px;
+  padding: 0 20px;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+
+  &:nth-child(2) {
+    border-top: 1px solid #01EDEE;
+  }
+}
+
+div.loginModal {
+  width: 100%;
+  height: 100%;
+}
+
+.loginWrapper {
+  background: rgba(2, 37, 40, 0.96);
+  backdrop-filter: blur(6px);
+}
+
+.discordButton {
+  background: unset;
+  box-shadow: none;
+}
+
+.logIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.authModal {
+  height: 425px;
+  width: 880px;
+  background: linear-gradient(0deg, rgba(6, 34, 40, 0.80) 0%, rgba(6, 34, 40, 0.80) 100%), linear-gradient(180deg, rgba(0, 255, 255, 0.05) 0%, rgba(0, 255, 255, 0.00) 100%);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 2px solid rgba(0, 255, 255, 0.30);
+
+  @media (max-width: 899px) {
+    height: 518px;
+    padding: 0 34px;
+
+    :global(button.secondary.close) {
+      right: 8px;
+      top: 8px;
+    }
+  }
+}
+
+.authModalContent {
+  height: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 64px;
+}
+
+.authModalTitle {
+  color: #FFF;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 100%;
+  text-align: center;
+  text-transform: capitalize;
+
+  @media (max-width: 899px) {
+    font-size: 48px;
+  }
+}
+
+.authModalButtons {
+  display: flex;
+  gap: 9px;
+
+  @media (max-width: 899px) {
+    flex-direction: column;
+    gap: 28px;
+  }
+}
+
+:global(button.primary).registerButton {
+  height: 64px;
+  width: 292px;
+  font-size: 16px;
+}
+
+:global(button.tertiary).authLoginButton {
+  height: 64px;
+  width: 292px;
+  font-size: 16px;
+}
+
+.buttonBlock {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+}
+
+.buttonBlockTitle {
+  color: #FDFDFD;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  text-decoration-line: underline;
+}

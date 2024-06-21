@@ -1,0 +1,68 @@
+.controlWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.control {
+  width: 100%;
+  position: relative;
+  align-items: center;
+  display: flex;
+  min-width: 64px;
+
+  input {
+    height: 67px;
+    width: 290px;
+    padding-left: 26px;
+    padding-right: 26px;
+    background: linear-gradient(180deg, rgba(0, 255, 255, 0.05) 0%, rgba(0, 255, 255, 0.00) 100%);
+    border: 2px solid #026A6D;
+    border-radius: 912px;
+    box-shadow: none;
+    color: rgba(69, 229, 229, 0.65);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 110%;
+
+    &.invalid {
+      border: 2px solid #FF9E59;
+    }
+
+    &::placeholder {
+       color: rgba(69, 229, 229, 0.65);
+       font-size: 16px;
+       font-style: normal;
+       font-weight: 800;
+       line-height: 110%;
+       text-transform: uppercase;
+     }
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(69, 229, 229, 0.65);
+  }
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+  position: relative;
+  color: #50a1ff;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.top {
+  display: block;
+
+  & :global(.rdtPicker) {
+    margin-top: -470px;
+  }
+}

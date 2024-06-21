@@ -1,0 +1,250 @@
+.discord {
+  width: 100%;
+  height: 100%;
+}
+
+.placeholder {
+  width: calc(100% - 210px);
+  height: calc(100% - 100px);
+  margin: 45px 100px;
+  position: relative;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(0, 255, 255, 0.05) 0%, rgba(0, 255, 255, 0.00) 100%);
+  border: 2px solid #04A6A7;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+
+  &:before {
+    width: calc(100% + 15px);
+    height: calc(100% + 15px);
+    position: absolute;
+    border: 2px solid #61CBCC;
+    border-radius: 20px;
+    content: "";
+  }
+
+  @media (max-width: 1199px) {
+    height: auto;
+    width: auto;
+    margin: 45px 0;
+  }
+}
+
+.placeholderText {
+  align-items: center;
+  cursor: pointer;
+  color: #45E5E5;
+  display: flex;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 800;
+  justify-content: center;
+  line-height: 110%;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 2;
+
+  img {
+    height: 16px;
+    margin-right: 8px;
+  }
+}
+
+.connectDiscordButton {
+  padding: 0 !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #45E5E5 !important;
+
+  :global {
+    .icon-discord {
+      height: 16px;
+      width: 21px;
+      background: url("/img/discord-icon.svg") no-repeat center / contain;
+    }
+  }
+
+  &:hover {
+    color: #45E5E5 !important;
+  }
+}
+
+.lootboxes {
+  margin: 0 80px 80px 128px;
+  color: #45E5E5;
+  display: flex;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 110%;
+  text-transform: uppercase;
+  gap: 35px;
+
+  @media (max-width: 1199px) {
+    margin: 0 0 60px 0;
+    font-size: 28px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  @media (max-width: 899px) {
+    align-items: center;
+    flex-direction: column;
+    left: none;
+    transform: none;
+  }
+}
+
+.lootbox {
+  height: 320px;
+  width: 264px;
+  position: relative;
+  align-items: center;
+  border: 2px solid #04A6A7;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+
+  &:before {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    position: absolute;
+    border: 2px solid #61CBCC;
+    border-radius: 15px;
+    content: "";
+
+    @media (max-width: 1599px) {
+      width: calc(100% - 8px);
+      height: calc(100% - 8px);
+    }
+  }
+
+  @media (max-width: 1599px) {
+    height: 240px;
+    width: 200px;
+    min-height: 240px;
+    min-width: 200px;
+
+    img {
+      width: 132px;
+    }
+  }
+
+  @media (max-width: 899px) {
+    height: 320px;
+    width: 280px;
+    min-height: 320px;
+    min-width: 280px;
+  }
+}
+
+.counter {
+  position: absolute;
+  bottom: 16px;
+  color: #FDFDFD;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 64px;
+  letter-spacing: -1px;
+  right: 16px;
+  text-align: right;
+  text-transform: uppercase;
+
+  @media (max-width: 1599px) {
+    bottom: 12px;
+    font-size: 48px;
+    line-height: 48px;
+    right: 15px;
+  }
+}
+
+.avatar {
+  height: 80px;
+  width: 80px;
+  position: relative;
+  align-items: center;
+  background: no-repeat center / cover;
+  border: 1px solid #AFDD40;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  min-height: 80px;
+  min-width: 80px;
+
+  &:before {
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
+    position: absolute;
+    border: 1px solid #9BFF70;
+    border-radius: 50%;
+    content: "";
+  }
+
+  @media (max-width: 899px) {
+    height: 60px;
+    width: 60px;
+    min-height: 60px;
+    min-width: 60px;
+
+    &:before {
+      width: calc(100% + 12px);
+      height: calc(100% + 12px);
+    }
+  }
+}
+
+.userInfo {
+  margin: 80px 0 64px 128px;
+  align-items: center;
+  display: flex;
+  gap: 28px;
+
+  @media (max-width: 1199px) {
+    margin: 56px 0 32px 0;
+    font-size: 28px;
+  }
+
+  @media (max-width: 899px) {
+    font-size: 14px;
+  }
+}
+
+.discordId {
+  color: #FDFDFD;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+  text-transform: uppercase;
+
+  @media (max-width: 1199px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 899px) {
+    font-size: 14px;
+  }
+}
+
+.discordIdNumber {
+  font-size: 32px;
+
+  @media (max-width: 1599px) {
+    font-size: 28px;
+  }
+
+  @media (max-width: 899px) {
+    width: 180px;
+    font-size: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.discordIdCaption {
+  text-transform: uppercase;
+}

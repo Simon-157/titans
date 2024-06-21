@@ -1,0 +1,23 @@
+.alerts {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  bottom: 0;
+  z-index: 999999;
+  color: #fef5ed;
+  padding: 10px 40px;
+  transition: transform 0.3s ease;
+  background: #696B75;
+
+  &.err {
+    background: #E74C3C;
+  }
+
+  &.success {
+    background: #357a38;
+  }
+
+  &.visible {
+    transform: translateX(-50%) translateY(0);
+  }
+}

@@ -1,0 +1,15 @@
+@import '../../../css/root';
+
+.events {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.more {
+  width: 240px;
+  height: 64px;
+  margin: 5px auto 0;
+  font-size: 16px;
+}

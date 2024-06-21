@@ -1,0 +1,68 @@
+@import '../../../css/root';
+
+.emailBlock {
+  padding: 80px 120px;
+
+  @media (max-width: 1199px) {
+    padding: 80px 0;
+  }
+}
+
+.title {
+  color: #FFF;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 100%;
+  text-transform: capitalize;
+
+  @media (max-width: 1199px) {
+    font-size: 32px;
+    text-align: center;
+  }
+}
+
+.text {
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+
+  @media (max-width: 1199px) {
+    text-align: center;
+  }
+}
+
+.emailLink {
+  color: #FF8945;
+}
+
+.switchers {
+  margin-top: 80px;
+}
+
+.switcher {
+  margin-bottom: 56px;
+  display: flex;
+  gap: 20px;
+}
+
+.switcherLabelTitle {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.switcherLabelText {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}

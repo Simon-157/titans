@@ -1,0 +1,270 @@
+@import '../../../css/root';
+
+.bars {
+  position: relative;
+  background: #070707;
+}
+
+.block {
+  position: relative;
+  padding-top: 50px;
+}
+
+.list {
+  padding-bottom: 20px;
+}
+
+.dots {
+  width: 178px;
+  height: 440px;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  color: #fff;
+  z-index: 1;
+}
+
+.bricks {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url('/img/bricks.png') no-repeat top left / contain;
+  opacity: 0.2;
+  transform: rotate(180deg);
+}
+
+.bar {
+  margin: 0 10px 20px !important;
+}
+
+.my {
+  color: #070707;
+
+  &:before {
+    content: '';
+    width: 56.58%;
+    height: 585px;
+    position: absolute;
+    top: 290px;
+    right: 0;
+    background: linear-gradient(to right, #ff1c48 0%, #ff5753 100%);
+  }
+
+  &:after {
+    content: '';
+    width: 178px;
+    height: 440px;
+    position: absolute;
+    top: 360px;
+    right: 25px;
+    background: url('/img/dot-bg-shape.svg') no-repeat center / cover;
+    z-index: 1;
+  }
+}
+
+.optionsWrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  z-index: 1;
+}
+
+.header {
+  color: #2a333f;
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.searchWrapper {
+  position: relative;
+  max-width: 600px;
+  margin: 35px auto 0;
+  z-index: 1;
+}
+
+.search {
+  border: 4px solid #070707;
+  background: $neutral700;
+
+  & :global(.icon) {
+    width: 35px;
+    height: 35px;
+    left: 18px;
+    font-size: 35px;
+    line-height: 35px !important;
+  }
+
+  &:after {
+    content: '';
+    height: 100%;
+    width: 4px;
+    background: #070707;
+    position: absolute;
+    top: 0;
+    left: 70px;
+  }
+}
+
+.input {
+  padding: 5px 20px 5px 92px !important;
+  background: $neutral100;
+  border: none;
+  border-radius: 0;
+  color: #070707 !important;
+  font-size: 18px;
+}
+
+.select {
+  &:not(:first-child) {
+    margin-left: 15px;
+  }
+}
+
+.addCard {
+  position: relative;
+  width: calc(25% - 18.75px);
+  max-width: calc(25% - 18.75px);
+  height: 456px;
+  background: #070707;
+  border: 4px solid #fef5ed;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-15px);
+  }
+}
+
+.plus {
+  width: 72px;
+  height: 72px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background: url('/img/plus-icon.svg') no-repeat center / contain;
+  color: #fef5ed;
+}
+
+.dialogHeader {
+  background: #e4e8ee;
+  color: #2a333f;
+  padding: 20px 15px;
+}
+
+.filters {
+  position: absolute;
+  top: -2px;
+  right: 15px;
+  display: flex;
+  z-index: 4;
+}
+
+.yellow {
+  color: #f0c42a;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.barItem {
+  width: 48%;
+
+  &:nth-child(n + 3) {
+    margin-top: 30px;
+  }
+}
+
+div.following {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 115px;
+  border-bottom: 1px solid #fff;
+
+  &:after {
+    content: '';
+    max-width: 1298px;
+    height: 12px;
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 8px;
+    margin: auto;
+    background: url('/img/arrows.svg') no-repeat center / cover;
+  }
+}
+
+.carousel {
+  height: 490px;
+
+  & :global(.brands) {
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .bars {
+    padding-top: 15px;
+  }
+
+  .block {
+    padding-top: 30px;
+  }
+
+  .grid {
+    margin-bottom: 20px;
+  }
+
+  .select {
+    display: none;
+  }
+
+  .carousel {
+    height: 400px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  .img {
+    height: 80px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .searchWrapper {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+
+  .search {
+    height: 55px;
+
+    & :global(.icon) {
+      left: 8px;
+    }
+
+    &:after {
+      left: 55px;
+    }
+  }
+
+  .input {
+    padding-left: 77px !important;
+  }
+}

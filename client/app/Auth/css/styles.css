@@ -1,0 +1,90 @@
+@import '../../../css/root';
+
+.auth {
+  height: 100%;
+}
+
+.logo {
+  width: 100%;
+  position: absolute;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+
+  img {
+    margin-top: 30px;
+  }
+}
+
+.auth :global {
+  button.primary {
+    height: 79px;
+    box-shadow: 0 -12px 62px 20px rgba(0, 255, 255, 0.2);
+    color: #FFF;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 110%;
+    text-align: center;
+    text-transform: uppercase;
+
+    :global(.content:after) {
+      height: 3px;
+      bottom: 8px;
+    }
+
+    &::before {
+      height: calc(100% - 18px);
+      width: calc(100% - 18px);
+    }
+
+    svg {
+      stroke-dasharray: 353 70;
+
+      rect {
+        height: 58px;
+        width: calc(100% - 18px);
+      }
+    }
+
+    @media (max-width: 1199px) {
+      transform: scale(1);
+    }
+  }
+
+  .tertiary {
+    padding: 0 18px;
+    color: #45E5E5;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 110%;
+    text-align: center;
+    text-transform: uppercase;
+
+    > div {
+      justify-content: center;
+
+      div:last-of-type {
+        width: auto !important;
+      }
+    }
+  }
+
+  .icon-discord {
+    width: 24px;
+    height: 24px;
+    background: url("/img/discord-icon.svg") no-repeat center;
+  }
+
+  .icon-google {
+    width: 24px;
+    height: 24px;
+    background: url("/img/google-icon.svg") no-repeat center;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,16 @@
+.dot {
+  width: 15px;
+  height: 4px;
+  margin-top: 20px;
+  background: #fff;
+  transition: background-color 0.3s ease, width 0.3s ease;
+
+  &:not(:first-child) {
+    margin-left: 10px;
+  }
+
+  &.active {
+    width: 30px;
+    background: #F7374E;
+  }
+}

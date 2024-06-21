@@ -1,0 +1,178 @@
+@import '../../../css/root';
+
+div.login {
+  max-width: 100%;
+  min-height: 100%;
+  padding: 100px 30px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.loginBlock {
+  margin-top: 20px;
+
+  @media (max-width: 899px) {
+    width: 100%;
+
+    input {
+      width: 100%;
+    }
+  }
+}
+
+.password {
+  margin-top: 6px;
+
+  @media (max-width: 899px) {
+    width: 100%;
+
+    input {
+      width: 100%;
+    }
+  }
+}
+
+.forgot {
+  margin-top: 10px;
+  color: #FDFDFD;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  text-decoration-line: underline;
+}
+
+.formContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media (max-width: 899px) {
+    width: 100%;
+  }
+}
+
+.title {
+  color: #FFF;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 100%;
+  text-transform: capitalize;
+}
+
+.btns {
+  width: 278px;
+  margin-top: 48px;
+}
+
+.divider {
+  width: 140px;
+  margin: 60px 0 40px 0;
+  align-items: center;
+  color: rgba(69, 229, 229, 0.42);
+  display: flex;
+  flex: 1;
+  font-size: 15.809px;
+  font-style: normal;
+  font-weight: 800;
+  justify-content: space-between;
+  line-height: 110%;
+  text-align: center;
+  text-transform: uppercase;
+
+  hr {
+    border: 1px solid #025258;
+    flex-grow: 1;
+  }
+
+  .dividerText {
+    margin: 0 12px;
+  }
+}
+
+:global(button.tertiary).registrationButton {
+  height: 51px;
+  margin-top: 20px;
+  color: #45E5E5;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 110%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hide {
+  display: none;
+}
+
+.recaptcha {
+  display: block;
+  height: 79px;
+  margin: auto;
+}
+
+@media (max-width: 899px) {
+  .form {
+    width: 310px;
+  }
+}
+
+.registrationText {
+  margin-top: 5px;
+  color: #FDFDFD;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.registrationTextLink {
+  color: #F73;
+  cursor: pointer;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.socialButtons {
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+
+  > div {
+    display: flex;
+  }
+
+  :global(button.tertiary.circle) {
+    height: 64px !important;
+    width: 64px !important;
+
+    &:first-of-type {
+      border-color: #FF9E59;
+    }
+  }
+
+  :global(.discordButton), :global(.googleButton) {
+    margin: 0 0 0 10px !important;
+    border-color: rgba(128, 255, 255, 0.75) !important;
+  }
+
+  :global(.discordButton) {
+    > div div:not(:first-of-type) {
+      display: none;
+    }
+  }
+}

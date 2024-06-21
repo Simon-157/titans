@@ -1,0 +1,16 @@
+systemLog:
+  destination: file
+  path: "/data/cryptotitans/mongodb.log"
+  logAppend: true
+storage:
+  engine: wiredTiger
+  dbPath: "/data/cryptotitans"
+  journal:
+    enabled: true
+net:
+  bindIp: 127.0.0.1,127.0.1.1
+  port: 13666
+replication:
+  replSetName: 'cryptotitans'
+processManagement:
+  fork: true

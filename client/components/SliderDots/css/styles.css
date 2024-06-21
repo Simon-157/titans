@@ -1,0 +1,19 @@
+.container {
+  position: relative;
+  display: flex;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin: 0 4px;
+  cursor: pointer;
+  border: 2px solid  rgba(0, 229, 229, 0.65);
+
+  &.active{
+    border:none;
+    background: url("/img/activeDot.svg") no-repeat center / cover;
+  }
+}
+

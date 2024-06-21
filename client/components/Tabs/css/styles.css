@@ -1,0 +1,127 @@
+@import '../../../css/root';
+
+.nav {
+  display: flex;
+
+  &.underline {
+    display: flex;
+    justify-content: center;
+
+    & .navItem {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid transparent;
+      border-radius: 0;
+      color: $neutral300;
+
+      &:hover {
+        background: transparent;
+        color: $primary100;
+      }
+
+      &:global(.current) {
+        border-bottom: 1px solid $primary100;
+        color: $primary100;
+      }
+    }
+  }
+}
+
+:global(button.nav).navItem {
+  height: 88px;
+  color: #088A8C;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 110%;
+  text-align: center;
+  text-transform: uppercase;
+  min-width: 160px;
+
+  &:before {
+    border: 2px solid #02A0A1;
+  }
+
+  &:not(:first-child) {
+    margin-top: 0;
+  }
+
+  &:hover, &.active {
+    color: #fff;
+    position: relative;
+    background: linear-gradient(180deg, rgba(0, 255, 255, 0.05) 0%, rgba(0, 255, 255, 0.00) 100%);
+
+    &:after {
+      width: 100%;
+      height: 3px;
+      position: absolute;
+      background: #fff;
+      bottom: -2px;
+      content: "";
+    }
+  }
+
+  @media (max-width: 1199px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 899px) {
+    font-size: 14px;
+  }
+}
+
+.content {
+  position: relative;
+
+  & ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: #f3f2f2;
+    border-radius: 10px;
+  }
+
+  & ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+
+  & ::-webkit-scrollbar-thumb {
+    background: #f1000b;
+    border-radius: 4px;
+  }
+
+  & ::-webkit-scrollbar-corner {
+    background: #f3f2f2;
+  }
+}
+
+.contentItem {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+  }
+}
+
+.counter {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background: #FF7A00;
+  border-radius: 10px;
+  color: #052427;
+  font-size: 14px;
+  font-weight: 900;
+  right: -24px;
+  top: -12px;
+}
+
+.navItemContent {
+  position: relative;
+}

@@ -1,0 +1,72 @@
+.share {
+  margin-top: 15px;
+  position: relative;
+  z-index: 3;
+
+  & > button {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.shareBtn {
+  padding: 5px;
+}
+
+.icon {
+  width: 24px;
+  height: 28px;
+}
+
+.btnList {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: -2px;
+  background-color: #070707;
+  border: 2px solid #fef5ed;
+  border-radius: 8px;
+  z-index: 1;
+
+  &.right {
+    left: auto;
+    right: 0;
+  }
+
+  &.show {
+    display: flex;
+  }
+}
+
+button.btn {
+  padding-left: 35px;
+  background-position: 10px 50% !important;
+  background-repeat: no-repeat !important;
+  border: none !important;
+  color: #fef5ed;
+
+  &:not(:last-child) {
+    border-bottom: 3px solid #fef5ed !important;
+  }
+
+  &.facebook {
+    background-image: url('/img/facebook-slim.svg');
+    background-size: 12px !important;
+  }
+
+  &.link {
+    background-image: url('/img/link-icon.svg');
+    background-size: 18px !important;
+  }
+
+  &.twitter {
+    background-image: url('/img/twitter-white.svg');
+    background-size: 20px !important;
+  }
+
+  &:hover {
+    background-color: #070707;
+  }
+}

@@ -1,0 +1,263 @@
+.leftBlock {
+  width: 55%;
+  padding-top: 5%;
+  position: relative;
+  background-size: 70%;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+
+  &.chapter1 {
+    --title-icon-bg: url("/img/explore/timer.svg") no-repeat center;
+     background: url("/img/explore/lore-chapter-1-bg.png") no-repeat top / contain;
+     background-position-y: 50px;
+  }
+
+  &.chapter3 {
+    --title-icon-bg: url("/img/explore/blend.svg") no-repeat center;
+
+    .background {
+      padding-bottom: 30px;
+      background: url("/img/explore/lore-chapter-2-bg.png") no-repeat top/contain;
+      background-origin: content-box;
+    }
+  }
+
+  &.chapter5 {
+    --title-icon-bg: url("/img/explore/hammer.svg") no-repeat center;
+
+    .background {
+      background: url("/img/explore/lore-chapter-3-bg.png") no-repeat top / contain;
+    }
+  }
+
+  &.chapter7 {
+    --title-icon-bg: url("/img/explore/ask.svg") no-repeat center;
+
+    .background {
+      background: url("/img/explore/lore-chapter-4-bg.png") no-repeat top / contain;
+    }
+  }
+
+  @media (max-width: 899px) {
+    height: 400px;
+    width: auto;
+    padding: 23px 0 0 26px;
+  }
+}
+
+.background {
+  width: 85%;
+  margin-left: 5%;
+  position: relative;
+  bottom: 0;
+  flex: 1;
+  min-height: 55%;
+  z-index: -1;
+}
+
+.contentTitle {
+  color: #FFF;
+  flex: 1;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 100%;
+  text-transform: capitalize;
+
+  @media (max-width: 1599px) {
+    font-size: 50px;
+  }
+
+  @media (max-width: 1199px) {
+    font-size: 37px;
+  }
+
+  @media (max-width: 899px) {
+    font-size: 41px;
+  }
+}
+
+.rightBlock {
+  width: 45%;
+  padding: 5% 5% 0 0;
+  color: #D4F9FA;
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 164%;
+  letter-spacing: -0.72px;
+
+  @media (max-width: 1599px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 1199px) {
+    font-size: 13px;
+  }
+
+  @media (max-width: 899px) {
+    width: auto;
+    font-size: 16px;
+  }
+}
+
+.titleIconBlock {
+  width: 360px;
+  padding-right: 25px;
+  display: flex;
+  font-size: 80px;
+
+  @media (max-width: 1599px) {
+    width: 240px;
+  }
+
+  @media (max-width: 1199px) {
+    width: 165px;
+  }
+
+  @media (max-width: 899px) {
+    width: auto;
+  }
+}
+
+.titleLine {
+  width: 100%;
+  height: 3px;
+  margin-top: calc(0.5em - 3px);
+  background: #013840;
+
+  &:last-of-type {
+    width: 50%;
+  }
+
+  @media (max-width: 1199px) {
+    margin-top: calc(0.5em - 25px);
+  }
+
+  @media (max-width: 899px) {
+    display: none;
+  }
+}
+
+.extraBlock {
+  width: 30%;
+}
+
+.titleIcon {
+  height: 68px;
+  width: 68px;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0px 4px 4px 0px rgba(1, 32, 39, 0.50);
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(180deg, #FF9E59 0%, #F73 100%), linear-gradient(180deg, #FFFEB4 0%, #FFF176 100%);
+
+  &:before {
+    height: 94px;
+    width: 94px;
+    position: absolute;
+    border: 3px solid #6EF8FA;
+    border-radius: 50%;
+    content: "";
+    background: var(--title-icon-bg);
+    background-size: 44px;
+  }
+
+  img {
+    width: 44px;
+  }
+
+  @media (max-width: 1199px) {
+    height: 32px;
+    width: 32px;
+
+    &:before {
+      height: 44px;
+      width: 44px;
+      background-size: 33px 25px;
+    }
+  }
+
+  @media (max-width: 899px) {
+    height: 45px;
+    width: 45px;
+
+    &:before {
+      height: 62px;
+      width: 62px;
+      background-size: 33px 25px;
+    }
+  }
+}
+
+.wrapperIcon {
+  display: flex;
+  justify-content: center;
+  min-width: 140px;
+
+  @media (max-width: 1199px) {
+    min-width: auto;
+  }
+}
+
+.description {
+  overflow: auto;
+
+  @media (max-width: 899px) {
+    margin: 30px 0 30px 18px;
+  }
+}
+
+.buttonBlock {
+  width: 210px;
+
+  :global(button.tertiary) {
+    height: 84px;
+    width: 100%;
+    margin: 50px 0;
+    border-color: #196A6B;
+
+    &:before {
+      border-color: #249595;
+    }
+
+    img {
+      width: 12px;
+    }
+
+    @media (max-width: 1599px) {
+      height: 60px;
+      margin: 30px 0;
+
+      img {
+        width: 10px;
+      }
+    }
+
+    @media (max-width: 1199px) {
+      width: 118px;
+      height: 47px;
+
+      img {
+        width: 7px;
+      }
+    }
+  }
+
+  @media (max-width: 1599px) {
+    width: 160px;
+  }
+
+  @media (max-width: 899px) {
+    display: none;
+  }
+}
+
+.titleWrapper {
+  width: 90%;
+  display: flex;
+}

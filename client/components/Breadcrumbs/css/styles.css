@@ -1,0 +1,20 @@
+@import '../../../css/root';
+
+.breadcrumbs {
+  padding-top: 15px;
+  color: $neutral200;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.path {
+  color: $neutral200 !important;
+}
+
+.current {
+  color: $neutral100 !important;
+  text-decoration: underline;
+}

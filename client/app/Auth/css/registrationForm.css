@@ -1,0 +1,142 @@
+@import '../../../css/root';
+
+.btns {
+  width: 278px;
+}
+
+.divider {
+  width: 140px;
+  margin: 38px 0 18px 0;
+  align-items: center;
+  color: rgba(69, 229, 229, 0.42);
+  display: flex;
+  flex: 1;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 800;
+  justify-content: space-between;
+  line-height: 110%;
+  text-align: center;
+  text-transform: uppercase;
+
+  hr {
+    border: 1px solid #025258;
+    flex-grow: 1;
+  }
+
+  .dividerText {
+    margin: 0 12px;
+  }
+}
+
+.title {
+  color: #FFF;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 100%;
+  text-transform: capitalize;
+
+  @media (max-width: 899px) {
+    margin-bottom: 10px;
+  }
+}
+
+.field {
+  width: 100%;
+  margin-top: 16px;
+  align-items: flex-start;
+  display: flex;
+
+  > div:nth-child(2) {
+    margin-left: 18px;
+  }
+
+  @media (max-width: 899px) {
+    margin-top: 20px;
+    flex-direction: column;
+    gap: 20px;
+
+    input, :global(.react-datepicker__input-container input) {
+      width: 100%;
+    }
+
+    > div:nth-child(2) {
+      margin-left: 0;
+    }
+  }
+}
+
+.form input[type="checkbox"] {
+  height: 21px;
+  width: 21px;
+  box-shadow: inset 0 0 0 2px #016769;
+
+  + label {
+    color: #2EA4A5;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  &:checked {
+    accent-color: #022529;
+    background: #04E0EF;
+  }
+}
+
+.registerButton {
+  margin-top: 35px;
+}
+
+.checkboxField {
+  width: 100%;
+  margin-top: 20px;
+  align-items: center;
+  display: flex;
+
+  input {
+    min-width: 21px;
+    min-height: 21px;
+  }
+}
+
+.socialButtons {
+  margin: 48px 0 4px 0;
+  display: flex;
+  gap: 10px;
+
+  :global(button.tertiary.circle) {
+    height: 64px;
+    width: 64px;
+
+    &:first-of-type {
+      border-color: #FF9E59;
+    }
+  }
+}
+
+.form {
+  @media (max-width: 899px) {
+    width: 310px;
+  }
+}
+
+.registrationText {
+  margin-top: 5px;
+  color: #FDFDFD;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.registrationTextLink {
+  color: #F73;
+  cursor: pointer;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}

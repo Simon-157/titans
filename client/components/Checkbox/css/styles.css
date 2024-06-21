@@ -1,0 +1,52 @@
+.container {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: block;
+
+  @media (max-width: 1199px) {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.container input {
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.checkmark {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  align-items: center;
+  border: 2px solid #016769;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  top: 0;
+
+  @media (max-width: 1199px) {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.checkmark:after {
+  width: 85%;
+  height: 85%;
+  position: absolute;
+  background: url("/img/checkmark.svg") no-repeat center center / contain;
+  content: "";
+  display: none;
+}
+
+.container input ~ .checkmark {
+  background: #fff;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}

@@ -1,0 +1,141 @@
+@import '../../../../../css/root';
+
+.container {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  @media (max-width: 899px) {
+    flex-direction: column;
+  }
+}
+
+.block {
+  width: 290px;
+  height: 112px;
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  gap: 8px;
+  background: linear-gradient(180deg, rgba(0, 255, 255, 0.35) 0%, rgba(0, 255, 255, 0.10) 100%);
+  border: 1px solid $blue4;
+  border-radius: 20px;
+
+  @media (max-width: 1199px) {
+    width: 194px;
+    height: 103px;
+  }
+
+  @media (max-width: 899px) {
+    width: 240px;
+    height: 103px;
+  }
+
+  &.smaller {
+    height: 52px;
+    /* margin: 4px 0; */
+    padding: 5px 10px;
+    border-radius: 10px;
+
+    @media (max-width: 1199px) {
+      height: 50px;
+    }
+
+    @media (max-width: 899px) {
+      height: 50px;
+    }
+  }
+
+  &.empty {
+    @media (max-width: 899px) {
+     display: none;
+    }
+  }
+}
+
+.userContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.weaponImage {
+  width: 30%;
+  position: relative;
+  aspect-ratio: 1/1;
+
+  @media (max-width: 1199px) {
+    height: 60%;
+  }
+}
+
+.itemGlow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(/img/genGlow.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  mix-blend-mode: overlay;
+}
+
+.weaponIcon {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.tagsContainer {
+  margin-top: 0.5em;
+  display: flex;
+  gap: 5px;
+
+  @media (max-width: 1199px) {
+    flex-direction: column;
+  }
+}
+
+.blockTitle {
+  font-size: 20px;
+  font-weight: 800;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @media (max-width: 1199px) {
+    font-size: 16px;
+  }
+}
+
+.userInfo {
+  width: calc(100% - 40px);
+}
+
+.userIcon {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  background: url('/img/user-icon.png') no-repeat center / cover;
+  border-radius: 16px;
+}
+
+.userType {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  @media (max-width: 1199px) {
+    font-size:10px;
+  }
+}

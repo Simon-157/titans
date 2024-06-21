@@ -1,0 +1,9 @@
+div.loginModal {
+  width: 100%;
+  height: 100%;
+}
+
+.loginWrapper {
+  background: rgba(2, 37, 40, 0.96);
+  backdrop-filter: blur(6px);
+}

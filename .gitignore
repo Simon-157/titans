@@ -1,0 +1,22 @@
+# Don't check auto-generated stuff into git
+/app
+/build
+/coverage
+/dist
+/node_modules
+/settings
+package-lock.json
+yarn.lock
+
+# Cruft
+.DS_Store
+npm-debug.log
+yarn-error.log
+.idea
+!jsconfig.json
+mailQueue.json
+users.json
+usersSSO.json
+usersSSOprod.json
+*.data
+*.wasm

@@ -1,0 +1,40 @@
+.wallet {
+  margin-top: 10px;
+}
+
+.status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #34D399;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.statusText {
+  margin-left: 5px;
+}
+
+.select {
+  width: 270px;
+  max-width: 100%;
+  margin-top: 20px;
+}
+
+.unlink {
+  width: 270px;
+  max-width: 100%;
+  height: 67px !important;
+  margin-top: 10px;
+  color: #45E5E5 !important;
+  font-size: 16px !important;
+}
+
+.hr {
+  margin-top: 20px;
+  border: 1px solid #45E5E5;
+}
+
+.plugin {
+  margin-top: 20px;
+}
