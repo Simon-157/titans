@@ -318,7 +318,8 @@
   }
   .eventDetails {
     width: 100%;
-    padding: 90px;
+        padding-left: 100px;
+    padding-right: 100px;
   }
   .singleEventWrapper {
     padding: 10px;
