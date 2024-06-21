@@ -41,28 +41,12 @@
   display: flex;
   justify-content: center;
   gap: 20px;
-
-        @media (max-width: 1024px) {
-
-                flex-direction: column;
-                align-items: center;
- 
-        }
-
-
-        @media (max-width: 768px) {
-           
-                flex-direction: column;
-                align-items: flex-start;
-       
-        }
 }
 
 .eventDetails {
   display: flex;
   width: 50%;
 }
-
 
 .eventMain {
   background: linear-gradient(
@@ -138,27 +122,26 @@
   margin-bottom: 20px;
 }
 
-
 .eventMap img {
   width: 100%;
   border-radius: 10px;
 }
 
 /* CustomButton styles */
-.customButton{
-    padding: 10px 20px;
-    border: 2px solid #45E5E5;
-    border-radius: 40px;
-    cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    position: relative;
+.customButton {
+  padding: 10px 20px;
+  border: 2px solid #45e5e5;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  position: relative;
 }
 
-.customButton button{
+.customButton button {
   /* padding: 20px 30px; */
   border: 2px solid transparent;
   border-radius: 40px;
@@ -175,7 +158,7 @@
     rgba(0, 255, 255, 0) 100%
   );
   position: relative;
-  color: #45E5E5;
+  color: #45e5e5;
 }
 
 .customButton::before {
@@ -228,16 +211,17 @@
   width: 16px;
   height: 16px;
   margin-right: 10px;
-  filter: invert(73%) sepia(34%) saturate(5055%) hue-rotate(146deg) brightness(100%) contrast(97%);
+  filter: invert(73%) sepia(34%) saturate(5055%) hue-rotate(146deg)
+    brightness(100%) contrast(97%);
 }
 
 .customButton.primary {
-  color: #45E5E5;
+  color: #45e5e5;
   box-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
 }
 
 .customButton.secondary {
-  color: #45E5E5;
+  color: #45e5e5;
   box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
 }
 
@@ -252,7 +236,7 @@
   position: relative;
   padding: 5px;
   border-radius: 8px;
-  width: 20%;
+  width: 374px;
   height: max-content;
   /* background: linear-gradient(to right, #80ffff27 100%, #0bd3e52c 20%); */
 }
@@ -328,12 +312,28 @@
 }
 
 @media (max-width: 768px) {
-  .promoSectionWrapper {
-    width: 60%;
+  .detailsWrapper {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .eventDetails {
+    width: 100%;
+    padding: 90px;
+  }
+  .singleEventWrapper {
+    padding: 10px;
   }
 
+  .promoSectionWrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
   .promoSection {
-    padding: 15px;
+    justify-content: center;
+    align-items: center;
   }
 
   .joinButton,
@@ -348,8 +348,11 @@
 }
 
 @media (max-width: 480px) {
-  .promoSectionWrapper {
-    width: 80%;
+  .detailsWrapper {
+    flex-direction: column;
+  }
+  .singleEventWrapper {
+    padding: 10px;
   }
 
   .promoSection {
@@ -464,16 +467,12 @@
     &__info {
       margin-top: 10px;
     }
-
-
   }
 }
 
-
-@media(max-width: 768){
-    .detailsWrapper {
-      flex-direction: column;
-      padding: 20px;
-    }
-
+@media (max-width: 768) {
+  .detailsWrapper {
+    flex-direction: column;
+    padding: 20px;
+  }
 }
