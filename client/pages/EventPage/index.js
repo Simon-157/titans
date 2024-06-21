@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import EventCard from './EventCard';
+import Navbar from '../EventsPage/NavBar';
+import EventDetails from './EventDetails';
+import RelatedEvents from './RelatedEvents';
+import Footer from '../EventsPage/Footer';
 import styles from './css/styles.css';
 
-class EventsSection extends Component {
-  render() {
- 
+class SingleEventPage extends Component {
+  getEventById = (id) => {
     
     const events = [
       { id: 12, title: "MEETUP", location: "Jaipur", date: "Aug 29th, 2024",description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra." , time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW.png" },
@@ -22,23 +23,28 @@ class EventsSection extends Component {
       { id: 49, title: "HAVOC", location: "Bangalore", date: "Aug 29th, 2024", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW.png" },
     ];
 
-    return (
-      <div className={styles.eventsSectionWrapper}>
-      <section className={styles.eventsSection}>
-        <div className={styles.eventsSection__events}>
-          {events.map((event, index) => (
-             <Link to={`/test/all/${event.id}`} key={index}>
-                <EventCard event={event} />
-            </Link>
-            // <EventCard key={index} event={event} />
-          ))}
-        </div>
-      </section>
+    return events.find(event => event.id === parseInt(id));
+  };
 
+  render() {
+    const { id } = this.props.match.params;
+    const event = this.getEventById(id);
+
+    if (!event) {
+      return <div>Event not found</div>;
+    }
+
+    return (
+      <div className={styles.app}>
+        <Navbar />
+        <div className={styles.singleEventWrapper}>
+          <EventDetails event={event} />
+          <RelatedEvents />
+        </div>
+        <Footer/>
       </div>
     );
   }
 }
 
-export default EventsSection;
-
+export default SingleEventPage;

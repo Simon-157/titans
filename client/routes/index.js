@@ -14,6 +14,7 @@ import QRPage from 'pages/QR';
 import Rentals from 'pages/Rentals';
 import TournamentLeaderBoard from 'pages/TournamentLeaderBoard';
 import EventsPage from '../pages/EventsPage';
+import SingleEventPage from '../pages/EventPage';
 
 const Profile = Loadable({
   loader: () => import('pages/Profile'),
@@ -134,6 +135,12 @@ const routes = [
     component: EventsPage,
     exact: true,
     name: EVENTS,
+  },
+
+  {
+    path: '/test/all/:id',
+    component: SingleEventPage,
+    name: EVENT,
   },
 ];
 
