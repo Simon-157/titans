@@ -1,11 +1,28 @@
 import React, { Component } from "react";
 import styles from "./css/styles.css";
 import CustomButton from "./CustomButton";
-import { LOGO, PRIMARY, SECONDARY } from "defaults";
+import { LOGO, PRIMARY, SECONDARY, TERTIARY } from "defaults";
+import SocialShare from "./components/SocialShare";
+
 
 class PromoCard extends Component {
+   state = {
+    showSocialShare: true,
+  };
+
+  toggleSocialShare = () => {
+    this.setState((prevState) => ({
+      showSocialShare: !prevState.showSocialShare,
+    }));
+  };
+
+  handleJoinClick = () => {
+    console.log('Join Event clicked');
+  };
+
   render() {
     return (
+      
       <div className={styles.promoSectionWrapper}>
         <div className={styles.promoSection}>
           <p>
@@ -25,16 +42,29 @@ class PromoCard extends Component {
             >
               JOIN EVENT
             </button>
-            {/* <button className={SECONDARY} style={{ width: "75%" , height: "50px", fontSize: "1em" , fontWeight: "bold" }} icon="/img/share.svg">
-                    SHARE
-                  </button> */}
-            <CustomButton
-              text="SHARE"
-              onClick={this.handleShareClick}
-              icon="/img/share.svg"
-              width={"75%"}
-            />
+          
+
+              <SocialShare
+                className="shareWrapper"
+                text="Check out this awesome article!"
+                url={window.location.href}
+                right={true}
+                t={(text) => text.join(' ')}
+              >
+                Share
+              </SocialShare>
+
+            
           </div>
+          {this.showSocialShare && (
+          <SocialShare
+            className=""
+            text="Check this out!"
+            url={window.location.href}
+            right={true}
+            t={(key) => key}
+          />
+        )}
           <div className={styles.promoContent}>
             <img
               src="/img/spar.png"

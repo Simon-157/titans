@@ -1,8 +1,22 @@
 import React, { Component } from 'react';
 import styles from './css/styles.css';
+import cx from 'classnames';
+import { CIRCLE, SECONDARY } from '../../../defaults';
 
 class Navbar extends Component {
+  state = {
+    isSideSheetOpen: false,
+  };
+
+  toggleSideSheet = () => {
+    this.setState((prevState) => ({
+      isSideSheetOpen: !prevState.isSideSheetOpen,
+    }));
+  };
+
   render() {
+    const { isSideSheetOpen } = this.state;
+
     return (
       <header className={styles.navbar}>
         <div className={styles.navbar__logo}>
@@ -19,14 +33,33 @@ class Navbar extends Component {
         </nav>
         <div className={styles.navbar__actions}>
           <div className={styles.hdhd}>
-            <img src="/img/Language.svg" alt="Language"  className='navbar__icon__language'/>
+            <img src="/img/Language.svg" alt="Language" className='navbar__icon__language' />
           </div>
           <div className={styles.navbar__icon}>
             <img src="/img/search.svg" alt="Search" />
           </div>
-          <div className={styles.navbar__profile}>
-            <img src="/img/profile.svg" alt="Profile" />
+          <div className={styles.navbar__hamburger} onClick={this.toggleSideSheet}>
+            <button className={`${SECONDARY} ${CIRCLE}`} >
+              <img src="/img/menu-burger.svg" alt="Menu" />
+            </button>
           </div>
+          <div className={styles.navbar__profile}>
+
+            <button className={`${SECONDARY} ${CIRCLE}`}>
+              <img src="/img/profile.svg" alt="Profile" />
+            </button>
+          </div>
+        </div>
+        
+        <div className={cx(styles.sideSheet, { [styles.open]: isSideSheetOpen })}>
+          <div className={styles.sideSheet__close} onClick={this.toggleSideSheet}><button className={`${SECONDARY} ${CIRCLE}`}><img src="/img/close.svg" /></button></div>
+          <ul className={styles.sideSheet__list}>
+            <li className={styles.sideSheet__item}><a href="#">PLAY</a></li>
+            <li className={styles.sideSheet__item}><a href="#">DISCOVER</a></li>
+            <li className={styles.sideSheet__item}><a href="#">BLOG</a></li>
+            <li className={styles.sideSheet__item}><a href="#">EVENTS</a></li>
+            <li className={styles.sideSheet__item}><a href="#">CAFÉS</a></li>
+          </ul>
         </div>
       </header>
     );
