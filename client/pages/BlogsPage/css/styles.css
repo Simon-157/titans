@@ -1,0 +1,256 @@
+/* General styles */
+.app {
+  overflow-x: hidden;
+  min-height: 100vh;
+  width: 100vw;
+  background: url("/img/forest-bg.jpg") no-repeat center center / cover,
+    linear-gradient(118.88deg, #01131a -2.2%, #002e2a 115.26%);
+  background-blend-mode: luminosity;
+}
+
+.blogspageWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  /* margin-top: 10px; */
+  margin-bottom: 40px;
+  font-family: "space-grotesk";
+}
+
+.allBlogsPage {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.recentBlogWrapper {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  width: 780px;
+  gap: 20px;
+}
+
+.recentblogDetails {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    152.97deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  border-radius: 8px;
+}
+
+.recentblogDetails img {
+  width: 100%;
+  height: fit-content;
+  border-radius: 10px;
+}
+
+.recentblogInfo {
+  padding: 20px;
+}
+.recentblogInfo p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.recentblogInfo h3 {
+  color: #45e5e5;
+  margin-bottom: 2ex;
+}
+
+.recentblogInfo p span {
+  font-weight: 700;
+}
+
+/* BlogList styles */
+.blogList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: center;
+}
+
+/* BlogCard styles */
+.blogCard {
+  width: 300px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 255, 255, 0.35) 0%,
+    rgba(0, 255, 255, 0.1) 100%
+  );
+  border-radius: 0px 0px 10px 10px;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.blogCard:hover {
+  transform: translateY(-10px);
+}
+
+.blogImage {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.blogContent {
+  padding: 15px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.blogTitle {
+  font-size: 1.2em;
+  margin: 0 0 10px 0;
+}
+
+.blogMeta {
+  font-size: 0.8em;
+  margin: 10px 0;
+}
+
+.blogMeta span {
+  font-weight: 700;
+}
+.blogDescription {
+  font-size: 1em;
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* Medium screens */
+@media (max-width: 1024px) {
+  .recentBlogWrapper {
+    width: 50%;
+  }
+  .blogList {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, auto);
+    width: 50%;
+  }
+
+  .recentBlogWrapper {
+    height: fit-content;
+    width: fit-content;
+  }
+  .blogCard:nth-child(n + 3) {
+    display: none;
+  }
+
+  .blogImage {
+    height: 185px;
+  }
+}
+
+/* Smaller screens */
+@media (max-width: 768px) {
+  .allBlogsPage {
+    flex-direction: column;
+  }
+
+  .recentBlogWrapper {
+    width: 100%;
+  }
+  .blogList {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, auto);
+    width: 100%;
+  }
+
+  .blogCard {
+    width: 100%;
+  }
+
+  .blogImage {
+    height: auto;
+    object-fit: cover;
+  }
+
+  .blogContent {
+    padding: 5px;
+  }
+
+  .blogTitle {
+    font-size: 0.8em;
+    margin: 2px;
+  }
+
+  .blogMeta {
+    font-size: 0.7em;
+  }
+
+  .blogDescription {
+    font-size: 0.9em;
+  }
+}
+
+/* SEARCH BOX STYLES */
+.searchBox {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    rgba(25, 61, 60, 0.168) 0%,
+    rgba(255, 255, 255, 0.06) 100%
+  );
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(1px);
+  background-blend-mode: overlay;
+  backdrop-filter: blur(15px);
+  border-radius: 50px;
+  padding: 5px 15px;
+  margin: 40px auto;
+  border: 3px solid #48b8bb34;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  /* Smaller screens */
+@media (max-width: 768px) {
+    width: 90%;
+    place-content: center;
+    .searchBox {
+        margin: 20px auto;
+    }
+
+    .input {
+        font-size: 1em;
+    }
+    
+    .searchIcon {
+        font-size: 1.5em;
+    }
+}
+}
+.input {
+  flex: 1;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2em;
+  padding: 2px;
+  outline: none;
+  box-sizing: border-box;
+  box-shadow: none;
+}
+
+.input::placeholder {
+  color: #7a8a9a;
+}

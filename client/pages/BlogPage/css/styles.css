@@ -1,0 +1,102 @@
+.blogDetail {
+  padding: 20px;
+  color: #fff;
+  overflow-x: hidden;
+  min-height: 100vh;
+  width: 100vw;
+  background: url("/img/forest-bg.jpg") no-repeat center center / cover,
+    linear-gradient(118.88deg, #01131a -2.2%, #002e2a 115.26%);
+  background-blend-mode: luminosity;
+  font-family: "Space Grotesk";
+
+  @media (max-width: 897px) {
+    padding: 10px;
+  }
+
+  .content {
+    width: 70%;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    .header {
+      text-align: center;
+      margin: 40px auto 30px auto;
+
+      h1 {
+        font-size: 2em;
+        font-weight: bold;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 1.8em;
+        }
+      }
+
+      @media (max-width: 576px) {
+        h1 {
+          font-size: 1.3em;
+        }
+      }
+    }
+
+    .mainImage {
+      width: 100%;
+      border-radius: 10px 10px 0px 0px;
+      margin-bottom: -40px;
+      @media (max-width: 768px) {
+        margin-bottom: -20px;
+      }
+
+      @media (max-width: 576px) {
+        margin-bottom: -20px;
+      }
+    }
+    .description {
+      margin: 0;
+      padding: 40px 20px 20px 20px;
+      background: linear-gradient(
+        152.97deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      border-radius: 10px;
+      backdrop-filter: blur(5px);
+
+      .authorInfo {
+        p {
+          font-size: 1.2em;
+          color: #7a8a9a;
+        }
+
+        @media (max-width: 768px) {
+          p {
+            font-size: 1em;
+          }
+        }
+
+        @media (max-width: 576px) {
+          p {
+            font-size: 0.9em;
+          }
+        }
+      }
+
+      p {
+        font-size: 1.4em;
+        line-height: 1.6;
+
+        @media (max-width: 768px) {
+          font-size: 1em;
+        }
+
+        @media (max-width: 576px) {
+          font-size: 0.9em;
+        }
+      }
+    }
+  }
+}

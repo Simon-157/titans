@@ -142,6 +142,25 @@ const routes = [
     component: SingleEventPage,
     name: EVENT,
   },
+
+  {
+    path: '/blogs',
+    component: Loadable({
+      loader: () => import('pages/BlogsPage'),
+      loading: LoadingBar,
+      delay: 0,
+    }),
+  },
+
+   {
+    path: '/blog/:blogId',
+    component: Loadable({
+      loader: () => import('pages/BlogPage'),
+      loading: LoadingBar,
+      delay: 0,
+    }),
+  }
+
 ];
 
 export default routes;
