@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import CafeCard from './CafeCard';
 import { cafes } from './data';
-import styles from './AllCafes.module.scss';
+import styles from './css/styles.css';
 
 
 class CafeCard extends Component {
@@ -46,37 +45,40 @@ class AllCafes extends Component {
     });
 
     return (
-      <div className={styles.allCafes}>
-        <header className={styles.header}>
-          <h1>All Cafés</h1>
-        </header>
-        <section className={styles.searchSection}>
-          <input
-            type="text"
-            placeholder="Search Café"
-            value={searchQuery}
-            onChange={this.handleSearchChange}
-            className={styles.searchInput}
-          />
-          <div className={styles.regionFilters}>
-            {['all', 'north', 'south', 'east', 'west'].map((region) => (
-              <button
-                key={region}
-                className={this.state.region === region ? styles.active : ''}
-                onClick={() => this.handleRegionChange(region)}
-              >
-                {region.charAt(0).toUpperCase() + region.slice(1)}
-              </button>
+      <main className={styles.cafePageWrapper}>
+
+        <div className={styles.allCafes}>
+            <header className={styles.header}>
+            <h1>All Cafés</h1>
+            </header>
+            <section className={styles.searchSection}>
+            <input
+                type="text"
+                placeholder="Search Café"
+                value={searchQuery}
+                onChange={this.handleSearchChange}
+                className={styles.searchInput}
+            />
+            <div className={styles.regionFilters}>
+                {['all', 'north', 'south', 'east', 'west'].map((region) => (
+                <button
+                    key={region}
+                    className={this.state.region === region ? styles.active : ''}
+                    onClick={() => this.handleRegionChange(region)}
+                >
+                    {region.charAt(0).toUpperCase() + region.slice(1)}
+                </button>
+                ))}
+            </div>
+            </section>
+            <section className={styles.cafeGrid}>
+            {filteredCafes.map((cafe) => (
+                <CafeCard key={cafe.id} {...cafe} />
             ))}
-          </div>
-        </section>
-        <section className={styles.cafeGrid}>
-          {filteredCafes.map((cafe) => (
-            <CafeCard key={cafe.id} {...cafe} />
-          ))}
-        </section>
-        <button className={styles.moreCafesBtn}>More Cafés</button>
-      </div>
+            </section>
+            <button className={styles.moreCafesBtn}>More Cafés</button>
+        </div>
+      </main>
     );
   }
 }

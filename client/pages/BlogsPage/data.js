@@ -1,4 +1,4 @@
-export const blogsData = [
+export const blogData = [
   {
     id: 1001,
     title: "GAME PASS IS NOW OFFICIALLY A REVOLVING DOOR FOR REIGN OF TITANS",

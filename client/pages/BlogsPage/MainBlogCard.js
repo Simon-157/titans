@@ -11,6 +11,12 @@ class MainBlogCard extends Component {
             this.props.history.push(`/blog/${blog.id}`);
         }
 
+        const sanitizeHtml = (html) => {
+            // TODO: Sanitize the html string to prevent XSS attacks
+            return { __html: html };
+        };
+
+
         return (
             <div className={styles.recentBlogWrapper}>
 

@@ -33,16 +33,16 @@
 }
 
 .title {
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin: 0;
 
     @media (max-width: 768px) {
-        font-size: 1.2em;
+        font-size: 1.0em;
     }
 }
 
 .info {
-  font-size: 0.9em;
+  font-size: 0.8em;
   color: #999;
 
   span {
@@ -50,7 +50,7 @@
   }
 
     @media (max-width: 768px) {
-        font-size: 0.7em;
+        font-size: 0.6em;
     }
 }
 

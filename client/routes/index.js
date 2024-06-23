@@ -159,6 +159,14 @@ const routes = [
       loading: LoadingBar,
       delay: 0,
     }),
+  },
+  {
+    path: '/cafes',
+    component: Loadable({
+      loader: () => import('pages/CafesPage'),
+      loading: LoadingBar,
+      delay: 0,
+    }),
   }
 
 ];
