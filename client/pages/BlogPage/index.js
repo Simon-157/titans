@@ -36,7 +36,7 @@ class BlogDetail extends Component {
                     <img src={blog.image} alt={blog.title} className={styles.mainImage} />
                     <div className={styles.description}>
                         <section className={styles.authorInfo}>
-                            <p>{timeAgo(blog.date)} By {blog.author} | {blog.readTime} min read</p>
+                            <p><san>{timeAgo(blog.date)} </san>By {blog.author} | {blog.readTime} min read</p>
                         </section>
                         <div className="blog-description" dangerouslySetInnerHTML={sanitizeHtml(blog.description)} />
                     </div>
