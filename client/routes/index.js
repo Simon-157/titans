@@ -66,20 +66,20 @@ const routes = [
     exact: true,
     name: EXPLORE,
   },
-  {
-    path: '/event/:shortUrl',
-    component: Event,
-    exact: true,
-    name: EVENT,
-    tab: EVENTS,
-  },
-  {
-    path: '/events',
-    component: Events,
-    exact: true,
-    name: EVENTS,
-    tab: EVENTS,
-  },
+  // {
+  //   path: '/event/:shortUrl',
+  //   component: Event,
+  //   exact: true,
+  //   name: EVENT,
+  //   tab: EVENTS,
+  // },
+  // {
+  //   path: '/events',
+  //   component: Events,
+  //   exact: true,
+  //   name: EVENTS,
+  //   tab: EVENTS,
+  // },
   {
     path: '/faq',
     component: Faq,
@@ -131,16 +131,17 @@ const routes = [
   },
 
   {
-    path: '/test/all',
+    path: '/events',
     component: EventsPage,
     exact: true,
     name: EVENTS,
+    Tab: EVENTS,
   },
 
   {
-    path: '/test/all/:id',
+    path: '/event/:id',
     component: SingleEventPage,
-    name: EVENT,
+    name: EVENT
   },
 
   {
@@ -164,6 +165,14 @@ const routes = [
     path: '/cafes',
     component: Loadable({
       loader: () => import('pages/CafesPage'),
+      loading: LoadingBar,
+      delay: 0,
+    }),
+  },
+    {
+    path: '/cafe/:cafeId',
+    component: Loadable({
+      loader: () => import('pages/CafePage'),
       loading: LoadingBar,
       delay: 0,
     }),

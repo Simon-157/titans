@@ -69,9 +69,11 @@
       .authorInfo {
         p {
           font-size: 1.2em;
+          color: #ffffff95;
 
           span{
             font-weight: 700;
+            color: #fff;
           }
         }
 

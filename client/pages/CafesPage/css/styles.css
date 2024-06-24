@@ -1,4 +1,4 @@
-.cafePageWrapper{
+.cafePageWrapper {
   overflow-x: hidden;
   min-height: 100vh;
   width: 100vw;
@@ -7,23 +7,32 @@
   background-blend-mode: luminosity;
 }
 
-.allCafes {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 
+.allCafes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
   @media (max-width: 768px) {
     padding: 10px;
   }
 
   .header {
-    text-align: center;
-    margin-bottom: 20px;
+    display: flex;
+    gap:15px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    
+    img{
+        height: 2.3em;
+    }
 
     h1 {
       font-size: 2.5em;
       font-weight: bold;
+      text-transform: uppercase;
     }
 
     @media (max-width: 768px) {
@@ -43,39 +52,107 @@
     text-align: center;
     margin-bottom: 20px;
 
-    .searchInput {
-      padding: 10px;
-      width: 100%;
-      max-width: 400px;
-      border: none;
+    /* SEARCH BOX STYLES */
+    .searchBox {
+      display: flex;
+      align-items: center;
+      background: linear-gradient(
+        180deg,
+        rgba(25, 61, 60, 0.168) 0%,
+        rgba(255, 255, 255, 0.06) 100%
+      );
+      background-blend-mode: luminosity;
+      backdrop-filter: blur(1px);
+      background-blend-mode: overlay;
+      backdrop-filter: blur(15px);
       border-radius: 50px;
-      font-size: 1em;
-      margin-bottom: 20px;
-    }
+      padding: 5px 15px;
+      font-size: 1.5em;
+      margin: 40px auto;
+      border: 3px solid #48b8bb34;
+      max-width: 380px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
+      /* Smaller screens */
+      @media (max-width: 768px) {
+        width: 90%;
+        place-content: center;
+        /* margin: 20px auto; */
+        font-size: 1.1em;
+
+        .searchIcon {
+          font-size: 1.5em;
+        }
+      }
+    }
     .regionFilters {
       display: flex;
       justify-content: center;
       gap: 10px;
+      display: flex;
+      align-items: flex-end;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 255, 255, 0) 0%,
+        rgba(0, 255, 255, 0.067) 100%
+      );
+      flex: none;
+      order: 0;
+      align-self: stretch;
+      border-radius: 10px;
+      border-bottom: 1px solid #3fbab2;
+      flex-grow: 0;
 
       button {
-        padding: 10px 20px;
+        font-size: 1.2em;
+        font-weight: bold;
+        padding: 10px 30px;
         border: none;
-        border-radius: 50px;
-        background-color: #142f3f;
-        color: #fff;
+        border-radius: 0px 0px 10px 10px;
+        color: #3fbab2;
         cursor: pointer;
         transition: background-color 0.3s ease;
 
         &:hover {
-          background-color: #17a2b8;
+          background-color: #3fbab2;
+          color: #fff;
         }
 
         &.active {
-          background-color: #17a2b8;
+          background: linear-gradient(
+            180deg,
+            rgba(0, 255, 255, 0) 0%,
+            rgba(0, 255, 255, 0.35) 100%
+          );
+          color: #fff;
+        }
+      }
+
+      @media (max-width: 768px) {
+        flex-wrap: wrap;
+        gap: 5px;
+        button {
+          font-size: 1em;
+          padding: 5px 15px;
         }
       }
     }
+  }
+
+  .input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2em;
+    padding: 2px;
+    outline: none;
+    box-sizing: border-box;
+    box-shadow: none;
+  }
+
+  .input::placeholder {
+    color: #7a8a9a;
   }
 
   .cafeGrid {
@@ -94,6 +171,7 @@
 
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
+      width: 80%;
     }
   }
 
@@ -116,12 +194,17 @@
 
 /* CAFE CARD STYLES */
 .cafeCard {
-  background: linear-gradient(180deg, rgba(0, 255, 255, 0.35) 0%, rgba(0, 255, 255, 0.1) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 255, 255, 0.35) 0%,
+    rgba(0, 255, 255, 0.1) 100%
+  );
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
-  
+  cursor: pointer;
+
   &:hover {
     transform: translateY(-5px);
   }
@@ -136,9 +219,9 @@
     padding: 10px;
     color: #fff;
     text-align: center;
-    
+
     h3 {
-        text-transform: uppercase;
+      text-transform: uppercase;
       margin: 0 0 5px;
       font-size: 1.2em;
     }

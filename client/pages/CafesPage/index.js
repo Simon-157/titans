@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { cafes } from './data';
 import styles from './css/styles.css';
-
+import { TERTIARY } from '../../../defaults';
+import Navbar from '../EventsPage/NavBar';
+import HeaderSection from '../EventsPage/HeaderSection';
+import LeaderboardBanner from './LeaderboardBanner';
+import Footer from '../EventsPage/Footer';
 
 class CafeCard extends Component {
   render() {
@@ -18,13 +22,13 @@ class CafeCard extends Component {
   }
 }
 
-
 class AllCafes extends Component {
   constructor(props) {
     super(props);
     this.state = {
       searchQuery: '',
-      region: 'all',
+      region: 'see all regions',
+      visibleCafes: 12,
     };
   }
 
@@ -36,48 +40,62 @@ class AllCafes extends Component {
     this.setState({ region });
   };
 
+  loadMoreCafes = () => {
+    this.setState((prevState) => ({ visibleCafes: prevState.visibleCafes + 12 }));
+  };
+
   render() {
-    const { searchQuery, region } = this.state;
+    const { searchQuery, region, visibleCafes } = this.state;
     const filteredCafes = cafes.filter((cafe) => {
       const matchesSearchQuery = cafe.name.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesRegion = region === 'all' || cafe.region === region;
+      const matchesRegion = region === 'see all regions' || cafe.region === region;
       return matchesSearchQuery && matchesRegion;
     });
 
     return (
       <main className={styles.cafePageWrapper}>
+        <Navbar />
+        <HeaderSection />
 
+        <LeaderboardBanner />
         <div className={styles.allCafes}>
-            <header className={styles.header}>
-            <h1>All Cafés</h1>
-            </header>
-            <section className={styles.searchSection}>
-            <input
+          <section className={styles.searchSection}>
+            <div className={styles.searchBox}>
+                <input
                 type="text"
                 placeholder="Search Café"
                 value={searchQuery}
                 onChange={this.handleSearchChange}
-                className={styles.searchInput}
-            />
-            <div className={styles.regionFilters}>
-                {['all', 'north', 'south', 'east', 'west'].map((region) => (
-                <button
-                    key={region}
-                    className={this.state.region === region ? styles.active : ''}
-                    onClick={() => this.handleRegionChange(region)}
-                >
-                    {region.charAt(0).toUpperCase() + region.slice(1)}
-                </button>
-                ))}
+                className={styles.input}
+                />
             </div>
-            </section>
-            <section className={styles.cafeGrid}>
-            {filteredCafes.map((cafe) => (
-                <CafeCard key={cafe.id} {...cafe} />
+            <header className={styles.header}>
+               <img src='/img/box-icon.png' /> <h1>All Cafés</h1>
+            </header>
+            <div className={styles.regionFilters}>
+              {['see all regions', 'north', 'south', 'east', 'west'].map((region) => (
+                <button
+                  key={region}
+                  className={this.state.region === region ? styles.active : ''}
+                  onClick={() => this.handleRegionChange(region)}
+                >
+                  {region.charAt(0).toUpperCase() + region.slice(1)}
+                </button>
+              ))}
+            </div>
+          </section>
+          <section className={styles.cafeGrid}>
+            {filteredCafes.slice(0, visibleCafes).map((cafe) => (
+              <CafeCard key={cafe.id} {...cafe} />
             ))}
-            </section>
-            <button className={styles.moreCafesBtn}>More Cafés</button>
+          </section>
+          {visibleCafes < filteredCafes.length && (
+            <button className={`${TERTIARY}`} onClick={this.loadMoreCafes} style={{height:"45px"}}>
+              More Cafés
+            </button>
+          )}
         </div>
+        <Footer />
       </main>
     );
   }

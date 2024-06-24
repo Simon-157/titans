@@ -27,7 +27,7 @@ class EventsSection extends Component {
       <section className={styles.eventsSection}>
         <div className={styles.eventsSection__events}>
           {events.map((event, index) => (
-             <Link to={`/test/all/${event.id}`} key={index}>
+             <Link to={`/event/${event.id}`} key={index}>
                 <EventCard event={event} />
             </Link>
             // <EventCard key={index} event={event} />
