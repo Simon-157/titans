@@ -1,0 +1,351 @@
+.landingPage {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  overflow-x: hidden;
+  font-family: "Barlow";
+  background:linear-gradient(118.88deg, #01131a -2.2%, #002e2a 115.26%);
+  
+  .container {
+      padding: 20px;
+      width: 100vw;
+      height: max-content;
+      background: url("/img/forest-bg.jpg") no-repeat center center / cover,
+        linear-gradient(118.88deg, #01131a -2.2%, #002e2a 115.26%);
+      background-blend-mode: luminosity;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mainContent {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+    display: flex;
+
+    .subtitle {
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 34px;
+    }
+
+    .features {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      max-width: 1200px;
+      margin-bottom: 30px;
+
+      .feature {
+        flex: 1;
+        margin: 0 10px;
+        text-align: left;
+
+        h3 {
+          display: flex;
+          align-items: center;
+          font-style: normal;
+          font-weight:600;
+          font-size: 28px;
+          line-height: 32px;
+          letter-spacing: -0.02em;
+          margin-bottom: 10px;
+          text-transform: uppercase;
+
+          .featureNumber {
+            font-size: 36px;
+            color: #00bcd4;
+            margin-right: 10px;
+          }
+        }
+
+        p {
+          font-size: 20px;
+          margin-left: 30px;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .images {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+
+      .sideImages {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 15px 0px 15px 15px;
+
+        img {
+          width: 330px;
+          height: 180px;
+          object-fit: fill;
+          border-radius: 10px;
+          cursor: pointer;
+        }
+      }
+
+      .mainImage {
+        img {
+          margin: 10px;
+          width: 860px;
+          height: 430px;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+/* CAFES AROUND YOU STYLES */
+
+
+.allCafes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  margin: 90px 0px;
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+
+  .header {
+    display: flex;
+    gap:15px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    
+    img{
+        height: 2.3em;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2em;
+      }
+    }
+
+    @media (max-width: 576px) {
+      h1 {
+        font-size: 1.5em;
+      }
+    }
+  }
+
+  .searchSection {
+    text-align: center;
+    margin-bottom: 20px;
+
+    /* SEARCH BOX STYLES */
+    .searchBox {
+      display: flex;
+      align-items: center;
+      background: linear-gradient(
+        180deg,
+        rgba(25, 61, 60, 0.168) 0%,
+        rgba(255, 255, 255, 0.06) 100%
+      );
+      background-blend-mode: luminosity;
+      backdrop-filter: blur(1px);
+      background-blend-mode: overlay;
+      backdrop-filter: blur(15px);
+      border-radius: 50px;
+      padding: 5px 15px;
+      font-size: 1.5em;
+      margin: 40px auto;
+      border: 3px solid #48b8bb34;
+      max-width: 380px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+      /* Smaller screens */
+      @media (max-width: 768px) {
+        width: 90%;
+        place-content: center;
+        /* margin: 20px auto; */
+        font-size: 1.1em;
+
+        .searchIcon {
+          font-size: 1.5em;
+        }
+      }
+    }
+
+  }
+
+}
+
+// Responsive styles
+
+@media (max-width: 1200px) {
+  .mainContent {
+    .title {
+      font-size: 64px;
+    }
+
+    .subtitle {
+      font-size: 32px;
+    }
+
+    .features {
+      .feature {
+        h3 {
+          font-size: 24px;
+        }
+
+        p {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .images {
+      .sideImages {
+        img {
+          width: 300px;
+          height: 250px;
+        }
+      }
+
+      .mainImage {
+        img {
+          width: 600px;
+          height: 450px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .mainContent {
+    .features {
+      flex-direction: row;
+      justify-content: space-around;
+
+      .feature {
+        margin: 0 10px;
+        max-width: 30%;
+      }
+    }
+
+    .images {
+      .sideImages {
+        img {
+          width: 250px;
+          height: 200px;
+        }
+      }
+
+      .mainImage {
+        img {
+          width: 500px;
+          height: 400px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    .features {
+      flex-direction: column;
+
+      .feature {
+        max-width: 80%;
+        margin: 10px 0;
+
+        h3 {
+          font-size: 20px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .images {
+      .sideImages img{
+        display: none;
+      }
+
+      .mainImage {
+        img {
+          width: 500px;
+          height: 400px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .mainContent {
+    .title {
+      font-size: 48px;
+    }
+
+    .playButton {
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+
+    .subtitle {
+      font-size: 24px;
+    }
+
+    .features {
+      flex-direction: column;
+
+      .feature {
+        max-width: 80%;
+        margin: 10px 0;
+
+        h3 {
+          font-size: 20px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+    .images {
+      .sideImages img{
+        display: none;
+      }
+
+      .mainImage {
+        img {
+          width: 300px;
+          height: 200px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+

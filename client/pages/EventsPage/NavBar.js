@@ -26,9 +26,9 @@ class Navbar extends Component {
           <ul className={styles.navbar__list}>
             <li className={styles.navbar__item}><a href="#">PLAY</a></li>
             <li className={styles.navbar__item}><a href="#">DISCOVER</a></li>
-            <li className={styles.navbar__item}><a href="#">BLOG</a></li>
-            <li className={styles.navbar__item}><a href="#">EVENTS</a></li>
-            <li className={styles.navbar__item}><a href="#">CAFÉS</a></li>
+            <li className={styles.navbar__item}><a href="/blogs">BLOG</a></li>
+            <li className={styles.navbar__item}><a href="/events">EVENTS</a></li>
+            <li className={styles.navbar__item}><a href="/cafes">CAFÉS</a></li>
           </ul>
         </nav>
         <div className={styles.navbar__actions}>
@@ -56,9 +56,9 @@ class Navbar extends Component {
           <ul className={styles.sideSheet__list}>
             <li className={styles.sideSheet__item}><a href="#">PLAY</a></li>
             <li className={styles.sideSheet__item}><a href="#">DISCOVER</a></li>
-            <li className={styles.sideSheet__item}><a href="#">BLOG</a></li>
-            <li className={styles.sideSheet__item}><a href="#">EVENTS</a></li>
-            <li className={styles.sideSheet__item}><a href="#">CAFÉS</a></li>
+            <li className={styles.sideSheet__item}><a href="/blogs">BLOG</a></li>
+            <li className={styles.sideSheet__item}><a href="/events">EVENTS</a></li>
+            <li className={styles.sideSheet__item}><a href="/cafes">CAFÉS</a></li>
           </ul>
         </div>
       </header>

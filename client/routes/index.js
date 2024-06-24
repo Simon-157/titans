@@ -15,6 +15,7 @@ import Rentals from 'pages/Rentals';
 import TournamentLeaderBoard from 'pages/TournamentLeaderBoard';
 import EventsPage from '../pages/EventsPage';
 import SingleEventPage from '../pages/EventPage';
+import LandingPage from '../pages/LandingPage';
 
 const Profile = Loadable({
   loader: () => import('pages/Profile'),
@@ -176,7 +177,16 @@ const routes = [
       loading: LoadingBar,
       delay: 0,
     }),
-  }
+  },
+
+  {
+
+    path:'/india',
+    component: LandingPage,
+    exact: true,
+    name: HOME,
+    
+  },
 
 ];
 

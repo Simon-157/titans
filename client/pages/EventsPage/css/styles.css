@@ -15,6 +15,7 @@
 /* styles.css */
 .navbar {
   display: flex;
+  width: 100vw;
   justify-content: space-between;
   align-items: center;
   padding: 10px 100px;
@@ -649,6 +650,7 @@
   color: #ffffff;
   text-transform: uppercase;
   font-weight: 600;
+  
 
   &__links {
     display: flex;
@@ -660,6 +662,7 @@
       color: #edeff3;
       margin: 0 10px;
       text-decoration: none;
+      place-content: center;
 
       &:hover {
         text-decoration: underline;
