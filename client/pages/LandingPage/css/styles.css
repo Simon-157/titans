@@ -30,6 +30,11 @@
       right: 10%;
       top: 30%;
 
+
+    @media (max-width: 998px) {
+      display: none;
+    }
+
     }
 
     .subtitle {
@@ -114,6 +119,15 @@
 
 /* CAFES AROUND YOU STYLES */
 
+  .scrollUp{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10%;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
 
 .allCafes {
   display: flex;
@@ -155,6 +169,7 @@
       }
     }
   }
+
 
   .searchSection {
     text-align: center;

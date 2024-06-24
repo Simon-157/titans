@@ -41,6 +41,7 @@ class LandingPage extends React.Component {
             ]
         };
         this.bottomRef = React.createRef();
+        this.topRef = React.createRef();
     }
 
     handleImageClick = (index) => {
@@ -64,10 +65,13 @@ class LandingPage extends React.Component {
         this.setState((prevState) => ({ visibleCafes: prevState.visibleCafes + 12 }));
     };
 
-    handleScrollButtonClick = () => {
+    handleScrollDownButtonClick = () => {
         this.bottomRef.current.scrollIntoView({ behavior: 'smooth' });
     };
 
+    handleScrollUpButtonClick = () => {
+        this.topRef.current.scrollIntoView({ behavior: 'smooth' });
+    };
     render() {
         const { features, sideImages, mainImage, region, visibleCafes } = this.state;
         const filteredCafes = cafes.filter((cafe) => {
@@ -76,21 +80,21 @@ class LandingPage extends React.Component {
         });
 
         return (
-            <div className={styles.landingPage}>
+            <div className={styles.landingPage} > 
                 <div className={styles.container}>
                     <Navbar />
                     <div className={styles.mainContent}>
-                        <img src="/img/logo.svg" alt="Reign of Titans" width={600} height={250} />
+                        <img  ref={this.topRef} src="/img/logo.svg" alt="Reign of Titans" width={600} height={250} />
                         <span className={styles.scroll}> 
                             <button
                                 className={`${CIRCLE} ${TERTIARY}`}
                                 style={{}}
-                                onClick={this.handleScrollButtonClick}
+                                onClick={this.handleScrollDownButtonClick}
                             >
                                 <img src="/img/scrolldown.svg" alt="scroll" />
                             </button>
                         </span>
-                        <button className={`${PRIMARY}`} style={{ width: "320px", height: "70px", margin: "90px auto" }}>PLAY NOW</button>
+                        <button  className={`${PRIMARY}`} style={{ width: "320px", height: "70px", margin: "90px auto" }}>PLAY NOW</button>
                         <h2 className={styles.subtitle}>Reign of Titans Comes to India!</h2>
                         <div className={styles.features}>
                             {features.map((feature) => (
@@ -141,6 +145,15 @@ class LandingPage extends React.Component {
                     </section>
                     <CafeList cafes={filteredCafes} visibleCafes={visibleCafes} loadMoreCafes={this.loadMoreCafes} />
                 </div>
+                <span className={styles.scrollUp}> 
+                        <button
+                            className={`${CIRCLE} ${TERTIARY}`}
+                            style={{}}
+                            onClick={this.handleScrollUpButtonClick}
+                        >
+                            <img src="/img/scrollup.svg" alt="scroll" />
+                        </button>
+                    </span>
 
                 <Footer />
                 <div ref={this.bottomRef}></div>
