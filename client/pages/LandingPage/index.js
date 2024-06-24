@@ -40,6 +40,7 @@ class LandingPage extends React.Component {
                 }
             ]
         };
+        this.bottomRef = React.createRef();
     }
 
     handleImageClick = (index) => {
@@ -63,11 +64,8 @@ class LandingPage extends React.Component {
         this.setState((prevState) => ({ visibleCafes: prevState.visibleCafes + 12 }));
     };
 
-    handleScrollClick = () => {
-        window.scrollTo({
-            top: document.body.scrollHeight,
-            behavior: 'smooth'
-        });
+    handleScrollButtonClick = () => {
+        this.bottomRef.current.scrollIntoView({ behavior: 'smooth' });
     };
 
     render() {
@@ -83,11 +81,11 @@ class LandingPage extends React.Component {
                     <Navbar />
                     <div className={styles.mainContent}>
                         <img src="/img/logo.svg" alt="Reign of Titans" width={600} height={250} />
-                        <span className={styles.scroll}>
-                            <button 
-                                className={`${CIRCLE} ${TERTIARY}`} 
-                                style={{}} 
-                                onClick={this.handleScrollClick}
+                        <span className={styles.scroll}> 
+                            <button
+                                className={`${CIRCLE} ${TERTIARY}`}
+                                style={{}}
+                                onClick={this.handleScrollButtonClick}
                             >
                                 <img src="/img/scrolldown.svg" alt="scroll" />
                             </button>
@@ -145,6 +143,7 @@ class LandingPage extends React.Component {
                 </div>
 
                 <Footer />
+                <div ref={this.bottomRef}></div>
             </div>
         );
     }
