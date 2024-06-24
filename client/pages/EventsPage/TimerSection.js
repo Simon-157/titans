@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './css/styles.css';
-import { FILLED, SECONDARY, TERTIARY } from '../../../defaults';
+import { FILLED, PRIMARY, SECONDARY, TERTIARY } from '../../../defaults';
 
 class TimerSection extends Component {
   render() {
@@ -45,8 +45,8 @@ class TimerSection extends Component {
             </div>
           </div>
           <div className={styles.timerSection__actions}>
-            <button className={`styles.shareButton ${TERTIARY} ${FILLED} `}>SHARE</button>
-            <button className={styles.joinButton}>JOIN EVENT</button>
+            <button className={`${TERTIARY} `} style={{ height: '70px' , width: '250px', fontSize: '20px'}}>SHARE</button>
+            <button className={`${PRIMARY}`} style={{ height: '70px' , width: '250px', fontSize: '20px'}}>JOIN EVENT</button>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './css/styles.css';
 import cx from 'classnames';
 import { CIRCLE, SECONDARY } from '../../../defaults';
+import { Link } from 'react-router-dom';
 
 class Navbar extends Component {
   state = {
@@ -43,12 +44,12 @@ class Navbar extends Component {
               <img src="/img/menu-burger.svg" alt="Menu" />
             </button>
           </div>
-          <div className={styles.navbar__profile}>
+          {/* <div className={styles.navbar__profile}>
 
             <button className={`${SECONDARY} ${CIRCLE}`}>
               <img src="/img/profile.svg" alt="Profile" />
             </button>
-          </div>
+          </div> */}
         </div>
         
         <div className={cx(styles.sideSheet, { [styles.open]: isSideSheetOpen })}>
@@ -58,7 +59,7 @@ class Navbar extends Component {
             <li className={styles.sideSheet__item}><a href="#">DISCOVER</a></li>
             <li className={styles.sideSheet__item}><a href="/blogs">BLOG</a></li>
             <li className={styles.sideSheet__item}><a href="/events">EVENTS</a></li>
-            <li className={styles.sideSheet__item}><a href="/cafes">CAFÉS</a></li>
+            <li className={styles.sideSheet__item}><Link to="/cafes">CAFÉS</Link></li>
           </ul>
         </div>
       </header>

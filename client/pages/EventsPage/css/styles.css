@@ -379,7 +379,7 @@
   height: 100%;
   width: 50%;
   flex-grow: 1;
-  padding: 20px;
+  padding: 40px;
   border: 1px solid #00e5da46;
   /* border-image: linear-gradient(to right, #80ffb14b, #0bd3e557) 1 ; */
   border-radius: 0 8px 8px 0;
@@ -387,13 +387,14 @@
 }
 
 .timerSection__details h2 {
-  font-size: 1.5em;
+  font-size: 2em;
   margin-bottom: 20px;
 }
 
 .timerSection__details p {
-  font-size: 1em;
+  font-size: 1.5em;
   margin-bottom: 20px;
+  font-weight: 600;
 }
 
 .timerSection__details .highlight {
@@ -406,6 +407,8 @@
   flex-direction: column;
   gap: 10px;
   margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 1.2em;
 }
 
 .infoItem {

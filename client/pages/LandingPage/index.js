@@ -7,6 +7,7 @@ import RegionFilter from '../CafesPage/RegionFilter';
 import { cafes } from '../CafesPage/data';
 import HeaderSection from '../EventsPage/HeaderSection';
 import Footer from '../EventsPage/Footer';
+import { CIRCLE, TERTIARY } from '../../../defaults';
 
 class LandingPage extends React.Component {
     constructor(props) {
@@ -77,7 +78,8 @@ class LandingPage extends React.Component {
                     <Navbar />
                     <div className={styles.mainContent}>
                         <img src="/img/logo.svg" alt="Reign of Titans" width={600} height={250} />
-                        <button className={`${PRIMARY}`} style={{ width: "400px", height: "75px", margin: "100px auto" }}>PLAY NOW</button>
+                        <span className={styles.scroll}><button className={`${CIRCLE} ${TERTIARY}`} style={{ }}><img src="/img/scrolldown.svg" alt="scroll" /></button></span>
+                        <button className={`${PRIMARY}`} style={{ width: "320px", height: "70px", margin: "90px auto" }}>PLAY NOW</button>
                         <h2 className={styles.subtitle}>Reign of Titans Comes to India!</h2>
                         <div className={styles.features}>
                             {features.map((feature) => (

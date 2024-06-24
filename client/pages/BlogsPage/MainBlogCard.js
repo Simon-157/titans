@@ -27,7 +27,7 @@ class MainBlogCard extends Component {
                         <h2>{blog.title}</h2>
                         <p>{blog.description}</p>
                         <p>
-                            <span>{timeAgo(blog.date)}</span> By {blog.author} | {blog.readTime} min read
+                            <span>{timeAgo(blog.date)}</span> <span>By {blog.author} | {blog.readTime} min read</span>
                         </p>
                     </div>
                 </div>

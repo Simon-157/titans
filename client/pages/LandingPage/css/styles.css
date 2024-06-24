@@ -25,6 +25,13 @@
     margin-top: 50px;
     display: flex;
 
+    .scroll{
+      position: absolute;
+      right: 10%;
+      top: 30%;
+
+    }
+
     .subtitle {
       margin-bottom: 40px;
       text-transform: uppercase;
@@ -35,8 +42,8 @@
     .features {
       display: flex;
       justify-content: space-around;
-      width: 100%;
-      max-width: 1200px;
+      
+      max-width: 1500px;
       margin-bottom: 30px;
 
       .feature {
@@ -49,9 +56,9 @@
           align-items: center;
           font-style: normal;
           font-weight:600;
-          font-size: 28px;
+          font-size: 26px;
           line-height: 32px;
-          letter-spacing: -0.02em;
+          /* letter-spacing: -0.02em; */
           margin-bottom: 10px;
           text-transform: uppercase;
 
@@ -210,7 +217,7 @@
         }
 
         p {
-          font-size: 18px;
+          font-size: 1dpx;
         }
       }
     }
@@ -235,6 +242,11 @@
 
 @media (max-width: 992px) {
   .mainContent {
+
+    .subtitle {
+      font-size: 30px;
+
+    }
     .features {
       flex-direction: row;
       justify-content: space-around;
@@ -265,19 +277,27 @@
 
 @media (max-width: 768px) {
   .mainContent {
+    img{
+      width: 80%;
+    }
+    .container {
+      padding: 10px;
+
+    }
     .features {
       flex-direction: column;
+      width: 100%;
 
       .feature {
-        max-width: 80%;
+        /* max-width: 80%; */
         margin: 10px 0;
 
         h3 {
-          font-size: 20px;
+          font-size: 18px;
         }
 
         p {
-          font-size: 16px;
+          font-size: 14px;
         }
       }
     }
@@ -314,13 +334,14 @@
 
     .features {
       flex-direction: column;
+      margin-top: 20px;
 
       .feature {
-        max-width: 80%;
+        max-width:fit-content;
         margin: 10px 0;
 
         h3 {
-          font-size: 20px;
+          font-size: 18px;
         }
 
         p {

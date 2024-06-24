@@ -5,7 +5,7 @@
   justify-content: center;
   margin: 2px auto;
   max-width: 60%;
-  padding: 1px;
+  padding: 4px;
   background: linear-gradient(#0000001e, #0000000f) padding-box, linear-gradient(to right, #00eeff25, #00eeff2a) border-box;
   border: 2px solid transparent;
   clip-path: polygon(
