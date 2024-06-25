@@ -53,33 +53,33 @@ class EventDetails extends Component {
                                 </div>
                             </div>
                             <div className={styles.eventActions}>
-                                <button  className={"tertiary"} style={{color:"#45E5E5", height:"40px" , border:"1px solid #45E5E5", fontSize:"1em", fontWeight:"bold"}}>
+                                <button className={"tertiary"} style={{ color: "#45E5E5", height: "40px", border: "1px solid #45E5E5", fontSize: "1em", fontWeight: "bold" }}>
                                     GET DIRECTIONS
                                 </button>
 
-                                 <button  className={"tertiary"} style={{color:"#45E5E5", height:"40px" , border:"1px solid #45E5E5", fontSize:"1em", fontWeight:"bold"}}>
+                                <button className={"tertiary"} style={{ color: "#45E5E5", height: "40px", border: "1px solid #45E5E5", fontSize: "1em", fontWeight: "bold" }}>
                                     CAFE INFO
                                 </button>
                             </div>
                             <div className={styles.eventMap}>
                                 {/* <img src={"/img/map.svg"} alt="Map" /> */}
-                                      <GoogleMaps
-        defaultZoom={8}
-        markers={[{ lat: 37.7749, lng: -122.4194 }]}
-        showMarker={true}
-        lat={37.7749}
-        lng={-122.4194}
-        height={400}
-        getRef={(map) => console.log(map)}
-        onBoundsChanged={() => console.log('Bounds changed')}
-      />
+                                <GoogleMaps
+                                    defaultZoom={8}
+                                    markers={[{ lat: 37.7749, lng: -122.4194 }]}
+                                    showMarker={true}
+                                    lat={37.7749}
+                                    lng={-122.4194}
+                                    height={400}
+                                    getRef={(map) => console.log(map)}
+                                    onBoundsChanged={() => console.log('Bounds changed')}
+                                />
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <PromoCard />
-                
+
             </div>
         );
     }
