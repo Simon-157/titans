@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import styles from './css/styles.css';
 import { FILLED, PRIMARY, SECONDARY, TERTIARY } from '../../../defaults';
 import RegisterModal from '../EventPage/components/RegisterForm';
+import SocialShareModal from '../EventPage/components/SocialShareModal';
 
 class TimerSection extends Component {
 
     state = {
     isRegisterModalOpen: false,
+    isSocialShareModalOpen: false,
+    eventUrl: window.location.href
   };
 
   toggleRegisterModal = () => {
@@ -14,9 +17,15 @@ class TimerSection extends Component {
       isRegisterModalOpen: !prevState.isRegisterModalOpen,
     }));
   };
+
+    toggleSocialShareModal = () => {
+    this.setState((prevState) => ({
+      isSocialShareModalOpen: !prevState.isSocialShareModalOpen,
+    }));
+  };
   render() {
 
-        const { isRegisterModalOpen } = this.state;
+        const { isRegisterModalOpen, isSocialShareModalOpen, eventUrl  } = this.state;
 
     return (
       <div className={styles.timerSectionWrapper}>
@@ -59,14 +68,18 @@ class TimerSection extends Component {
             </div>
           </div>
           <div className={styles.timerSection__actions}>
-            <button className={`${TERTIARY} `} style={{ height: '70px' , width: '250px', fontSize: '20px'}}>SHARE</button>
+            <button className={`${TERTIARY} `} style={{ height: '70px' , width: '250px', fontSize: '20px'}} onClick={this.toggleSocialShareModal}>SHARE</button>
             <button className={`${PRIMARY}`} style={{ height: '70px' , width: '250px', fontSize: '20px'}} onClick={this.toggleRegisterModal} >JOIN EVENT</button>
           </div>
         </div>
       </div>
 
         <RegisterModal isOpen={isRegisterModalOpen} onClose={this.toggleRegisterModal} />
-
+         <SocialShareModal
+          isOpen={isSocialShareModalOpen}
+          onClose={this.toggleSocialShareModal}
+          eventUrl={eventUrl}
+        />
       </div>
     );
   }

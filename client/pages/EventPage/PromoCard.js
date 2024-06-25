@@ -4,18 +4,22 @@ import CustomButton from "./CustomButton";
 import { LOGO, PRIMARY, SECONDARY, TERTIARY } from "defaults";
 import SocialShare from "./components/SocialShare";
 import RegisterModal from "./components/RegisterForm";
+import SocialShareModal from "./components/SocialShareModal";
 
 
 class PromoCard extends Component {
    state = {
-    showSocialShare: true,
+ 
     isRegisterModalOpen: false,
+    isSocialShareModalOpen: false,
+    eventUrl: window.location.href
 
   };
 
-  toggleSocialShare = () => {
+ 
+    toggleSocialShareModal = () => {
     this.setState((prevState) => ({
-      showSocialShare: !prevState.showSocialShare,
+      isSocialShareModalOpen: !prevState.isSocialShareModalOpen,
     }));
   };
 
@@ -25,7 +29,7 @@ class PromoCard extends Component {
     }));
   };
   render() {
-      const { isRegisterModalOpen } = this.state;
+      const { isRegisterModalOpen,  isSocialShareModalOpen, eventUrl  } = this.state;
     return (
       
       <div className={styles.promoSectionWrapper}>
@@ -48,29 +52,23 @@ class PromoCard extends Component {
             >
               JOIN EVENT
             </button>
-          
 
-              <SocialShare
-                className="shareWrapper"
-                text="Check out this awesome article!"
-                url={window.location.href}
-                right={true}
-                t={(text) => text.join(' ')}
+            <button
+              className={TERTIARY}
+              onClick={this.toggleSocialShareModal}
+              style={{
+                width: "75%",
+                height: "50px",
+                fontSize: "1em",
+                fontWeight: "bold",
+              }}
               >
-                Share
-              </SocialShare>
-
+                <img src="/img/share.svg" />
+                SHARE
+              </button>
             
           </div>
-          {this.showSocialShare && (
-          <SocialShare
-            className=""
-            text="Check this out!"
-            url={window.location.href}
-            right={true}
-            t={(key) => key}
-          />
-        )}
+        
           <div className={styles.promoContent}>
             <img
               src="/img/spar.png"
@@ -89,6 +87,11 @@ class PromoCard extends Component {
           </div>
         </div>
                <RegisterModal isOpen={isRegisterModalOpen} onClose={this.toggleRegisterModal} />
+               <SocialShareModal
+          isOpen={isSocialShareModalOpen}
+          onClose={this.toggleSocialShareModal}
+          eventUrl={eventUrl}
+        />
 
       </div>
     );

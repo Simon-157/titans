@@ -1,34 +1,28 @@
 import React, { Component } from 'react';
-import ConfirmationModal from '../EventPage/components/ConfirmationModal';
+import SocialShareModal from '../EventPage/components/SocialShareModal';
 
 class Test extends Component {
   state = {
-    isConfirmationModalOpen: false,
-    eventDetails: {
-      title: 'CHAMPIONS CHALLENGE KERMES CUP',
-      date: 'June 29th, 2024 | 17:00-22:00',
-      venue: 'Lounge tulip Cafe, Mumbai, India',
-      qrCode: '65XA - 352',
-      giveaway: 'Free LEGION NOTEBOOK Giveaway: Faucibus at et nulla ipsum, lorem et. Nullam adipiscing maecenas quis amet.'
-    }
+    isSocialShareModalOpen: false,
+    eventUrl: 'https://example.com/event/12345'
   };
 
-  toggleConfirmationModal = () => {
+  toggleSocialShareModal = () => {
     this.setState((prevState) => ({
-      isConfirmationModalOpen: !prevState.isConfirmationModalOpen,
+      isSocialShareModalOpen: !prevState.isSocialShareModalOpen,
     }));
   };
 
   render() {
-    const { isConfirmationModalOpen, eventDetails } = this.state;
+    const { isSocialShareModalOpen, eventUrl } = this.state;
 
     return (
       <div>
-        <button onClick={this.toggleConfirmationModal}>Open Confirmation Modal</button>
-        <ConfirmationModal
-          isOpen={isConfirmationModalOpen}
-          onClose={this.toggleConfirmationModal}
-          eventDetails={eventDetails}
+        <button onClick={this.toggleSocialShareModal}>Open Share Modal</button>
+        <SocialShareModal
+          isOpen={isSocialShareModalOpen}
+          onClose={this.toggleSocialShareModal}
+          eventUrl={eventUrl}
         />
       </div>
     );
