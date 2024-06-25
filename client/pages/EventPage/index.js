@@ -4,23 +4,29 @@ import EventDetails from './EventDetails';
 import RelatedEvents from './RelatedEvents';
 import Footer from '../EventsPage/Footer';
 import styles from './css/styles.css';
+import { events } from './data';
+import RegionFilter from '../CafesPage/RegionFilter';
 
 class SingleEventPage extends Component {
+    constructor(props) {
+    super(props);
+    this.state = {
+      searchQuery: '',
+      region: 'see all regions',
+      visibleEvents: 4,
+    };
+  }
+
+
+  handleRegionChange = (region) => {
+    this.setState({ region });
+  };
+
+  loadMoreEvents = () => {
+    this.setState((prevState) => ({ visibleEvents: prevState.visibleEvents + 4 }));
+  };
+
   getEventById = (id) => { 
-    const events = [
-      { id: 12, title: "MEETUP", location: "Jaipur", date: "Aug 29th, 2024",description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra." , time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW.png" },
-      { id: 22, title: "LUCKNOW", location: "Surat", date: "Aug 29th, 2024", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW-1.png" },
-      { id: 32, title: "KERMES CUP", location: "Surat", date: "Aug 29th, 2024", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW.png" },
-      { id: 42, title: "HAVOC", location: "Bangalore", date: "Aug 29th, 2024", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW2.png" },
-      { id: 21, title: "MEETUP", location: "Jaipur", date: "Aug 29th, 2024", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW.png" },
-      { id: 24, title: "LUCKNOW", location: "Surat", date: "Aug 29th, 2024", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW3.png" },
-      { id: 34, title: "KERMES CUP", location: "Surat", date: "Aug 29th, 2024", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW.png" },
-      { id: 44, title: "HAVOC", location: "Bangalore", date: "Aug 29th, 2024", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW2.png" },
-      { id: 14, title: "MEETUP", location: "Jaipur", date: "Aug 29th, 2024", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW.png" },
-      { id: 29, title: "LUCKNOW", location: "Surat", date: "Aug 29th, 2024", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW3.png" },
-      { id: 39, title: "KERMES CUP", location: "Surat", date: "Aug 29th, 2024", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW.png" },
-      { id: 49, title: "HAVOC", location: "Bangalore", date: "Aug 29th, 2024", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW.png" },
-    ];
 
     return events.find(event => event.id === parseInt(id));
   };
@@ -33,12 +39,30 @@ class SingleEventPage extends Component {
       return <div>Event not found</div>;
     }
 
+    const { searchQuery, region, visibleEvents } = this.state;
+    const filteredEvents = events.filter((event) => {
+      const matchesRegion = region === 'see all regions' || event.region === region;
+      return  matchesRegion;
+    });
+
     return (
       <div className={styles.app}>
         <Navbar />
         <div className={styles.singleEventWrapper}>
           <EventDetails event={event} />
-          <RelatedEvents />
+
+          <div className={styles.allCafes}>
+
+            <section className={styles.searchSection}>
+            
+            <header className={styles.header}>
+              <img src='/img/box-icon.png' alt="box icon" /> 
+              <h1>Events You May Like</h1>
+            </header>
+            <RegionFilter currentRegion={region} onRegionChange={this.handleRegionChange} />
+          </section>
+          <RelatedEvents events={filteredEvents}  visibleEvents={visibleEvents} loadMoreEvents={this.loadMoreEvents} />
+          </div>
         </div>
         <Footer/>
       </div>

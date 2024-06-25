@@ -1,9 +1,23 @@
 import React, { Component } from 'react';
 import styles from './css/styles.css';
 import { FILLED, PRIMARY, SECONDARY, TERTIARY } from '../../../defaults';
+import RegisterModal from '../EventPage/components/RegisterForm';
 
 class TimerSection extends Component {
+
+    state = {
+    isRegisterModalOpen: false,
+  };
+
+  toggleRegisterModal = () => {
+    this.setState((prevState) => ({
+      isRegisterModalOpen: !prevState.isRegisterModalOpen,
+    }));
+  };
   render() {
+
+        const { isRegisterModalOpen } = this.state;
+
     return (
       <div className={styles.timerSectionWrapper}>
       <div className={styles.timerSection}>
@@ -46,10 +60,13 @@ class TimerSection extends Component {
           </div>
           <div className={styles.timerSection__actions}>
             <button className={`${TERTIARY} `} style={{ height: '70px' , width: '250px', fontSize: '20px'}}>SHARE</button>
-            <button className={`${PRIMARY}`} style={{ height: '70px' , width: '250px', fontSize: '20px'}}>JOIN EVENT</button>
+            <button className={`${PRIMARY}`} style={{ height: '70px' , width: '250px', fontSize: '20px'}} onClick={this.toggleRegisterModal} >JOIN EVENT</button>
           </div>
         </div>
       </div>
+
+        <RegisterModal isOpen={isRegisterModalOpen} onClose={this.toggleRegisterModal} />
+
       </div>
     );
   }

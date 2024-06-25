@@ -8,13 +8,17 @@ import { cafes } from '../CafesPage/data';
 import HeaderSection from '../EventsPage/HeaderSection';
 import Footer from '../EventsPage/Footer';
 import { CIRCLE, TERTIARY } from '../../../defaults';
+import RelatedEvents from '../EventPage/RelatedEvents';
+import { events } from '../EventsPage/data';
 
 class LandingPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            region: 'see all regions',
+            region1: 'see all regions',
+            region2: 'see all regions',
             visibleCafes: 4,
+            visibleEvents: 4,
             mainImage: "/img/langing_pageImage1.png",
             sideImages: [
                 "/img/langing_pageImage2.png",
@@ -57,13 +61,23 @@ class LandingPage extends React.Component {
         this.setState({ searchQuery: event.target.value });
     };
 
-    handleRegionChange = (region) => {
-        this.setState({ region });
+    handleRegion1Change = (region1) => {
+        this.setState({ region1 });
     };
 
-    loadMoreCafes = () => {
-        this.setState((prevState) => ({ visibleCafes: prevState.visibleCafes + 12 }));
+    handleRegion2Change = (region2) => {
+        this.setState({ region2 });
     };
+
+
+    loadMoreCafes = () => {
+        this.setState((prevState) => ({ visibleCafes: prevState.visibleCafes + 4 }));
+    };
+
+    loadMoreEvents = () => {
+        this.setState((prevState) => ({ visibleEvents: prevState.visibleEvents + 4 }));
+    };
+
 
     handleScrollDownButtonClick = () => {
         this.bottomRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -73,19 +87,26 @@ class LandingPage extends React.Component {
         this.topRef.current.scrollIntoView({ behavior: 'smooth' });
     };
     render() {
-        const { features, sideImages, mainImage, region, visibleCafes } = this.state;
+
+        const { features, sideImages, mainImage, region1, region2, visibleCafes, visibleEvents } = this.state;
+
         const filteredCafes = cafes.filter((cafe) => {
-            const matchesRegion = region === 'see all regions' || cafe.region === region;
+            const matchesRegion = region1 === 'see all regions' || cafe.region === region1;
+            return matchesRegion;
+        });
+
+        const filteredEvents = events.filter((event) => {
+            const matchesRegion = region2 === 'see all regions' || event.region === region2;
             return matchesRegion;
         });
 
         return (
-            <div className={styles.landingPage} > 
+            <div className={styles.landingPage} >
                 <div className={styles.container}>
                     <Navbar />
                     <div className={styles.mainContent}>
-                        <img  ref={this.topRef} src="/img/logo.svg" alt="Reign of Titans" width={600} height={250} />
-                        <span className={styles.scroll}> 
+                        <img ref={this.topRef} src="/img/logo.svg" alt="Reign of Titans" width={600} height={250} />
+                        <span className={styles.scroll}>
                             <button
                                 className={`${CIRCLE} ${TERTIARY}`}
                                 style={{}}
@@ -94,7 +115,7 @@ class LandingPage extends React.Component {
                                 <img src="/img/scrolldown.svg" alt="scroll" />
                             </button>
                         </span>
-                        <button  className={`${PRIMARY}`} style={{ width: "320px", height: "70px", margin: "90px auto" }}>PLAY NOW</button>
+                        <button className={`${PRIMARY}`} style={{ width: "320px", height: "70px", margin: "90px auto" }}>PLAY NOW</button>
                         <h2 className={styles.subtitle}>Reign of Titans Comes to India!</h2>
                         <div className={styles.features}>
                             {features.map((feature) => (
@@ -129,9 +150,12 @@ class LandingPage extends React.Component {
                             <h1> Events Around You</h1>
                         </header>
                         <HeaderSection />
-                        <RegionFilter currentRegion={region} onRegionChange={this.handleRegionChange} />
+                        <RegionFilter currentRegion={region2} onRegionChange={this.handleRegion2Change} />
                     </section>
-                    <CafeList cafes={filteredCafes} visibleCafes={visibleCafes} loadMoreCafes={this.loadMoreCafes} />
+                    <div className={styles.eventsAround}>
+
+                    <RelatedEvents events={filteredEvents} visibleEvents={visibleEvents} loadMoreEvents={this.loadMoreEvents} />
+                    </div>
                 </div>
 
                 <div className={styles.allCafes}>
@@ -141,19 +165,19 @@ class LandingPage extends React.Component {
                             <h1> Cafés Around You</h1>
                         </header>
                         <HeaderSection />
-                        <RegionFilter currentRegion={region} onRegionChange={this.handleRegionChange} />
+                        <RegionFilter currentRegion={region1} onRegionChange={this.handleRegion1Change} />
                     </section>
                     <CafeList cafes={filteredCafes} visibleCafes={visibleCafes} loadMoreCafes={this.loadMoreCafes} />
                 </div>
-                <span className={styles.scrollUp}> 
-                        <button
-                            className={`${CIRCLE} ${TERTIARY}`}
-                            style={{}}
-                            onClick={this.handleScrollUpButtonClick}
-                        >
-                            <img src="/img/scrollup.svg" alt="scroll" />
-                        </button>
-                    </span>
+                <span className={styles.scrollUp}>
+                    <button
+                        className={`${CIRCLE} ${TERTIARY}`}
+                        style={{}}
+                        onClick={this.handleScrollUpButtonClick}
+                    >
+                        <img src="/img/scrollup.svg" alt="scroll" />
+                    </button>
+                </span>
 
                 <Footer />
                 <div ref={this.bottomRef}></div>

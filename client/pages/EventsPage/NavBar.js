@@ -19,7 +19,7 @@ class Navbar extends Component {
     const { isSideSheetOpen } = this.state;
 
     return (
-      <header className={styles.navbar}>
+      <><header className={styles.navbar}>
         <div className={styles.navbar__logo}>
           <img src="/img/logo-bare.svg" alt="Logo" />
         </div>
@@ -39,30 +39,39 @@ class Navbar extends Component {
           <div className={styles.navbar__icon}>
             <img src="/img/search.svg" alt="Search" />
           </div>
+          
           <div className={styles.navbar__hamburger} onClick={this.toggleSideSheet}>
-            <button className={`${SECONDARY} ${CIRCLE}`} >
-              <img src="/img/menu-burger.svg" alt="Menu" />
+            <button className={`${SECONDARY} ${CIRCLE}`}>
+              {isSideSheetOpen ? <img src="/img/close.svg" alt="Close" /> : <img src="/img/menu-burger.svg" alt="Menu" /> }
             </button>
           </div>
-          {/* <div className={styles.navbar__profile}>
+          <div className={styles.navbar__profile}>
 
             <button className={`${SECONDARY} ${CIRCLE}`}>
               <img src="/img/profile.svg" alt="Profile" />
             </button>
-          </div> */}
+          </div>
         </div>
-        
-        <div className={cx(styles.sideSheet, { [styles.open]: isSideSheetOpen })}>
-          <div className={styles.sideSheet__close} onClick={this.toggleSideSheet}><button className={`${SECONDARY} ${CIRCLE}`}><img src="/img/close.svg" /></button></div>
-          <ul className={styles.sideSheet__list}>
-            <li className={styles.sideSheet__item}><a href="#">PLAY</a></li>
-            <li className={styles.sideSheet__item}><a href="#">DISCOVER</a></li>
-            <li className={styles.sideSheet__item}><a href="/blogs">BLOG</a></li>
-            <li className={styles.sideSheet__item}><a href="/events">EVENTS</a></li>
-            <li className={styles.sideSheet__item}><Link to="/cafes">CAFÉS</Link></li>
-          </ul>
-        </div>
+
       </header>
+        <section className={cx(styles.sideSheetWrapper, {[styles.open]: isSideSheetOpen })}>
+          <div className={styles.sideSheet }>
+            {/* <div className={styles.sideSheet__close} onClick={this.toggleSideSheet}><button className={`${SECONDARY} ${CIRCLE}`}><img src="/img/close.svg" /></button></div> */}
+            <ul className={styles.sideSheet__list}>
+              <li className={styles.sideSheet__item}><Link to="#">HOME</Link></li>
+              <li className={styles.sideSheet__item}><Link to="#">PLAY</Link></li>
+              <li className={styles.sideSheet__item}><Link to="#">DISCOVER</Link></li>
+              <li className={styles.sideSheet__item}><Link to="/blogs">BLOG</Link></li>
+              <li className={styles.sideSheet__item}><Link to="/events">EVENTS</Link></li>
+              <li className={styles.sideSheet__item}><Link to="/cafes">CAFÉS</Link></li>
+              <li className={styles.sideSheet__item}><Link to="/cafes">PROFILE</Link></li>
+              <li className={styles.sideSheet__item}><Link to="/cafes">LOG OUT</Link></li>
+
+
+            </ul>
+          </div>
+
+        </section></>
     );
   }
 }

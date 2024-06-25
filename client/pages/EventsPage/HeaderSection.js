@@ -13,7 +13,7 @@ class HeaderSection extends Component {
         <div className={styles.headerSection}>
           {showTitle && (
             <h1 className={styles.headerSection__title}>
-              <span className={styles.headerSection__icon}>🎮</span>
+              <span className={styles.headerSection__icon}><img src='/img/box-icon.png' alt="box icon" /></span>
               EVENTS AROUND YOU
             </h1>
           )}

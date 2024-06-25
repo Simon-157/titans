@@ -2,43 +2,72 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import EventCard from './EventCard';
 import styles from './css/styles.css';
+import { events } from './data';
 
 class EventsSection extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentPage: 1,
+      eventsPerPage: 8,
+    };
+  }
+
+  handleClickNext = () => {
+    const { currentPage } = this.state;
+    const totalPages = Math.ceil(this.events.length / this.state.eventsPerPage);
+    if (currentPage < totalPages) {
+      this.setState({ currentPage: currentPage + 1 });
+    }
+  };
+
+  handleClickPrev = () => {
+    const { currentPage } = this.state;
+    if (currentPage > 1) {
+      this.setState({ currentPage: currentPage - 1 });
+    }
+  };
+
   render() {
- 
-    
-    const events = [
-      { id: 12, title: "MEETUP", location: "Jaipur", date: "Aug 29th, 2024",description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra." , time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW.png" },
-      { id: 22, title: "LUCKNOW", location: "Surat", date: "Aug 29th, 2024", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW-1.png" },
-      { id: 32, title: "KERMES CUP", location: "Surat", date: "Aug 29th, 2024", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW.png" },
-      { id: 42, title: "HAVOC", location: "Bangalore", date: "Aug 29th, 2024", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW2.png" },
-      { id: 21, title: "MEETUP", location: "Jaipur", date: "Aug 29th, 2024", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW.png" },
-      { id: 24, title: "LUCKNOW", location: "Surat", date: "Aug 29th, 2024", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW3.png" },
-      { id: 34, title: "KERMES CUP", location: "Surat", date: "Aug 29th, 2024", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW.png" },
-      { id: 44, title: "HAVOC", location: "Bangalore", date: "Aug 29th, 2024", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW2.png" },
-      { id: 14, title: "MEETUP", location: "Jaipur", date: "Aug 29th, 2024", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW.png" },
-      { id: 29, title: "LUCKNOW", location: "Surat", date: "Aug 29th, 2024", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW3.png" },
-      { id: 39, title: "KERMES CUP", location: "Surat", date: "Aug 29th, 2024", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW.png" },
-      { id: 49, title: "HAVOC", location: "Bangalore", date: "Aug 29th, 2024", description:"Donec magna bibendum egestas sollicitudin risus duis neque ac sodales. Dui, bibendum fusce justo molestie. Purus eu integer ac at vitae ut. Nisl, in egestas nunc, mauris. Commodo quam nisl, in vitae cursus viverra nibh. Tristique nunc nisl cras est ornare quisque sed arcu pharetra. Ac vel libero, nunc ipsum arcu nunc elementum tristique tincidunt. Ut eu sed mauris a. Ac semper tincidunt velit auctor mi. Turpis vitae, sed diam tortor. Odio turpis felis elementum fermentum. Sed lectus orci ut massa, consectetur eget in in elementum. Egestas sapien aliquet at egestas non, est viverra.", time: "17:00-22:00", details: "Lorem ipsum dolor sit", image: "/img/OW.png" },
-    ];
+    const { currentPage, eventsPerPage } = this.state;
+
+    this.events = events; 
+
+    // Calculating the indices for the current page
+    const indexOfLastEvent = currentPage * eventsPerPage;
+    const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
+    const currentEvents = events.slice(indexOfFirstEvent, indexOfLastEvent);
 
     return (
       <div className={styles.eventsSectionWrapper}>
-      <section className={styles.eventsSection}>
-        <div className={styles.eventsSection__events}>
-          {events.map((event, index) => (
-             <Link to={`/event/${event.id}`} key={index}>
-                <EventCard event={event} />
-            </Link>
-            // <EventCard key={index} event={event} />
-          ))}
-        </div>
-      </section>
+        <section className={styles.eventsSection}>
+          <div className={styles.eventsSection__header}>
 
+          </div>
+          <div className={styles.eventsSection__events}>
+            {currentEvents.map((event, index) => (
+              <Link to={`/event/${event.id}`} key={index}>
+                <EventCard event={event} />
+              </Link>
+            ))}
+          </div>
+          <div className={styles.pagination}>
+            <button onClick={this.handleClickPrev} disabled={currentPage === 1}>
+              &lt;
+            </button>
+            <div className={styles.paginationDots}>
+              {Array.from({ length: Math.ceil(events.length / eventsPerPage) }, (_, i) => (
+                <span key={i} className={currentPage === i + 1 ? styles.active : ''}></span>
+              ))}
+            </div>
+            <button onClick={this.handleClickNext} disabled={currentPage === Math.ceil(events.length / eventsPerPage)}>
+              &gt;
+            </button>
+          </div>
+        </section>
       </div>
     );
   }
 }
 
 export default EventsSection;
-

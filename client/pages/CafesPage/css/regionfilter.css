@@ -12,7 +12,6 @@
       flex: none;
       order: 0;
       align-self: stretch;
-      border-radius: 10px;
       border-bottom: 1px solid #3fbab2;
       margin: 20px 0px;
       flex-grow: 0;
@@ -22,8 +21,7 @@
         font-weight: bold;
         padding: 10px 30px;
         border: none;
-        border-radius: 0px 0px 10px 10px;
-        color: #3fbab2;
+         color: #3fbab2;
         cursor: pointer;
         transition: background-color 0.3s ease;
 
