@@ -24,7 +24,9 @@ export default class RegisterModal extends Component {
     return (
       <Modal onClose={onClose} className={styles.modal} wrapClassName={styles.wrap}>
         <div className={styles.registerModal}>
-          <button className={styles.closeButton} onClick={onClose}>&times;</button>
+            <div className={styles.closeButton}>
+             <button className={`${TERTIARY} ${CIRCLE}`} onClick={onClose} style={{width: '40px', height: '40px', textAlign: 'center'}}>&times;</button>
+            </div>
           <div className={styles.header}>
             <h2>Register</h2>
             <p>Already have an account? <Link to="/login">Log in</Link></p>
@@ -57,7 +59,7 @@ export default class RegisterModal extends Component {
                 By proceeding, you agree to our <a href="/terms">Terms of Service</a> and confirm you have read our <a href="/privacy">Privacy Policy</a>.
               </label>
             </div>
-            <button type="submit" className={styles.registerButton}>REGISTER</button>
+            <button type="submit" className={`${TERTIARY}`} style={{width: '100%'}}>REGISTER</button>
           </form>
         </div>
       </Modal>
