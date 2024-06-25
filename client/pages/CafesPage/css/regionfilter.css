@@ -1,51 +1,48 @@
 .regionFilters {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      display: flex;
-      align-items: flex-end;
-      background: linear-gradient(
-        180deg,
-        rgba(0, 255, 255, 0) 0%,
-        rgba(0, 255, 255, 0.067) 100%
-      );
-      flex: none;
-      order: 0;
-      align-self: stretch;
-      border-bottom: 1px solid #3fbab2;
-      margin: 20px 0px;
-      flex-grow: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  display: flex;
+  align-items: flex-end;
+  background: linear-gradient(180deg,
+      rgba(0, 255, 255, 0) 0%,
+      rgba(0, 255, 255, 0.067) 100%);
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  border-bottom: 1px solid #3fbab2;
+  margin: 20px 0px;
+  flex-grow: 0;
 
-      button {
-        font-size: 1.2em;
-        font-weight: bold;
-        padding: 10px 30px;
-        border: none;
-         color: #3fbab2;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
+  button {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 30px;
+    border: none;
+    color: #3fbab2;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 
-        &:hover {
-          background-color: #3fbab2;
-          color: #fff;
-        }
-
-        &.active {
-          background: linear-gradient(
-            180deg,
-            rgba(0, 255, 255, 0) 0%,
-            rgba(0, 255, 255, 0.35) 100%
-          );
-          color: #fff;
-        }
-      }
-
-      @media (max-width: 768px) {
-        flex-wrap: wrap;
-        gap: 5px;
-        button {
-          font-size: 1em;
-          padding: 5px 15px;
-        }
-      }
+    &:hover {
+      background-color: #3fbab2;
+      color: #fff;
     }
+
+    &.active {
+      background: linear-gradient(180deg,
+          rgba(0, 255, 255, 0) 0%,
+          rgba(0, 255, 255, 0.35) 100%);
+      color: #fff;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    gap: 5px;
+
+    button {
+      font-size: 1em;
+      padding: 5px 15px;
+    }
+  }
+}

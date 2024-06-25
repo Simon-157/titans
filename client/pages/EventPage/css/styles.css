@@ -18,6 +18,7 @@
   z-index: -1;
   border-radius: 10px;
 }
+
 .app {
   display: flex;
   flex-direction: column;
@@ -49,11 +50,9 @@
 }
 
 .eventMain {
-  background: linear-gradient(
-    152.97deg,
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(152.97deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0) 100%);
   border-radius: 8px;
 }
 
@@ -78,6 +77,7 @@
   margin-bottom: 20px;
   font-family: "Barlow", sans-serif;
 }
+
 .eventDetails__info {
   display: flex;
   flex-direction: column;
@@ -101,8 +101,7 @@
   width: 16px;
   height: 16px;
   margin-right: 10px;
-  filter: invert(73%) sepia(76%) saturate(600%) hue-rotate(330deg)
-    brightness(102%) contrast(102%);
+  filter: invert(73%) sepia(76%) saturate(600%) hue-rotate(330deg) brightness(102%) contrast(102%);
 }
 
 .infoItem div {
@@ -152,11 +151,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 255, 255, 0.05) 0%,
-    rgba(0, 255, 255, 0) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 255, 255, 0.05) 0%,
+      rgba(0, 255, 255, 0) 100%);
   position: relative;
   color: #45e5e5;
 }
@@ -170,11 +167,9 @@
   bottom: -2px;
   border-radius: 40px;
   z-index: -1;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 255, 255, 0.212) 0%,
-    rgba(0, 204, 255, 0.05) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 255, 255, 0.212) 0%,
+      rgba(0, 204, 255, 0.05) 100%);
   backdrop-filter: blur(10px);
   border-radius: 999px;
 
@@ -191,11 +186,9 @@
   right: -4px;
   bottom: -4px;
   border-radius: 40px;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 255, 255, 0.35) 0%,
-    rgba(0, 255, 255, 0.05) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 255, 255, 0.35) 0%,
+      rgba(0, 255, 255, 0.05) 100%);
   backdrop-filter: blur(10px);
   border-radius: 999px;
 
@@ -211,8 +204,7 @@
   width: 16px;
   height: 16px;
   margin-right: 10px;
-  filter: invert(73%) sepia(34%) saturate(5055%) hue-rotate(146deg)
-    brightness(100%) contrast(97%);
+  filter: invert(73%) sepia(34%) saturate(5055%) hue-rotate(146deg) brightness(100%) contrast(97%);
 }
 
 .customButton.primary {
@@ -229,6 +221,7 @@
 .customButton.secondary:hover {
   opacity: 0.8;
 }
+
 /* PromoSection styles */
 .promoSectionWrapper {
   display: flex;
@@ -249,11 +242,9 @@
   position: relative;
   box-sizing: border-box;
   z-index: 1;
-  background: linear-gradient(
-    152.97deg,
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(152.97deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0) 100%);
 }
 
 .joinShareButtons {
@@ -316,11 +307,13 @@
     flex-direction: column;
     justify-content: center;
   }
+
   .eventDetails {
     width: 100%;
-        padding-left: 100px;
+    padding-left: 100px;
     padding-right: 100px;
   }
+
   .singleEventWrapper {
     padding: 10px;
   }
@@ -332,6 +325,7 @@
     padding-left: 5%;
     padding-right: 5%;
   }
+
   .promoSection {
     justify-content: center;
     align-items: center;
@@ -349,15 +343,17 @@
 }
 
 @media (max-width: 480px) {
-.detailsWrapper {
+  .detailsWrapper {
     flex-direction: column;
     justify-content: center;
   }
+
   .eventDetails {
     width: 100%;
     padding-left: 10px;
     padding-right: 10px;
   }
+
   .singleEventWrapper {
     padding: 10px;
   }
@@ -369,10 +365,12 @@
     padding-left: 5%;
     padding-right: 5%;
   }
+
   .promoSection {
     justify-content: center;
     align-items: center;
   }
+
   .joinButton,
   .shareButton {
     padding: 6px 10px;
@@ -450,19 +448,20 @@
   flex-direction: column;
   padding: 10px;
   margin: 90px 0px;
+
   @media (max-width: 768px) {
     padding: 10px;
   }
 
   .header {
     display: flex;
-    gap:15px;
+    gap: 15px;
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
-    
-    img{
-        height: 2.3em;
+
+    img {
+      height: 2.3em;
     }
 
     h1 {
@@ -493,11 +492,9 @@
     .searchBox {
       display: flex;
       align-items: center;
-      background: linear-gradient(
-        180deg,
-        rgba(25, 61, 60, 0.168) 0%,
-        rgba(255, 255, 255, 0.06) 100%
-      );
+      background: linear-gradient(180deg,
+          rgba(25, 61, 60, 0.168) 0%,
+          rgba(255, 255, 255, 0.06) 100%);
       background-blend-mode: luminosity;
       backdrop-filter: blur(1px);
       background-blend-mode: overlay;
@@ -616,7 +613,7 @@
   transition: visibility 0.3s, opacity 0.3s;
 }
 
-.btns{
+.btns {
   display: flex;
   flex-direction: row;
   gap: 10px;

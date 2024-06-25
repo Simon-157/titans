@@ -1,7 +1,8 @@
-.blogPageWrapper{
+.blogPageWrapper {
   background: linear-gradient(118.88deg, #01131a -2.2%, #002e2a 115.26%);
   background-blend-mode: luminosity;
-  font-family: "Space Grotesk";
+  /* font-family: "Space Grotesk"; */
+  font-family: "Gilroy";
 }
 
 .blogDetail {
@@ -13,7 +14,7 @@
   background: url("/img/forest-bg.jpg") no-repeat center center / cover,
     linear-gradient(118.88deg, #01131a -2.2%, #002e2a 115.26%);
   background-blend-mode: luminosity;
-  font-family: "Space Grotesk";
+  font-family: "Gilroy";
 
   @media (max-width: 897px) {
     padding: 10px;
@@ -53,6 +54,7 @@
       width: 100%;
       border-radius: 10px 10px 0px 0px;
       margin-bottom: -40px;
+
       @media (max-width: 768px) {
         margin-bottom: -20px;
       }
@@ -61,14 +63,13 @@
         margin-bottom: -20px;
       }
     }
+
     .description {
       margin: 0;
       padding: 40px 20px 20px 20px;
-      background: linear-gradient(
-        152.97deg,
-        rgba(255, 255, 255, 0.2) 0%,
-        rgba(255, 255, 255, 0) 100%
-      );
+      background: linear-gradient(152.97deg,
+          rgba(255, 255, 255, 0.2) 0%,
+          rgba(255, 255, 255, 0) 100%);
       border-radius: 10px;
       backdrop-filter: blur(5px);
 
@@ -77,7 +78,7 @@
           font-size: 1.2em;
           color: #ffffff95;
 
-          span{
+          span {
             font-weight: 700;
             color: #fff;
           }
@@ -117,13 +118,14 @@
 
 
 
-.eventsAround{
+.eventsAround {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 90%;
+  /* max-width: 90%; */
 
 }
+
 .allCafes {
   display: flex;
   justify-content: center;
@@ -131,7 +133,7 @@
   flex-direction: column;
   padding: 10px;
   margin: 90px 0px;
-  
+
 
   @media (max-width: 768px) {
     padding: 10px;
@@ -139,13 +141,13 @@
 
   .header {
     display: flex;
-    gap:15px;
+    gap: 15px;
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
-    
-    img{
-        height: 2.3em;
+
+    img {
+      height: 2.3em;
     }
 
     h1 {

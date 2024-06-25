@@ -106,7 +106,7 @@ class LandingPage extends React.Component {
                     <Navbar />
                     <div className={styles.mainContent}>
                         <img ref={this.topRef} src="/img/logo.svg" alt="Reign of Titans" width={600} height={250} />
-                        <span className={styles.scroll}>
+                        {/* <span className={styles.scroll}>
                             <button
                                 className={`${CIRCLE} ${TERTIARY}`}
                                 style={{}}
@@ -114,7 +114,7 @@ class LandingPage extends React.Component {
                             >
                                 <img src="/img/scrolldown.svg" alt="scroll" />
                             </button>
-                        </span>
+                        </span> */}
                         <button className={`${PRIMARY}`} style={{ width: "320px", height: "70px", margin: "90px auto" }}>PLAY NOW</button>
                         <h2 className={styles.subtitle}>Reign of Titans Comes to India!</h2>
                         <div className={styles.features}>

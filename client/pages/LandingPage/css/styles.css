@@ -4,15 +4,15 @@
   color: white;
   overflow-x: hidden;
   font-family: "Gilroy";
-  background:linear-gradient(118.88deg, #01131a -2.2%, #002e2a 115.26%);
-  
+  background: linear-gradient(118.88deg, #01131a -2.2%, #002e2a 115.26%);
+
   .container {
-      padding: 20px;
-      width: 100vw;
-      height: max-content;
-      background: url("/img/forest-bg.jpg") no-repeat center center / cover,
-        linear-gradient(118.88deg, #01131a -2.2%, #002e2a 115.26%);
-      background-blend-mode: luminosity;
+    padding: 20px;
+    width: 100vw;
+    height: max-content;
+    background: url("/img/forest-bg.jpg") no-repeat center center / cover,
+      linear-gradient(118.88deg, #01131a -2.2%, #002e2a 115.26%);
+    background-blend-mode: luminosity;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,15 +25,15 @@
     margin-top: 50px;
     display: flex;
 
-    .scroll{
+    .scroll {
       position: absolute;
       right: 10%;
       top: 30%;
 
 
-    @media (max-width: 998px) {
-      display: none;
-    }
+      @media (max-width: 998px) {
+        display: none;
+      }
 
     }
 
@@ -47,7 +47,7 @@
     .features {
       display: flex;
       justify-content: space-around;
-      
+
       max-width: 1500px;
       margin-bottom: 30px;
 
@@ -60,7 +60,7 @@
           display: flex;
           align-items: center;
           font-style: normal;
-          font-weight:600;
+          font-weight: 600;
           font-size: 26px;
           line-height: 32px;
           /* letter-spacing: -0.02em; */
@@ -119,21 +119,23 @@
 
 /* CAFES AROUND YOU STYLES */
 
-  .scrollUp{
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 10%;
+.scrollUp {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10%;
 
-    @media (max-width: 768px) {
-      display: none;
-    }
+  @media (max-width: 768px) {
+    display: none;
   }
-.eventsAround{
+}
+
+.eventsAround {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 90%;
+  /* max-width: 90%; */
 }
+
 .allCafes {
   display: flex;
   justify-content: center;
@@ -141,19 +143,20 @@
   flex-direction: column;
   padding: 10px;
   margin: 90px 0px;
+
   @media (max-width: 768px) {
     padding: 10px;
   }
 
   .header {
     display: flex;
-    gap:15px;
+    gap: 15px;
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
-    
-    img{
-        height: 2.3em;
+
+    img {
+      height: 2.3em;
     }
 
     h1 {
@@ -184,11 +187,9 @@
     .searchBox {
       display: flex;
       align-items: center;
-      background: linear-gradient(
-        180deg,
-        rgba(25, 61, 60, 0.168) 0%,
-        rgba(255, 255, 255, 0.06) 100%
-      );
+      background: linear-gradient(180deg,
+          rgba(25, 61, 60, 0.168) 0%,
+          rgba(255, 255, 255, 0.06) 100%);
       background-blend-mode: luminosity;
       backdrop-filter: blur(1px);
       background-blend-mode: overlay;
@@ -267,6 +268,7 @@
       font-size: 30px;
 
     }
+
     .features {
       flex-direction: row;
       justify-content: space-around;
@@ -297,13 +299,15 @@
 
 @media (max-width: 768px) {
   .mainContent {
-    img{
+    img {
       width: 80%;
     }
+
     .container {
       padding: 10px;
 
     }
+
     .features {
       flex-direction: column;
       width: 100%;
@@ -323,7 +327,7 @@
     }
 
     .images {
-      .sideImages img{
+      .sideImages img {
         display: none;
       }
 
@@ -357,7 +361,7 @@
       margin-top: 20px;
 
       .feature {
-        max-width:fit-content;
+        max-width: fit-content;
         margin: 10px 0;
 
         h3 {
@@ -369,8 +373,9 @@
         }
       }
     }
+
     .images {
-      .sideImages img{
+      .sideImages img {
         display: none;
       }
 
@@ -383,10 +388,3 @@
     }
   }
 }
-
-
-
-
-
-
-

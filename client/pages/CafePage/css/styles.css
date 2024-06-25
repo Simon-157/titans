@@ -9,7 +9,7 @@
     nav ul {
       display: flex;
       list-style: none;
-      
+
       li {
         margin: 0 10px;
       }
@@ -22,6 +22,7 @@
 
     .cafeImage {
       flex: 1;
+
       img {
         width: 100%;
         height: auto;
@@ -45,9 +46,10 @@
     }
   }
 
-  .cafeEvents, .leaderboard {
+  .cafeEvents,
+  .leaderboard {
     margin: 20px 0;
-    
+
     h2 {
       margin-bottom: 10px;
     }
@@ -70,7 +72,8 @@
       width: 100%;
       border-collapse: collapse;
 
-      th, td {
+      th,
+      td {
         border: 1px solid #ccc;
         padding: 10px;
         text-align: left;
@@ -79,7 +82,7 @@
   }
 }
 
-// Responsive styles
+/* // Responsive styles */
 @media (max-width: 1200px) {
   .cafeInfo {
     flex-direction: column;
@@ -101,7 +104,8 @@
     }
   }
 
-  .cafeEvents .eventsList, .leaderboard table {
+  .cafeEvents .eventsList,
+  .leaderboard table {
     flex-direction: column;
   }
 }

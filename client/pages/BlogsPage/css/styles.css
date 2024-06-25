@@ -6,6 +6,7 @@
   background: url("/img/forest-bg.jpg") no-repeat center center / cover,
     linear-gradient(118.88deg, #01131a -2.2%, #002e2a 115.26%);
   background-blend-mode: luminosity;
+  font-family: "Gilroy";
 }
 
 .blogspageWrapper {
@@ -16,7 +17,7 @@
   padding: 20px;
   /* margin-top: 10px; */
   margin-bottom: 40px;
-  font-family: "Barlow";
+  /* font-family: "Barlow"; */
 }
 
 .allBlogsPage {
@@ -38,11 +39,9 @@
 .recentblogDetails {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(
-    152.97deg,
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(152.97deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0) 100%);
   border-radius: 8px;
 }
 
@@ -55,13 +54,15 @@
 .recentblogInfo {
   padding: 20px;
 }
+
 .recentblogInfo p {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4; 
+  -webkit-line-clamp: 4;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .recentblogInfo h3 {
   color: #45e5e5;
   margin-bottom: 2ex;
@@ -87,11 +88,9 @@
 /* BlogCard styles */
 .blogCard {
   width: 300px;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 255, 255, 0.35) 0%,
-    rgba(0, 255, 255, 0.1) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 255, 255, 0.35) 0%,
+      rgba(0, 255, 255, 0.1) 100%);
   border-radius: 0px 0px 10px 10px;
   flex: none;
   order: 1;
@@ -134,6 +133,7 @@
 .blogMeta span {
   font-weight: 700;
 }
+
 .blogDescription {
   font-size: 1em;
   margin: 0;
@@ -145,6 +145,7 @@
   .recentBlogWrapper {
     width: 50%;
   }
+
   .blogList {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(2, auto);
@@ -155,6 +156,7 @@
     height: fit-content;
     width: fit-content;
   }
+
   .blogCard:nth-child(n + 3) {
     display: none;
   }
@@ -173,6 +175,7 @@
   .recentBlogWrapper {
     width: 100%;
   }
+
   .blogList {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, auto);
@@ -210,11 +213,9 @@
 .searchBox {
   display: flex;
   align-items: center;
-  background: linear-gradient(
-    180deg,
-    rgba(25, 61, 60, 0.168) 0%,
-    rgba(255, 255, 255, 0.06) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(25, 61, 60, 0.168) 0%,
+      rgba(255, 255, 255, 0.06) 100%);
   background-blend-mode: luminosity;
   backdrop-filter: blur(1px);
   background-blend-mode: overlay;
@@ -228,22 +229,24 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
   /* Smaller screens */
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
     width: 90%;
     place-content: center;
+
     .searchBox {
-        margin: 20px auto;
+      margin: 20px auto;
     }
 
     .input {
-        font-size: 1em;
+      font-size: 1em;
     }
-    
+
     .searchIcon {
-        font-size: 1.5em;
+      font-size: 1.5em;
     }
+  }
 }
-}
+
 .input {
   flex: 1;
   background: none;

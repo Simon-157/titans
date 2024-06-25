@@ -5,6 +5,7 @@
   background: url("/img/forest-bg.jpg") no-repeat center center / cover,
     linear-gradient(118.88deg, #01131a -2.2%, #002e2a 115.26%);
   background-blend-mode: luminosity;
+  font-family: "Gilroy";
 }
 
 .allCafes {
@@ -13,6 +14,7 @@
   align-items: center;
   flex-direction: column;
   padding: 10px;
+
   @media (max-width: 768px) {
     padding: 10px;
   }
@@ -55,11 +57,9 @@
     .searchBox {
       display: flex;
       align-items: center;
-      background: linear-gradient(
-        180deg,
-        rgba(25, 61, 60, 0.168) 0%,
-        rgba(255, 255, 255, 0.06) 100%
-      );
+      background: linear-gradient(180deg,
+          rgba(25, 61, 60, 0.168) 0%,
+          rgba(255, 255, 255, 0.06) 100%);
       background-blend-mode: luminosity;
       backdrop-filter: blur(1px);
       background-blend-mode: overlay;
@@ -126,7 +126,7 @@
   flex-direction: column;
   justify-content: center;
 
-  &:hover{
+  &:hover {
     transform: translateY(-5px);
   }
 
@@ -136,14 +136,13 @@
     /* width: 60%; */
     margin: 0px 40px;
     background-color: #ff9e59;
-    border-radius: 10px 10px 0px 0px ;
+    border-radius: 10px 10px 0px 0px;
   }
+
   .cafeCard {
-    background: linear-gradient(
-      180deg,
-      rgba(0, 255, 255, 0.35) 0%,
-      rgba(0, 255, 255, 0.1) 100%
-    );
+    background: linear-gradient(180deg,
+        rgba(0, 255, 255, 0.35) 0%,
+        rgba(0, 255, 255, 0.1) 100%);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
