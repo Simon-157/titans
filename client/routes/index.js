@@ -16,6 +16,7 @@ import TournamentLeaderBoard from 'pages/TournamentLeaderBoard';
 import EventsPage from '../pages/EventsPage';
 import SingleEventPage from '../pages/EventPage';
 import LandingPage from '../pages/LandingPage';
+import Test from '../pages/testPage';
 
 const Profile = Loadable({
   loader: () => import('pages/Profile'),
@@ -187,6 +188,16 @@ const routes = [
     name: HOME,
     
   },
+
+    {
+
+    path:'/testpage',
+    component: Test,
+    exact: true,
+    name: HOME,
+    
+  },
+
 
 ];
 

@@ -1,12 +1,12 @@
 @import "../../../css/root.css";
 
-
 .wrap {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
+  font-family: 'Gilroy';
 }
 
 .modal {
@@ -14,7 +14,6 @@
   background: url("/img/forest-bg.jpg") no-repeat center center / cover,
     linear-gradient(118.88deg, #01131a -2.2%, #002e2a 115.26%);
   background-blend-mode: luminosity;
-
   padding: 0px;
   border-radius: 10px;
   width: 100%;
@@ -28,13 +27,14 @@
   padding: 20px;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #00bcd4;
 }
 
 .closeButton {
   position: absolute;
   top: 10px;
   right: 10px;
-  bottom: 10px;
+  padding-bottom: 20px;
   background: none;
   border: none;
   color: #00bbd465;
@@ -55,7 +55,7 @@
     font-size: 14px;
 
     a {
-      color: #00bcd4;
+      color: #FF7733;
       text-decoration: none;
     }
   }
@@ -94,58 +94,74 @@
   select {
     margin-bottom: 15px;
     padding: 10px;
-    border: 1px solid #08acc292;
     border-radius: 5px;
-    font-size: 14px;
-    color: #08acc292;
+    font-size: 1.2em;
+    color: #45E6E6;
+    font-weight: 700;
     backdrop-filter: blur(15px);
     border-radius: 50px;
-    /* padding: 5px 15px; */
-    font-size: 1.1em;
-    /* margin: 40px auto; */
     border: 3px solid #48b8bb34;
     max-width: 380px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     outline: none;
     box-shadow: none;
-
-
   }
 
-
-  .checkbox,
-  .terms {
-    display: flex;
-    align-items: center;
+  .error {
+    /* color: #ff4d4f; */
+    background: linear-gradient(180deg, #FF9E59 0%, #FF7733 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+    font-size: 12px;
+    margin-top: -10px;
     margin-bottom: 10px;
+    padding-left: 10px;
+  }
+}
 
-    input {
-      margin-right: 10px;
-    }
+.checkbox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
+  max-width: fit-content;
 
-    label {
-      font-size: 12px;
-    }
-
-    a {
-      color: #00bcd4;
-      text-decoration: none;
-    }
+  input {
+    margin-right: 10px;
+    cursor: pointer !important;
   }
 
-  .registerButton {
-    padding: 10px;
-    background-color: #00bcd4;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 10px;
+  label {
+    font-size: 12px;
+  }
 
-    &:hover {
-      background-color: #009cb4;
-    }
+}
+.terms{
+  padding: 5px;
+  a {
+    color: #00bcd4;
+    text-decoration: none;
+  }
+
+}
+button {
+  padding: 10px;
+  border-radius: 50px;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .modal {
+    max-width: 90%;
+  }
+
+  .form input,
+  .form select {
+    max-width: 100%;
   }
 }

@@ -1,0 +1,189 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-family: 'Gilroy';
+}
+
+.modal {
+  position: relative;
+  background: url("/img/forest-bg.jpg") no-repeat center center / cover,
+    linear-gradient(118.88deg, #01131a -2.2%, #002e2a 115.26%);
+  background-blend-mode: luminosity;
+
+  padding: 0px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 1000px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  font-family: "Gilroy";
+}
+
+.confirmationModal {
+  color: white;
+  position: relative;
+  padding: 50px 100px;
+  border-radius: 10px;
+  border: 1px solid #00bcd4;
+  background: linear-gradient(0deg, rgba(6, 34, 40, 0.8), rgba(6, 34, 40, 0.8)),
+    linear-gradient(
+      180deg,
+      rgba(0, 255, 255, 0.05) 0%,
+      rgba(0, 255, 255, 0) 100%
+    );
+  backdrop-filter: blur(10px);
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+
+  h2 {
+    margin: 10px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 100%;
+    font-size: 54px;
+    color: #fff;
+  }
+
+  p {
+    margin: 0;
+    font-size: 18px;
+    background: linear-gradient(180deg, #ff9e59 0%, #ff7733 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  h3 {
+    margin: 10px;
+    font-weight: 800;
+    font-size: 54px;
+    line-height: 100%;
+  }
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+
+  .detailItem {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 16px;
+      height: 16px;
+      margin-right: 10px;
+      filter: invert(73%) sepia(76%) saturate(600%) hue-rotate(330deg)
+        brightness(102%) contrast(102%);
+    }
+
+    .gradientClockIcon {
+      width: 16px;
+      height: 16px;
+      margin-right: 10px;
+      background: linear-gradient(180deg, #ff9e59 0%, #ff7733 100%);
+      mask: url("/img/marker.svg") no-repeat center / contain;
+      -webkit-mask: url("/img/clockSimple.svg") no-repeat center / contain;
+    }
+
+    .gradientMarkerIcon {
+      width: 16px;
+      height: 16px;
+      margin-right: 10px;
+      background: linear-gradient(180deg, #ff9e59 0%, #ff7733 100%);
+      mask: url("/img/marker.svg") no-repeat center / contain;
+      -webkit-mask: url("/img/marker.svg") no-repeat center / contain;
+    }
+
+    div {
+      span {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      p {
+        margin: 0;
+        font-size: 16px;
+        color: #fdfdfd9c;
+      }
+    }
+  }
+}
+
+.qrCodeContainer {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  /* max-width: ; */
+  margin: auto;
+
+  .qrCode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+
+    img {
+      width: 150px;
+      height: 150px;
+      margin: 10px;
+    }
+
+    p {
+      margin: 2px;
+      font-size: 14px;
+      color: #fff;
+    }
+  }
+
+  .bottomSec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0px;
+    gap: 10px;
+    p {
+      text-align: center;
+      font-size: 16px;
+    }
+
+  }
+}
+// MEDIA QUERIES FOR Responsive styles
+@media (max-width: 768px) {
+  .modal {
+    max-width: 90%;
+  }
+
+  .details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .detailItem {
+    margin-bottom: 10px;
+  }
+}

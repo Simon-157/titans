@@ -3,11 +3,14 @@ import styles from "./css/styles.css";
 import CustomButton from "./CustomButton";
 import { LOGO, PRIMARY, SECONDARY, TERTIARY } from "defaults";
 import SocialShare from "./components/SocialShare";
+import RegisterModal from "./components/RegisterForm";
 
 
 class PromoCard extends Component {
    state = {
     showSocialShare: true,
+    isRegisterModalOpen: false,
+
   };
 
   toggleSocialShare = () => {
@@ -16,11 +19,13 @@ class PromoCard extends Component {
     }));
   };
 
-  handleJoinClick = () => {
-    console.log('Join Event clicked');
+  toggleRegisterModal = () => {
+    this.setState((prevState) => ({
+      isRegisterModalOpen: !prevState.isRegisterModalOpen,
+    }));
   };
-
   render() {
+      const { isRegisterModalOpen } = this.state;
     return (
       
       <div className={styles.promoSectionWrapper}>
@@ -32,6 +37,7 @@ class PromoCard extends Component {
 
           <div className={styles.joinShareButtons}>
             <button
+              onClick={this.toggleRegisterModal}
               className={PRIMARY}
               style={{
                 width: "75%",
@@ -82,6 +88,8 @@ class PromoCard extends Component {
             </p>
           </div>
         </div>
+               <RegisterModal isOpen={isRegisterModalOpen} onClose={this.toggleRegisterModal} />
+
       </div>
     );
   }
