@@ -2,23 +2,21 @@
   display: flex;
   justify-content: center;
   gap: 10px;
-  display: flex;
   align-items: flex-end;
-  background: linear-gradient(180deg,
-      rgba(0, 255, 255, 0) 0%,
-      rgba(0, 255, 255, 0.067) 100%);
-  flex: none;
-  order: 0;
-  align-self: stretch;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 255, 255, 0) 0%,
+    rgba(0, 255, 255, 0.067) 100%
+  );
   border-bottom: 1px solid #3fbab2;
-  margin: 20px 0px;
-  flex-grow: 0;
+  margin: 20px 0;
 
   button {
     font-size: 1.2em;
     font-weight: bold;
     padding: 10px 30px;
     border: none;
+    border-radius: 0px;
     color: #3fbab2;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -29,20 +27,61 @@
     }
 
     &.active {
-      background: linear-gradient(180deg,
-          rgba(0, 255, 255, 0) 0%,
-          rgba(0, 255, 255, 0.35) 100%);
+      background: linear-gradient(
+        180deg,
+        rgba(0, 255, 255, 0) 0%,
+        rgba(0, 255, 255, 0.35) 100%
+      );
       color: #fff;
     }
   }
 
-  @media (max-width: 768px) {
-    flex-wrap: wrap;
-    gap: 5px;
+  .selectWrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
 
-    button {
-      font-size: 1em;
-      padding: 5px 15px;
+  .select {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+    border: 2px solid #00bcd4;
+    border-radius: 50px;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 255, 255, 0.35) 0%,
+      rgba(0, 255, 255, 0.05) 100%
+    );
+    backdrop-filter: blur(10px);
+    color: #00bcd4;
+    appearance: none;
+    width: 100%;
+    /* max-width: 300px; */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background: #00bcd4;
+      color: #fff;
+    }
+  }
+
+  .selectWrapper::after {
+    content: "\25BC"; /* Down arrow */
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #00bcd4;
+    font-size: 1.2em;
+  }
+
+  @media (max-width: 768px) {
+    .select {
+      width: 100%;
+      max-width: 300px;
     }
   }
 }

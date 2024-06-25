@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from '../css/register_form.css'; 
+import styles from '../css/register_form.css';
 import Modal from '../../../components/Modal';
 import { CIRCLE, SECONDARY } from 'defaults';
 import { Link } from 'react-router-dom';
 import { PRIMARY, TERTIARY } from '../../../../defaults';
-import ConfirmationModal from './ConfirmationModal'; 
+import ConfirmationModal from './ConfirmationModal';
 
 export default class RegisterModal extends Component {
   static propTypes = {
@@ -62,7 +62,7 @@ export default class RegisterModal extends Component {
       this.validateForm();
       if (this.state.isFormValid) {
         // Submit form and show ConfirmationModal
-              this.props.onClose();  
+        this.props.onClose();
         this.setState({ showConfirmationModal: true });
       }
     });

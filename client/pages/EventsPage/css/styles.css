@@ -619,6 +619,7 @@
   box-sizing: border-box;
   background-color: #21262d;
   border-radius: 10px;
+  border: 1px solid #00bcd4;
   margin: 10px;
   height: 390;
   width: 376px;

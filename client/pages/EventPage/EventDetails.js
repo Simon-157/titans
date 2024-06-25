@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styles from "./css/styles.css";
 import PromoCard from "./PromoCard";
 import { SECONDARY } from "../../../defaults";
+import GoogleMaps from "../../components/GoogleMaps";
 
 class EventDetails extends Component {
     render() {
@@ -61,7 +62,17 @@ class EventDetails extends Component {
                                 </button>
                             </div>
                             <div className={styles.eventMap}>
-                                <img src={"/img/map.svg"} alt="Map" />
+                                {/* <img src={"/img/map.svg"} alt="Map" /> */}
+                                      <GoogleMaps
+        defaultZoom={8}
+        markers={[{ lat: 37.7749, lng: -122.4194 }]}
+        showMarker={true}
+        lat={37.7749}
+        lng={-122.4194}
+        height={400}
+        getRef={(map) => console.log(map)}
+        onBoundsChanged={() => console.log('Bounds changed')}
+      />
                             </div>
                         </div>
                     </div>

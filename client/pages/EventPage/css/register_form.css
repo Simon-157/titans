@@ -1,11 +1,11 @@
-@import "../../../css/root.css";
+/* @import "../../../css/root.css"; */
 
 .wrap {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color:#01131aed;
   font-family: 'Gilroy';
 }
 
@@ -96,7 +96,7 @@
     padding: 10px;
     border-radius: 5px;
     font-size: 1.2em;
-    color: #45E6E6;
+    color: #45E6E6 !important;
     font-weight: 700;
     backdrop-filter: blur(15px);
     border-radius: 50px;
@@ -130,7 +130,7 @@ text-fill-color: transparent;
   max-width: fit-content;
 
   input {
-    margin-right: 10px;
+    /* margin-right: 10px; */
     cursor: pointer !important;
   }
 
