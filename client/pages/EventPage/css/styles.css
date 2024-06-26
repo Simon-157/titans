@@ -69,13 +69,16 @@
   font-size: 1.3em;
   margin-bottom: 10px;
   color: #00a0a1;
-  font-family: "Barlow", sans-serif;
+  font-family: "Girloy";
 }
 
 .eventInfo h2 {
-  font-size: 1.6em;
+  font-size: 2em;
   margin-bottom: 20px;
-  font-family: "Barlow", sans-serif;
+  font-family: 'Girloy';
+  p{
+    margin-bottom: 50px;
+  }
 }
 
 .eventDetails__info {
@@ -87,6 +90,7 @@
   flex: 0;
   order: 2;
   flex-grow: 0;
+
 }
 
 .infoItem {

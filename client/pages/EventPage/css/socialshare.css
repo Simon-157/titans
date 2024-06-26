@@ -4,29 +4,28 @@
   align-items: center;
   height: 100vh;
   background-color: #01131aed;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
 }
 
 .modal {
-
   position: relative;
   background: url("/img/forest-bg.jpg") no-repeat center center / cover,
-    linear-gradient(118.88deg, #01131a -2.2%, #002e2a 115.26%);
+    linear-gradient(118.88deg, #011218 -2.2%, #002e2a 115.26%);
   background-blend-mode: luminosity;
   padding: 0px;
   border-radius: 10px;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .socialShareModal {
   color: white;
   position: relative;
-  padding: 20px;
+  padding: 100px;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.1);
-border: 1px solid #00bcd4;
+  border: 1px solid #00bcd4;
 }
 
 .closeButton {
@@ -43,10 +42,8 @@ border: 1px solid #00bcd4;
 .header {
   text-align: center;
   margin-bottom: 20px;
-
-  h2 {
-    margin: 0;
-  }
+  font-weight: 700 !important;
+  font-size: 2.5em;
 }
 
 .icons {
@@ -76,9 +73,11 @@ border: 1px solid #00bcd4;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: #122e4244;
-  border-radius: 5px;
+  background: #25525571;
+  border: 1px solid #265b5f;
+  border-radius:30px;
   padding: 10px;
+  margin-top: 20px;
 
   input {
     background: none;

@@ -12,10 +12,10 @@ class EventDetails extends Component {
         return (
             <div className={styles.detailsWrapper}>
                 <button
-                    className={"tertiary"} style={{ color: '#45E5E5', height: '40px', border: '1px solid #45E5E5', fontSize: '1em', fontWeight: 'bold', opacity: '0.5' }}
+                    className={SECONDARY} style={{ height: '40px', border: '1px solid #45E5E5', fontSize: '1em', fontWeight: 'bold',  }}
                     onClick={() => this.props.history.goBack()}
                 >
-                    BACK
+                  {`BACK`}
                 </button>
                 <div className={styles.eventDetails}>
                     <div className={styles.eventMain}>
@@ -25,7 +25,7 @@ class EventDetails extends Component {
                         <div className={styles.eventInfo}>
                             <h3>REIGN OF TITANS</h3>
                             <h2>{title}</h2>
-                            <p>{description}</p>
+                            <p style={{ fontSize: "1.1em", marginBottom: "50px" }}>{description}</p>
                             <div className={styles.eventDetails__info}>
                                 <div className={styles.infoItem}>
                                     <div>

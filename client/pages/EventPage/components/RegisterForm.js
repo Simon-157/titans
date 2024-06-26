@@ -92,7 +92,7 @@ export default class RegisterModal extends Component {
       <><Modal onClose={onClose} className={styles.modal} wrapClassName={styles.wrap}>
         <div className={styles.registerModal}>
           <div className={styles.closeButton}>
-            <button className={`${TERTIARY} ${CIRCLE}`} onClick={onClose} style={{ width: '40px', height: '40px', textAlign: 'center' }}>&times;</button>
+            <button className={`${SECONDARY} ${CIRCLE}`} onClick={onClose} style={{ width: '45px', height: '45px', textAlign: 'center', fontSize: '1.5em' }}>&times;</button>
           </div>
           <div className={styles.header}>
             <h2>Register</h2>
@@ -167,7 +167,7 @@ export default class RegisterModal extends Component {
           <div className={styles.terms}>
             By proceeding, you agree to our <a href="/terms">Terms of Service</a> and confirm you have read our <a href="/privacy">Privacy Policy</a>.
           </div>
-          <button onClick={this.handleSubmit} className={isFormValid ? `${PRIMARY}` : `${TERTIARY}`} style={{ width: '100%', cursor: 'pointer' }}>REGISTER</button>
+          <button onClick={this.handleSubmit} className={isFormValid ? `${PRIMARY}` : `${TERTIARY}`} style={{ width: '100%', cursor: 'pointer', height: '45px', marginTop: '30px', marginBottom: '30px' }}>REGISTER</button>
         </div>
 
       </Modal><ConfirmationModal

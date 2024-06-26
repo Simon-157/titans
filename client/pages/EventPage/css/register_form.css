@@ -24,7 +24,7 @@
 .registerModal {
   color: white;
   position: relative;
-  padding: 20px;
+  padding: 50px;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid #00bcd4;
@@ -128,10 +128,13 @@ text-fill-color: transparent;
   align-items: flex-start;
   gap: 5px;
   max-width: fit-content;
-
+  
   input {
+    color: #00bcd4;
     /* margin-right: 10px; */
     cursor: pointer !important;
+    width: 30px;
+    height: 30px;
   }
 
   label {
@@ -140,7 +143,8 @@ text-fill-color: transparent;
 
 }
 .terms{
-  padding: 5px;
+  padding:5px;
+  
   a {
     color: #00bcd4;
     text-decoration: none;

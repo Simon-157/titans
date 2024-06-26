@@ -11,6 +11,7 @@ class EventCard extends Component {
         </div>
         <div className={styles.eventCard__content}>
           <h3>{title}</h3>
+
           <div className={styles.detail}>
             <img src='/img/clockSimple.svg' alt='time' width={16} className={styles.icon} />
             <p>{date} | {time}</p>

@@ -20,7 +20,7 @@ class CafeList extends Component {
             <button
               className={`${TERTIARY}`}
               onClick={loadMoreCafes}
-              style={{ height: '45px' }}
+              style={{ height: '45px', marginTop: '30px', marginBottom: '30px' }}
             >
               More Cafés
             </button>

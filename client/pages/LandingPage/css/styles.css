@@ -24,15 +24,34 @@
     text-align: center;
     margin-top: 50px;
     display: flex;
+    
 
-    .scroll {
-      position: absolute;
-      right: 10%;
-      top: 30%;
+    img {
+      margin: 50px 0px 30px 0px;
+    }
 
+    .containerHeader{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      /* align */
+      width: 100%;
+      .scroll {
+        position: relative;
+        padding-left: 35%;
+        /* padding-right: 5%; */
 
-      @media (max-width: 998px) {
-        display: none;
+        @media (max-width: 2220){
+            .scroll {
+        position: relative;
+        padding-left: 30%;
+        padding-right: 5%;
+        }
+      }
+        @media (max-width: 1108px) {
+          display: none;
+
+        }
       }
 
     }
@@ -41,43 +60,45 @@
       margin-bottom: 40px;
       text-transform: uppercase;
       font-weight: 700;
-      font-size: 34px;
+      font-size: 42px;
     }
 
     .features {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
+      gap: 80px;
 
-      max-width: 1500px;
+      /* max-width: 1500px; */
       margin-bottom: 30px;
 
       .feature {
         flex: 1;
         margin: 0 10px;
         text-align: left;
+        width: 330px;
 
         h3 {
           display: flex;
           align-items: center;
           font-style: normal;
-          font-weight: 600;
-          font-size: 26px;
+          font-weight: 700;
+          font-size: 32px;
           line-height: 32px;
           /* letter-spacing: -0.02em; */
           margin-bottom: 10px;
           text-transform: uppercase;
 
           .featureNumber {
-            font-size: 36px;
+            font-size: 1.8em;
             color: #00bcd4;
-            margin-right: 10px;
+            padding-right: 20px;
           }
         }
 
         p {
           font-size: 20px;
-          margin-left: 30px;
-          font-weight: 400;
+          margin-left: 50px;
+          font-weight: bold;
         }
       }
     }
@@ -85,37 +106,37 @@
     .images {
       display: flex;
       justify-content: center;
-      align-items: center;
-      margin-top: 30px;
+      place-items: center;
+      padding: 50px;
+      height: max-content;
 
       .sideImages {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        margin: 15px 0px 15px 15px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        vertical-align: middle;
+        
 
         img {
-          width: 330px;
-          height: 180px;
-          object-fit: fill;
+          width: 300px;
+          height: 120px;
           border-radius: 10px;
+
           cursor: pointer;
         }
       }
 
       .mainImage {
+        height:500px ;
         img {
-          margin: 10px;
           width: 860px;
-          height: 430px;
-          object-fit: cover;
           border-radius: 10px;
         }
       }
     }
   }
 }
-
 
 /* CAFES AROUND YOU STYLES */
 
@@ -179,7 +200,6 @@
     }
   }
 
-
   .searchSection {
     text-align: center;
     margin-bottom: 20px;
@@ -188,9 +208,11 @@
     .searchBox {
       display: flex;
       align-items: center;
-      background: linear-gradient(180deg,
-          rgba(25, 61, 60, 0.168) 0%,
-          rgba(255, 255, 255, 0.06) 100%);
+      background: linear-gradient(
+        180deg,
+        rgba(25, 61, 60, 0.168) 0%,
+        rgba(255, 255, 255, 0.06) 100%
+      );
       background-blend-mode: luminosity;
       backdrop-filter: blur(1px);
       background-blend-mode: overlay;
@@ -215,9 +237,7 @@
         }
       }
     }
-
   }
-
 }
 
 // Responsive styles
@@ -229,17 +249,20 @@
     }
 
     .subtitle {
-      font-size: 32px;
+      font-size: 32px !important;
     }
 
     .features {
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
       .feature {
         h3 {
           font-size: 24px;
         }
 
         p {
-          font-size: 1dpx;
+          font-size: 1px;
         }
       }
     }
@@ -247,8 +270,8 @@
     .images {
       .sideImages {
         img {
-          width: 300px;
-          height: 250px;
+          /* width: 300px;
+          height: 250px; */
         }
       }
 
@@ -262,29 +285,49 @@
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1000px) {
   .mainContent {
-
     .subtitle {
-      font-size: 30px;
-
+      font-weight: 600;
+      font-size: 24px;
     }
 
     .features {
-      flex-direction: row;
-      justify-content: space-around;
+      flex-direction: column;
+      justify-content: center;
+      /* width: 100%; */
+      /* justify-content: ; */
+      gap: 20px;
 
       .feature {
-        margin: 0 10px;
-        max-width: 30%;
+        margin: 0 8px;
+        /* text-align: left; */
+        width: 600px;
+
+        h3 {
+          font-weight: 600;
+          font-size: 32px;
+          line-height: 32px;
+
+          .featureNumber {
+            font-size: 1.6em;
+            color: #00bcd4;
+            padding-right: 15px;
+          }
+        }
+
+        p {
+          font-size: 20px;
+          margin-left: 40px;
+          font-weight: 400;
+        }
       }
     }
 
     .images {
       .sideImages {
         img {
-          width: 250px;
-          height: 200px;
+          display: none;
         }
       }
 
@@ -298,33 +341,23 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 780px) {
   .mainContent {
+    .subtitle {
+      font-size: 32px !important;
+      font-weight: 600 !important;
+    }
     img {
       width: 80%;
     }
 
     .container {
       padding: 10px;
-
     }
 
     .features {
       flex-direction: column;
-      width: 100%;
-
-      .feature {
-        /* max-width: 80%; */
-        margin: 10px 0;
-
-        h3 {
-          font-size: 18px;
-        }
-
-        p {
-          font-size: 14px;
-        }
-      }
+      justify-content: center;
     }
 
     .images {
@@ -342,19 +375,17 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 590px) {
   .mainContent {
-    .title {
-      font-size: 48px;
-    }
-
     .playButton {
       padding: 10px 20px;
       font-size: 18px;
     }
 
     .subtitle {
-      font-size: 24px;
+      max-width: 300px;
+      font-size: 34px !important;
+      font-weight: 700 !important;
     }
 
     .features {
@@ -362,11 +393,11 @@
       margin-top: 20px;
 
       .feature {
-        max-width: fit-content;
-        margin: 10px 0;
+        width: 440px !important;
 
         h3 {
-          font-size: 18px;
+          font-size: 28px !important;
+          font-weight: 600;
         }
 
         p {

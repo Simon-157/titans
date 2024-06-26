@@ -7,7 +7,7 @@ import RegionFilter from '../CafesPage/RegionFilter';
 import { cafes } from '../CafesPage/data';
 import HeaderSection from '../EventsPage/HeaderSection';
 import Footer from '../EventsPage/Footer';
-import { CIRCLE, TERTIARY } from '../../../defaults';
+import { CIRCLE, SECONDARY, TERTIARY } from '../../../defaults';
 import RelatedEvents from '../EventPage/RelatedEvents';
 import { events } from '../EventsPage/data';
 
@@ -15,16 +15,17 @@ class LandingPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            isMobile: window.innerWidth <= 768,
             region1: 'see all regions',
             region2: 'see all regions',
             visibleCafes: 4,
             visibleEvents: 4,
             mainImage: "/img/langing_pageImage1.png",
             sideImages: [
-                "/img/langing_pageImage2.png",
-                "/img/langing_pageImage3.png",
-                "/img/langing_pageImage4.png",
-                "/img/langing_pageImage2.png"
+                "/img/group.png",
+                "/img/group.png",
+                "/img/group.png",
+                "/img/group.png"
             ],
             features: [
                 {
@@ -34,7 +35,7 @@ class LandingPage extends React.Component {
                 },
                 {
                     id: 2,
-                    title: "Master the Arena of Art",
+                    title: "Master the Arena",
                     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa sed elementum sapien aliquam in. Magna mattis tellus nulla ultricies suscipit mi. sapien aliquam in. Magna mattis tellus nulla ultricies suscipit mi. "
                 },
                 {
@@ -86,9 +87,23 @@ class LandingPage extends React.Component {
     handleScrollUpButtonClick = () => {
         this.topRef.current.scrollIntoView({ behavior: 'smooth' });
     };
+
+    handleResize = () => {
+        this.setState({ isMobile: window.innerWidth <= 1206 });
+    };
+
+    componentDidMount() {
+        window.addEventListener('resize', this.handleResize);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleResize);
+    }
+
+
     render() {
 
-        const { features, sideImages, mainImage, region1, region2, visibleCafes, visibleEvents } = this.state;
+        const { features, sideImages, mainImage, region1, region2, visibleCafes, visibleEvents, isMobile } = this.state;
 
         const filteredCafes = cafes.filter((cafe) => {
             const matchesRegion = region1 === 'see all regions' || cafe.region === region1;
@@ -106,16 +121,23 @@ class LandingPage extends React.Component {
                     <Navbar />
                     <div className={styles.mainContent}>
                         <img ref={this.topRef} src="/img/logo.svg" alt="Reign of Titans" width={600} height={250} />
-                        {/* <span className={styles.scroll}>
-                            <button
-                                className={`${CIRCLE} ${TERTIARY}`}
-                                style={{}}
-                                onClick={this.handleScrollDownButtonClick}
-                            >
-                                <img src="/img/scrolldown.svg" alt="scroll" />
-                            </button>
-                        </span> */}
-                        <button className={`${PRIMARY}`} style={{ width: "320px", height: "70px", margin: "90px auto" }}>PLAY NOW</button>
+                        {isMobile ?
+                            <button className={`${PRIMARY}`} style={{ width: "320px", height: "70px", margin: "90px auto" }}>PLAY NOW</button>
+                            : <div className={styles.containerHeader}>
+                                <div>
+                                    <button className={`${PRIMARY}`} style={{ width: "320px", height: "70px", margin: "90px auto" }}>PLAY NOW</button>
+                                </div>
+                                <div className={styles.scroll}>
+                                    <button
+                                        className={`${CIRCLE} ${SECONDARY}`}
+                                        style={{}}
+                                        onClick={this.handleScrollDownButtonClick}
+                                    >
+                                        <img src="/img/scrolldown.svg" alt="scroll" />
+                                    </button>
+                                </div>
+                            </div>
+                        }
                         <h2 className={styles.subtitle}>Reign of Titans Comes to India!</h2>
                         <div className={styles.features}>
                             {features.map((feature) => (
@@ -154,7 +176,7 @@ class LandingPage extends React.Component {
                     </section>
                     <div className={styles.eventsAround}>
 
-                    <RelatedEvents events={filteredEvents} visibleEvents={visibleEvents} loadMoreEvents={this.loadMoreEvents} />
+                        <RelatedEvents events={filteredEvents} visibleEvents={visibleEvents} loadMoreEvents={this.loadMoreEvents} />
                     </div>
                 </div>
 
