@@ -19,7 +19,7 @@ class CafeBannerCard extends Component {
                             The Asgard was designed in Ireland and local artists put the finishing touches on this truly one-of-a-kind bar. Two gigantic communal tables, sofas and chairs make the pub a comfortable and inviting place to watch the games for groups of any size.
                         </p>
                         <div className={styles.buttons}>
-                            <button className={` ${PRIMARY} ${styles.joinButton}`}>JOIN REIGN OF TITANS LEADERBOARD</button>
+                            <button className={` ${PRIMARY} ${styles.joinButton}`}>JOIN LEADERBOARD</button>
                             <button className={`${SECONDARY} ${styles.actionButton}`}>EDIT</button>
                             <button className={`${SECONDARY} ${styles.actionButton}`}>STAFF</button>
                             <button className={`${SECONDARY} ${styles.actionButton}`}>DELETE</button>
