@@ -76,7 +76,8 @@
   font-size: 2em;
   margin-bottom: 20px;
   font-family: 'Girloy';
-  p{
+
+  p {
     margin-bottom: 50px;
   }
 }
@@ -241,7 +242,7 @@
 .promoSection {
   border-radius: 8px;
   padding: 20px;
-  text-align: center;
+  text-align: left;
   color: #ffffff;
   position: relative;
   box-sizing: border-box;
@@ -258,12 +259,13 @@
   align-items: center;
   gap: 10px;
   margin-bottom: 20px;
- img {
-  width: 22px;
-  height: 22px;
+
+  img {
+    width: 22px;
+    height: 22px;
     filter: invert(72%) sepia(7%) saturate(505%) hue-rotate(142deg) brightness(96%) contrast(86%);
-}
-  
+  }
+
 }
 
 .joinButton,
@@ -304,12 +306,16 @@
 .promoDescription {
   font-size: 1em;
   margin-bottom: 10px;
+  text-align: left;
+  line-height: 24px;
 }
 
 .promoNote {
-  color: #ff9900;
-  font-weight: bold;
+  color: #FBBF24;
+  font-size: 16px;
+  font-weight: 300;
   margin-top: 10px;
+  text-align: left;
 }
 
 @media (max-width: 768px) {
@@ -584,5 +590,3 @@
     padding: 20px;
   }
 }
-
-

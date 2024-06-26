@@ -12,7 +12,6 @@
   background: url("/img/forest-bg.jpg") no-repeat center center / cover,
     linear-gradient(118.88deg, #01131a -2.2%, #002e2a 115.26%);
   background-blend-mode: luminosity;
-
   padding: 0px;
   border-radius: 10px;
   width: 100%;
@@ -28,11 +27,9 @@
   border-radius: 10px;
   border: 1px solid #00bcd4;
   background: linear-gradient(0deg, rgba(6, 34, 40, 0.8), rgba(6, 34, 40, 0.8)),
-    linear-gradient(
-      180deg,
+    linear-gradient(180deg,
       rgba(0, 255, 255, 0.05) 0%,
-      rgba(0, 255, 255, 0) 100%
-    );
+      rgba(0, 255, 255, 0) 100%);
   backdrop-filter: blur(10px);
 }
 
@@ -62,7 +59,9 @@
 
   p {
     margin: 0;
-    font-size: 18px;
+    font-weight: 700;
+    padding-top: 10px;
+    font-size: 20px;
     background: linear-gradient(180deg, #ff9e59 0%, #ff7733 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -81,7 +80,6 @@
 .details {
   display: flex;
   justify-content: space-between;
-
   margin-bottom: 20px;
 
   .detailItem {
@@ -91,23 +89,23 @@
     img {
       width: 16px;
       height: 16px;
-      margin-right: 10px;
-      filter: invert(73%) sepia(76%) saturate(600%) hue-rotate(330deg)
-        brightness(102%) contrast(102%);
+      margin-right: 5px;
+      /* Adjusted margin */
+      filter: invert(73%) sepia(76%) saturate(600%) hue-rotate(330deg) brightness(102%) contrast(102%);
     }
 
     .gradientClockIcon {
-      width: 16px;
-      height: 16px;
-      margin-right: 10px;
+      width: 24px;
+      height: 24px;
+      margin-right: 5px;
       background: linear-gradient(180deg, #ff9e59 0%, #ff7733 100%);
       mask: url("/img/marker.svg") no-repeat center / contain;
       -webkit-mask: url("/img/clockSimple.svg") no-repeat center / contain;
     }
 
     .gradientMarkerIcon {
-      width: 16px;
-      height: 16px;
+      width: 24px;
+      height: 24px;
       margin-right: 10px;
       background: linear-gradient(180deg, #ff9e59 0%, #ff7733 100%);
       mask: url("/img/marker.svg") no-repeat center / contain;
@@ -117,15 +115,16 @@
     div {
       span {
         display: block;
-        font-size: 14px;
-        font-weight: 600;
+        font-size: 16px;
+        font-weight: 700;
         color: #fff;
+        line-height: 1.5;
       }
 
       p {
         margin: 0;
         font-size: 16px;
-        color: #fdfdfd9c;
+        color: #fdfdfd;
       }
     }
   }
@@ -135,7 +134,6 @@
   display: flex;
   align-items: center;
   gap: 30px;
-  /* max-width: ; */
   margin: auto;
 
   .qrCode {
@@ -165,17 +163,47 @@
     width: 100%;
     padding: 10px 0px;
     gap: 10px;
+
     p {
       text-align: center;
       font-size: 16px;
     }
-
   }
 }
-// MEDIA QUERIES FOR Responsive styles
+
+.giveaway {
+  width: 450px;
+  text-align: left;
+}
+
+.promoDescription {
+  font-size: 1em;
+  margin-bottom: 10px;
+  text-align: left !important;
+  line-height: 24px;
+}
+
+/* MEDIA QUERIES FOR RESPONSIVE STYLES */
 @media (max-width: 768px) {
   .modal {
     max-width: 90%;
+    padding: 20px;
+  }
+
+  .confirmationModal {
+    padding: 20px;
+  }
+
+  .header {
+
+    h2,
+    h3 {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 16px;
+    }
   }
 
   .details {
@@ -185,5 +213,69 @@
 
   .detailItem {
     margin-bottom: 10px;
+  }
+
+  .qrCodeContainer {
+    flex-direction: column;
+  }
+
+  .qrCode {
+    margin-bottom: 20px;
+  }
+
+  .bottomSec {
+    padding: 20px;
+  }
+
+  .giveaway {
+    width: 100%;
+    text-align: center;
+
+  }
+
+  .promoDescription {
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+
+    h2,
+    h3 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .details {
+    .detailItem {
+      flex-direction: column;
+      align-items: center;
+
+      div {
+        text-align: center;
+      }
+    }
+  }
+
+  .qrCode {
+    img {
+      width: 120px;
+      height: 120px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .bottomSec {
+    p {
+      font-size: 14px;
+    }
   }
 }

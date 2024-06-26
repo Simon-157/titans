@@ -56,8 +56,12 @@ export default class ConfirmationModal extends Component {
                             <p>{eventDetails.qrCode}</p>
                         </div>
                         <div className={styles.bottomSec}>
-                            <div>
-                                <p>{eventDetails.giveaway}</p>
+                            <div className={styles.giveaway}>
+                                <p className={styles.promoDescription}>
+                                    <b>Free LEGION NOTEBOOK Giveaway:</b> Faucibus at et nulla ipsum, lorem
+                                    et. Nullam adipiscing maecenas quis amet.
+                                </p>
+                                {/* <p>{eventDetails.giveaway}</p> */}
                             </div>
                             <div>
                                 <button className={`${TERTIARY} ${FILLED}`} style={{ width: '250px' }}>DOWNLOAD</button>

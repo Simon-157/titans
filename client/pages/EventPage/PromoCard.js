@@ -8,16 +8,16 @@ import SocialShareModal from "./components/SocialShareModal";
 
 
 class PromoCard extends Component {
-   state = {
- 
+  state = {
+
     isRegisterModalOpen: false,
     isSocialShareModalOpen: false,
     eventUrl: window.location.href
 
   };
 
- 
-    toggleSocialShareModal = () => {
+
+  toggleSocialShareModal = () => {
     this.setState((prevState) => ({
       isSocialShareModalOpen: !prevState.isSocialShareModalOpen,
     }));
@@ -29,9 +29,9 @@ class PromoCard extends Component {
     }));
   };
   render() {
-      const { isRegisterModalOpen,  isSocialShareModalOpen, eventUrl  } = this.state;
+    const { isRegisterModalOpen, isSocialShareModalOpen, eventUrl } = this.state;
     return (
-      
+
       <div className={styles.promoSectionWrapper}>
         <div className={styles.promoSection}>
           <p>
@@ -62,13 +62,13 @@ class PromoCard extends Component {
                 fontSize: "1em",
                 fontWeight: "bold",
               }}
-              >
-                <img src="/img/share.svg" />
-                SHARE
-              </button>
-            
+            >
+              <img src="/img/share.svg" />
+              SHARE
+            </button>
+
           </div>
-        
+
           <div className={styles.promoContent}>
             <img
               src="/img/spar.png"
@@ -76,7 +76,7 @@ class PromoCard extends Component {
               className={styles.promoImage}
             />
             <p className={styles.promoDescription}>
-              Free LEGION NOTEBOOK Giveaway: Faucibus at et nulla ipsum, lorem
+              <b>Free LEGION NOTEBOOK Giveaway:</b> Faucibus at et nulla ipsum, lorem
               et. Nullam adipiscing maecenas quis amet. Cum id leo, suspendisse
               nec, et, aliquet. Enim non fringilla nam sit tristique diam,
               nullam eget. Molestie vitae cursus justo.
@@ -86,8 +86,8 @@ class PromoCard extends Component {
             </p>
           </div>
         </div>
-               <RegisterModal isOpen={isRegisterModalOpen} onClose={this.toggleRegisterModal} />
-               <SocialShareModal
+        <RegisterModal isOpen={isRegisterModalOpen} onClose={this.toggleRegisterModal} />
+        <SocialShareModal
           isOpen={isSocialShareModalOpen}
           onClose={this.toggleSocialShareModal}
           eventUrl={eventUrl}
