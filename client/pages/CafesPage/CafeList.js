@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import CafeCard from './CafeCard';
 import styles from './css/grid.css';
 import { TERTIARY } from '../../../defaults';
+import { Link } from 'react-router-dom';
 
 class CafeList extends Component {
   render() {
@@ -12,7 +13,9 @@ class CafeList extends Component {
       <>
         <section className={styles.cafeGrid}>
           {cafes.slice(0, visibleCafes).map((cafe) => (
+            <Link to={`/cafe/${cafe.id}`} key={cafe.id}>
             <CafeCard key={cafe.id} {...cafe} />
+            </Link>
           ))}
         </section>
         <section>
