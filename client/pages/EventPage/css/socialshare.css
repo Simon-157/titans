@@ -12,7 +12,7 @@
   background: url("/img/forest-bg.jpg") no-repeat center center / cover,
     linear-gradient(118.88deg, #011218 -2.2%, #002e2a 115.26%);
   background-blend-mode: luminosity;
-  padding: 0px;
+  padding: 0;
   border-radius: 10px;
   width: 100%;
   max-width: 600px;
@@ -22,7 +22,7 @@
 .socialShareModal {
   color: white;
   position: relative;
-  padding: 100px;
+  padding: 40px;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid #00bcd4;
@@ -51,21 +51,21 @@
   justify-content: center;
   margin-bottom: 20px;
   gap: 20px;
+}
 
-  .iconButton {
-    background: none;
-    border: none;
-    cursor: pointer;
+.iconButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
-    img {
-      width: 40px;
-      height: 40px;
-    }
+.iconButton img {
+  width: 40px;
+  height: 40px;
+}
 
-    &:hover {
-      opacity: 0.8;
-    }
-  }
+.iconButton:hover {
+  opacity: 0.8;
 }
 
 .urlSection {
@@ -75,43 +75,51 @@
   gap: 10px;
   background: #25525571;
   border: 1px solid #265b5f;
-  border-radius:30px;
+  border-radius: 30px;
   padding: 10px;
   margin-top: 20px;
+}
 
-  input {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 16px;
-    width: 80%;
-    outline: none;
-    box-sizing: border-box;
-    box-shadow: none;
-  }
+.urlSection input {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  width: 80%;
+  outline: none;
+  box-sizing: border-box;
+  box-shadow: none;
+}
 
-  .copyButton {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.copyButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    img {
-      width: 24px;
-      height: 24px;
-    }
+.copyButton img {
+  width: 24px;
+  height: 24px;
+}
 
-    &:hover {
-      opacity: 0.8;
-    }
-  }
+.copyButton:hover {
+  opacity: 0.8;
 }
 
 @media (max-width: 768px) {
   .modal {
     max-width: 90%;
+  }
+
+  .socialShareModal {
+    padding: 20px;
+  }
+
+  .header {
+    font-size: 2em;
   }
 
   .icons {
@@ -121,5 +129,42 @@
   .iconButton img {
     width: 30px;
     height: 30px;
+  }
+
+  .urlSection input {
+    font-size: 14px;
+  }
+
+  .copyButton img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .socialShareModal {
+    padding: 10px;
+  }
+
+  .header {
+    font-size: 1.5em;
+  }
+
+  .icons {
+    gap: 5px;
+  }
+
+  .iconButton img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .urlSection input {
+    font-size: 12px;
+  }
+
+  .copyButton img {
+    width: 18px;
+    height: 18px;
   }
 }

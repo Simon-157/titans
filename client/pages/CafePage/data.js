@@ -27,7 +27,7 @@ export const cafe = {
       date: 'Aug 28th, 2023',
       time: '17:00-22:00',
       details: ['Lorem ipsum dolor sit', 'Lorem ipsum dolor sit'],
-      image: '/img/event1.png',
+      image: '/img/OW.png',
     },
     {
       id: '2',
@@ -36,7 +36,7 @@ export const cafe = {
       date: 'Aug 28th, 2023',
       time: '17:00-22:00',
       details: ['Lorem ipsum dolor sit', 'Lorem ipsum dolor sit'],
-      image: '/img/event2.png',
+      image: '/img/OW2.png',
     },
   ],
   leaderboard: [

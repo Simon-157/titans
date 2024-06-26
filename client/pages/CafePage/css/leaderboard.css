@@ -1,0 +1,183 @@
+.leaderboard {
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 990px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Gilroy';
+    margin: 0 auto; /* Center the leaderboard */
+  }
+  
+  .header {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    gap: 30px;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .header img {
+    max-width: 150px;
+    margin-bottom: 20px;
+  }
+  
+  .content {
+    text-align: center;
+  }
+  
+  .content h2 {
+    margin: 10px 0;
+    font-size: 32px;
+  }
+  
+  .content p {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .topRanks {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .rank {
+    background: linear-gradient(180deg, rgba(0, 255, 255, 0.3) 0%, rgba(0, 255, 255, 0) 100%);
+    backdrop-filter: blur(7.91016px);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 290px;
+    height: 100px;
+    box-sizing: border-box;
+    border: 2px solid rgba(9, 128, 128, 0.74);
+  }
+  
+  .medal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+  }
+  
+  .rank img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .rank h3 {
+    font-size: 32px;
+    font-weight: 700;
+  }
+  
+  .rank p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .note {
+    box-sizing: border-box;
+    border: 2px solid rgba(9, 128, 128, 0.74);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    height: 128px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.003) 0%, rgba(255, 255, 255, 0.075) 100%);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 130%;
+    color: #84FFFF;
+    margin-top: 20px; /* Add some margin to separate from topRanks */
+  }
+  
+  /* Media Queries */
+  @media (max-width: 1200px) {
+    .content h2 {
+      font-size: 28px;
+    }
+  
+    .content p {
+      font-size: 16px;
+    }
+  
+    .rank {
+      width: 240px;
+      height: 90px;
+    }
+  
+    .rank h3 {
+      font-size: 28px;
+    }
+  
+    .rank p {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .topRanks {
+      /* flex-direction: column; */
+      gap: 10px;
+    }
+  
+    .rank {
+      width: 90%;
+      height: auto;
+      padding: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .leaderboard {
+      padding: 20px;
+    }
+  
+    .content h2 {
+      font-size: 24px;
+    }
+  
+    .content p {
+      font-size: 14px;
+    }
+  
+    .rank {
+      width: 100%;
+      height: auto;
+      padding: 15px;
+    }
+  
+    .rank h3 {
+      font-size: 24px;
+    }
+  
+    .rank p {
+      font-size: 14px;
+    }
+  
+    .note {
+      padding: 15px;
+      font-size: 16px;
+    }
+  }
+  

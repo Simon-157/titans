@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from '../css/socialshare.css'
+import styles from '../css/socialshare.css';
 import Modal from '../../../components/Modal';
-import { CIRCLE, SECONDARY, TERTIARY } from '../../../../defaults';
+import { CIRCLE, SECONDARY } from '../../../../defaults';
 
 export default class SocialShareModal extends Component {
   static propTypes = {
@@ -27,14 +27,20 @@ export default class SocialShareModal extends Component {
     return (
       <Modal onClose={onClose} className={styles.modal} wrapClassName={styles.wrap}>
         <div className={styles.socialShareModal}>
-          <button className={`${styles.closeButton} ${SECONDARY}  ${CIRCLE}`} onClick={onClose} style={{ top: '10px', right: '10px', width: '40px', height: '40px', position: 'absolute', fontSize: '26px' }}>&times;</button>
+          <button 
+            className={`${styles.closeButton} ${SECONDARY} ${CIRCLE}`} 
+            onClick={onClose} 
+            style={{ top: '10px', right: '10px', width: '40px', height: '40px', position: 'absolute', fontSize: '26px' }}
+          >
+            &times;
+          </button>
           <div className={styles.header}>
-           Share With Friends
+            Share With Friends
           </div>
           <div className={styles.icons}>
             <button className={styles.iconButton}><img src="/img/discord-share.svg" alt="Discord" /></button>
-            <button className={styles.iconButton}><img src="/img/sms.png" alt="sms" /></button>
-            <button className={styles.iconButton}><img src="/img/twitter.svg" alt="Twitch" /></button>
+            <button className={styles.iconButton}><img src="/img/sms.png" alt="SMS" /></button>
+            <button className={styles.iconButton}><img src="/img/twitter.svg" alt="Twitter" /></button>
             <button className={styles.iconButton}><img src="/img/whatsapp.svg" alt="WhatsApp" /></button>
             <button className={styles.iconButton}><img src="/img/facebook.svg" alt="Facebook" /></button>
           </div>

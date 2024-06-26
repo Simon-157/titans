@@ -1,123 +1,47 @@
-.cafeDetails {
-  padding: 20px;
-
-  .header {
+/* General styles */
+.cafePageWrapper {
+  overflow-x: hidden;
+  min-height: 100vh;
+  width: 100vw;
+  background: url("/img/forest-bg.jpg") no-repeat center center / cover,
+    linear-gradient(118.88deg, #01131a -2.2%, #002e2a 115.26%);
+  background-blend-mode: luminosity;
+  font-family: "Gilroy";
+  justify-content: center;
+  align-items: center;
+  
+  .cafeDetails{
+    gap: 50px;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-
-    nav ul {
-      display: flex;
-      list-style: none;
-
-      li {
-        margin: 0 10px;
-      }
-    }
   }
-
-  .cafeInfo {
+  
+  .eventCards{
     display: flex;
-    margin: 20px 0;
+    gap: 20px;
 
-    .cafeImage {
-      flex: 1;
 
-      img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-      }
-    }
-
-    .cafeDetailsText {
-      flex: 2;
-      padding: 20px;
-
-      h1 {
-        margin-bottom: 10px;
-      }
-
-      .cafeMeta {
-        p {
-          margin: 5px 0;
-        }
-      }
-    }
-  }
-
-  .cafeEvents,
-  .leaderboard {
-    margin: 20px 0;
-
-    h2 {
-      margin-bottom: 10px;
-    }
-
-    .eventsList {
-      display: flex;
-      flex-wrap: wrap;
-
-      .eventCard {
-        flex: 1;
-        min-width: 200px;
-        padding: 10px;
-        margin: 10px;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-      }
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-
-      th,
-      td {
-        border: 1px solid #ccc;
-        padding: 10px;
-        text-align: left;
-      }
-    }
-  }
-}
-
-/* // Responsive styles */
-@media (max-width: 1200px) {
-  .cafeInfo {
-    flex-direction: column;
-
-    .cafeImage {
-      margin-bottom: 20px;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .header nav ul {
+  @media (max-width: 768px) {
     flex-direction: column;
   }
+  
+  }
 
-  .cafeInfo {
-    .cafeDetailsText {
-      padding: 10px;
+  .header{
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    h2{
+      font-size: 32px;
     }
   }
 
-  .cafeEvents .eventsList,
-  .leaderboard table {
-    flex-direction: column;
-  }
-}
 
-@media (max-width: 480px) {
-  .header nav ul {
-    display: none;
-  }
 
-  .cafeInfo {
-    .cafeDetailsText {
-      padding: 5px;
-    }
-  }
+
 }
