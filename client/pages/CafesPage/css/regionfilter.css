@@ -1,3 +1,5 @@
+
+
 .regionFilters {
   display: flex;
   justify-content: center;
@@ -36,52 +38,70 @@
     }
   }
 
-  .selectWrapper {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-  }
+  /* @media (max-width: 768px) {
+    .regionFilters {
+      align-items: center;
+      background: none;
+      border-bottom: none;
 
-  .select {
-    font-size: 1.2em;
-    font-weight: bold;
-    padding: 10px;
-    border: 2px solid #00bcd4;
-    border-radius: 50px;
-    background: linear-gradient(
-      180deg,
-      rgba(0, 255, 255, 0.35) 0%,
-      rgba(0, 255, 255, 0.05) 100%
-    );
-    backdrop-filter: blur(10px);
-    color: #00bcd4;
-    appearance: none;
-    width: 100%;
-    /* max-width: 300px; */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+      .regionSearch {
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+      }
 
-    &:hover {
-      background: #00bcd4;
-      color: #fff;
+      .regionSearch__dropdown {
+        width: 100% !important;
+      }
     }
-  }
+  } */
+}
 
-  .selectWrapper::after {
-    content: "\25BC"; /* Down arrow */
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-    color: #00bcd4;
-    font-size: 1.2em;
-  }
 
-  @media (max-width: 768px) {
-    .select {
-      width: 100%;
-      max-width: 300px;
-    }
+/* RegionSearch styles */
+/* .regionFiltersMobile {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+  
+  .regionSearch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    .regionSearch__dropdown {
+    width: 250px !important;
+    height: 54px !important;
+    font-size: 1.6em !important;
   }
+  }
+} */
+
+
+
+/* RegionSearch styles */
+.regionFiltersMobile {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  width: 500px;
+}
+
+.regionSearch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  height: 88px;
+  padding: 20px;
+
+  background-blend-mode: overlay;
+ 
+}
+
+.regionSearch__dropdown {
+  width: 250px !important;
+  height: 54px !important;
+  font-size: 1.6em !important;
 }

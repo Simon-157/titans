@@ -59,7 +59,10 @@ class SingleEventPage extends Component {
               <img src='/img/box-icon.png' alt="box icon" /> 
               <h1>Events You May Like</h1>
             </header>
+            <div className={styles.regionfilter}>
+
             <RegionFilter currentRegion={region} onRegionChange={this.handleRegionChange} />
+              </div>
           </section>
           <RelatedEvents events={filteredEvents}  visibleEvents={visibleEvents} loadMoreEvents={this.loadMoreEvents} />
           </div>

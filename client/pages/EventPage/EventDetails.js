@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styles from "./css/styles.css";
 import PromoCard from "./PromoCard";
-import { SECONDARY } from "../../../defaults";
+import { SECONDARY, TERTIARY } from "../../../defaults";
 import GoogleMaps from "../../components/GoogleMaps";
 
 class EventDetails extends Component {
@@ -12,10 +12,10 @@ class EventDetails extends Component {
         return (
             <div className={styles.detailsWrapper}>
                 <button
-                    className={SECONDARY} style={{ height: '40px', border: '1px solid #45E5E5', fontSize: '1em', fontWeight: 'bold',  }}
+                    className={SECONDARY} style={{ height: '40px',fontSize: '1em' , padding: '25px' }}
                     onClick={() => this.props.history.goBack()}
                 >
-                  {`BACK`}
+                  <span><img src="/img/back.png" alt="back" /></span>{`BACK`}
                 </button>
                 <div className={styles.eventDetails}>
                     <div className={styles.eventMain}>

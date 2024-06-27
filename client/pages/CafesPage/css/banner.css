@@ -8,10 +8,10 @@
   padding: 4px;
   background: linear-gradient(#0000001e, #0000000f) padding-box, linear-gradient(to right, #00eeff25, #00eeff2a) border-box;
   border: 2px solid transparent;
-  clip-path: polygon(30px 0%, calc(100% - 30px) 0%,
-      100% 30px, 100% calc(100% - 30px),
-      calc(100% - 30px) 100%, 30px 100%,
-      0% calc(100% - 30px), 0% 30px);
+  clip-path: polygon(40px 0%, calc(100% - 20px) 0%,
+      100% 20px, 100% calc(100% - 40px),
+      calc(100% - 40px) 100%, 20px 100%,
+      0% calc(100% - 20px), 0% 40px);
 
   @media (max-width: 768px) {
     max-width: 90%;
@@ -31,10 +31,10 @@
   background-blend-mode: hard-light;
   width: 100%;
   text-align: center;
-  clip-path: polygon(30px 0%, calc(100% - 30px) 0%,
-      100% 30px, 100% calc(100% - 30px),
-      calc(100% - 30px) 100%, 30px 100%,
-      0% calc(100% - 30px), 0% 30px);
+  clip-path: polygon(40px 0%, calc(100% - 20px) 0%,
+      100% 20px, 100% calc(100% - 40px),
+      calc(100% - 40px) 100%, 20px 100%,
+      0% calc(100% - 20px), 0% 40px);
 
   @media (max-width: 768px) {
     padding: 5px;
@@ -75,6 +75,4 @@
       font-size: 1em;
     }
   }
-
-
 }

@@ -26,10 +26,10 @@ class Navbar extends Component {
         <nav className={styles.navbar__nav}>
           <ul className={styles.navbar__list}>
             <li className={styles.navbar__item}><a href="#">PLAY</a></li>
-            <li className={styles.navbar__item}><a href="#">DISCOVER</a></li>
-            <li className={styles.navbar__item}><a href="/blogs">BLOG</a></li>
-            <li className={styles.navbar__item}><a href="/events">EVENTS</a></li>
-            <li className={styles.navbar__item}><a href="/cafes">CAFÉS</a></li>
+            <li className={styles.navbar__item}><Link to="/india">DISCOVER</Link></li>
+            <li className={styles.navbar__item}><Link to="/events">EVENTS</Link></li>
+            <li className={styles.navbar__item}><Link to="/cafes">CAFES</Link></li>
+            <li className={styles.navbar__item}><Link to="/blogs">BLOGS</Link></li>
           </ul>
         </nav>
         <div className={styles.navbar__actions}>
@@ -60,12 +60,12 @@ class Navbar extends Component {
             <ul className={styles.sideSheet__list}>
               <li className={styles.sideSheet__item}><Link to="#">HOME</Link></li>
               <li className={styles.sideSheet__item}><Link to="#">PLAY</Link></li>
-              <li className={styles.sideSheet__item}><Link to="#">DISCOVER</Link></li>
-              <li className={styles.sideSheet__item}><Link to="/blogs">BLOG</Link></li>
+              <li className={styles.sideSheet__item}><Link to="/india">DISCOVER</Link></li>
               <li className={styles.sideSheet__item}><Link to="/events">EVENTS</Link></li>
-              <li className={styles.sideSheet__item}><Link to="/cafes">CAFÉS</Link></li>
-              <li className={styles.sideSheet__item}><Link to="/cafes">PROFILE</Link></li>
-              <li className={styles.sideSheet__item}><Link to="/cafes">LOG OUT</Link></li>
+              <li className={styles.sideSheet__item}><Link to="/cafes">CAFES</Link></li>
+              <li className={styles.sideSheet__item}><Link to="/blogs">BLOGS</Link></li>
+              <li className={styles.sideSheet__item}><Link to="/profile">PROFILE</Link></li>
+              <li className={styles.sideSheet__item}><Link to="/logout">LOG OUT</Link></li>
 
 
             </ul>

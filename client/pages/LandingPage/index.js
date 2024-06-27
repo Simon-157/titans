@@ -116,8 +116,11 @@ class LandingPage extends React.Component {
         });
 
         return (
+            
             <div className={styles.landingPage} >
                 <div className={styles.container}>
+
+                    {/* <RegionFilter currentRegion={region1} onRegionChange={this.handleRegion1Change} /> */}
                     <Navbar />
                     <div className={styles.mainContent}>
                         <img ref={this.topRef} src="/img/logo.svg" alt="Reign of Titans" width={600} height={250} />
@@ -129,11 +132,11 @@ class LandingPage extends React.Component {
                                 </div>
                                 <div className={styles.scroll}>
                                     <button
-                                        className={`${CIRCLE} ${SECONDARY}`}
-                                        style={{}}
+                                        className={`${CIRCLE} ${TERTIARY}`}
+                                        
                                         onClick={this.handleScrollDownButtonClick}
                                     >
-                                        <img src="/img/scrolldown.svg" alt="scroll" />
+                                        <img src="/img/scrolldown.svg" alt="scroll" height={50} style={{ marginBottom: "40px" }} />
                                     </button>
                                 </div>
                             </div>
@@ -172,7 +175,10 @@ class LandingPage extends React.Component {
                             <h1> Events Around You</h1>
                         </header>
                         <HeaderSection />
+                        <div className={styles.regionfilter}>
+
                         <RegionFilter currentRegion={region2} onRegionChange={this.handleRegion2Change} />
+                        </div>
                     </section>
                     <div className={styles.eventsAround}>
 
@@ -187,7 +193,10 @@ class LandingPage extends React.Component {
                             <h1> Cafés Around You</h1>
                         </header>
                         <HeaderSection />
+                            <div className={styles.regionfilter}>
+
                         <RegionFilter currentRegion={region1} onRegionChange={this.handleRegion1Change} />
+                            </div>
                     </section>
                     <CafeList cafes={filteredCafes} visibleCafes={visibleCafes} loadMoreCafes={this.loadMoreCafes} />
                 </div>

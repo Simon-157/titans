@@ -18,6 +18,19 @@
     gap: 30px;
     width: 100%;
     padding: 10px;
+
+    .scrollUp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 50px; */
+
+  /* margin-right: 10%; */
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
   }
   
   .header img {
@@ -26,10 +39,11 @@
   }
   
   .content {
-    text-align: center;
+    text-align: left;
   }
   
   .content h2 {
+
     margin: 10px 0;
     font-size: 32px;
   }
@@ -180,4 +194,7 @@
       font-size: 16px;
     }
   }
+ 
   
+
+

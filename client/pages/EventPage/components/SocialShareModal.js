@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styles from '../css/socialshare.css';
 import Modal from '../../../components/Modal';
 import { CIRCLE, SECONDARY } from '../../../../defaults';
+import ModalWithHiddenCloseButton from './ModalHighOrder';
 
 export default class SocialShareModal extends Component {
   static propTypes = {
@@ -25,15 +26,17 @@ export default class SocialShareModal extends Component {
     }
 
     return (
-      <Modal onClose={onClose} className={styles.modal} wrapClassName={styles.wrap}>
+      <ModalWithHiddenCloseButton onClose={onClose} className={styles.modal} wrapClassName={styles.wrap}>
         <div className={styles.socialShareModal}>
-          <button 
-            className={`${styles.closeButton} ${SECONDARY} ${CIRCLE}`} 
+                      <button className={`${styles.closeButton} ${SECONDARY} ${CIRCLE}`} onClick={onClose} style={{ top: '10px', right: '10px', width: '40px', height: '40px', position: 'absolute', fontSize: '26px' }}><img src="/img/closeicon.svg" alt="Close" /></button>
+
+          {/* <button 
+            className={` ${SECONDARY} ${CIRCLE}`} 
             onClick={onClose} 
             style={{ top: '10px', right: '10px', width: '40px', height: '40px', position: 'absolute', fontSize: '26px' }}
           >
             &times;
-          </button>
+          </button> */}
           <div className={styles.header}>
             Share With Friends
           </div>
@@ -51,7 +54,7 @@ export default class SocialShareModal extends Component {
             </button>
           </div>
         </div>
-      </Modal>
+      </ModalWithHiddenCloseButton>
     );
   }
 }

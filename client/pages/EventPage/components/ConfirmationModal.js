@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import styles from "../css/confirmation_modal.css";
 import Modal from "../../../components/Modal";
-import { FILLED, SECONDARY, TERTIARY } from "../../../../defaults";
+import { CIRCLE, FILLED, SECONDARY, TERTIARY } from "../../../../defaults";
 
 export default class ConfirmationModal extends Component {
     static propTypes = {
@@ -25,9 +25,14 @@ export default class ConfirmationModal extends Component {
                 wrapClassName={styles.wrap}
             >
                 <div className={styles.confirmationModal}>
-                    <button className={styles.closeButton} onClick={onClose}>
-                        &times;
-                    </button>
+                    <div className={styles.closeButton}>
+
+                                <button className={`${SECONDARY} ${CIRCLE}`} onClick={onClose} style={{ width: '45px', height: '45px', textAlign: 'center', fontSize: '1.5em' }}><img src="/img/closeicon.svg" alt="Close" /></button>
+                    </div>
+
+                    {/* <button className={` ${CIRCLE} ${SECONDARY}`} onClick={onClose}>
+                        <img src='/img/closeicon.svg' alt="Close" />
+                    </button> */}
                     <div className={styles.header}>
                         <h2>Congrats!</h2>
                         <p>YOU HAVE JOINED</p>

@@ -63,7 +63,7 @@ class PromoCard extends Component {
                 fontWeight: "bold",
               }}
             >
-              <img src="/img/share.svg" />
+              <img src="/img/tabler_share.svg"  alt="Share" />
               SHARE
             </button>
 

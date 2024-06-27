@@ -12,17 +12,29 @@ class CafeBannerCard extends Component {
                         <div className={styles.location}>MUMBAI, INDIA</div>
                         <h1 className={styles.title}>REIGN OF TITANS CAFÉ</h1>
                         <div className={styles.rating}>
-                            <span>★★★★★</span>
-                            <span>5.0</span>
+                            {[...Array(5)].map((_, index) => (
+                                <span key={index}>
+                                    <img src='/img/love.png' alt='Love Icon' width={18} height={18} />
+                                </span>
+                            ))}
+                            <p>5.0</p>
+                            {/* <span>{rating.toFixed(1)}</span>
+                            <span><img src='/img/love.png' /></span> */}
                         </div>
                         <p className={styles.description}>
                             The Asgard was designed in Ireland and local artists put the finishing touches on this truly one-of-a-kind bar. Two gigantic communal tables, sofas and chairs make the pub a comfortable and inviting place to watch the games for groups of any size.
                         </p>
                         <div className={styles.buttons}>
-                            <button className={` ${PRIMARY} ${styles.joinButton}`}>JOIN LEADERBOARD</button>
-                            <button className={`${SECONDARY} ${styles.actionButton}`}>EDIT</button>
-                            <button className={`${SECONDARY} ${styles.actionButton}`}>STAFF</button>
-                            <button className={`${SECONDARY} ${styles.actionButton}`}>DELETE</button>
+                            <div className={styles.join}>
+                                <button className={` ${PRIMARY} ${styles.joinButton}`}>JOIN REIGN OF TITANS LEADER BOARD</button>
+
+                            </div>
+
+                            <div className={styles.actions}>
+                                <button className={`${SECONDARY} ${styles.actionButton}`}>EDIT</button>
+                                <button className={`${SECONDARY} ${styles.actionButton}`}>STAFF</button>
+                                <button className={`${SECONDARY} ${styles.actionButton}`}>DELETE</button>
+                            </div>
                         </div>
 
                     </section>
@@ -32,15 +44,15 @@ class CafeBannerCard extends Component {
                         <div className={styles.infoContainerColumnOne}>
 
                             <div className={styles.infoItem}>
-                                <span className={styles.icon}>📍</span>
+                                <span className={styles.icon}><img src='/img/miles.png' /></span>
                                 <span className={styles.text}>649.32 MILES AWAY</span>
                             </div>
                             <div className={styles.infoItem}>
-                                <span className={styles.icon}>👥</span>
+                                <span className={styles.icon}><img src='/img/people.png' /></span>
                                 <span className={styles.text}>CAPACITY: 80</span>
                             </div>
                             <div className={styles.infoItem}>
-                                <span className={styles.icon}>📍</span>
+                                <span className={styles.icon}><img src='/img/clockicon.png' /></span>
                                 <div className={styles.schedule}>
                                     <p>MON: 5:00 PM – 11:30 PM</p>
                                     <p>TUE: 5:00 PM – 11:30 PM</p>
@@ -56,15 +68,15 @@ class CafeBannerCard extends Component {
                         </div>
                         <div className={styles.infoContainerColumnTwo}>
                             <div className={styles.infoItem}>
-                                <span className={styles.icon}>📞</span>
+                                <span className={styles.icon}><img src='/img/phone.png' /></span>
                                 <span className={styles.text}>+420 604 464 481</span>
                             </div>
                             <div className={styles.infoItem}>
-                                <span className={styles.icon}>🌐</span>
+                                <span className={styles.icon}><img src='/img/globe.png' /></span>
                                 <span className={styles.text}>HTTPS://WWW.ASGARD-BAR.COM/</span>
                             </div>
                             <div className={styles.infoItem}>
-                                <span className={styles.icon}>📍</span>
+                                <span className={styles.icon}><img src='/img/markericon.png' width={26} height={24}/></span>
                                 <span className={styles.text}>90 FETTER LN, HOLBORN, PRAGUE EC4A 1JP, CZECH REPUBLIC</span>
                             </div>
                         </div>

@@ -6,6 +6,7 @@ import { CIRCLE, SECONDARY } from 'defaults';
 import { Link } from 'react-router-dom';
 import { PRIMARY, TERTIARY } from '../../../../defaults';
 import ConfirmationModal from './ConfirmationModal';
+import ModalWithHiddenCloseButton from './ModalHighOrder';
 
 export default class RegisterModal extends Component {
   static propTypes = {
@@ -62,7 +63,7 @@ export default class RegisterModal extends Component {
       this.validateForm();
       if (this.state.isFormValid) {
         // Submit form and show ConfirmationModal
-        this.props.onClose();
+        // this.props.onClose();
         this.setState({ showConfirmationModal: true });
       }
     });
@@ -89,10 +90,10 @@ export default class RegisterModal extends Component {
     };
 
     return (
-      <><Modal onClose={onClose} className={styles.modal} wrapClassName={styles.wrap}>
+      <><ModalWithHiddenCloseButton onClose={onClose} className={styles.modal} wrapClassName={styles.wrap}>
         <div className={styles.registerModal}>
           <div className={styles.closeButton}>
-            <button className={`${SECONDARY} ${CIRCLE}`} onClick={onClose} style={{ width: '45px', height: '45px', textAlign: 'center', fontSize: '1.5em' }}>&times;</button>
+            <button className={`${SECONDARY} ${CIRCLE}`} onClick={onClose} style={{ width: '45px', height: '45px', textAlign: 'center', fontSize: '1.5em' }}><img src="/img/closeicon.svg" alt="Close" /></button>
           </div>
           <div className={styles.header}>
             <h2>Register</h2>
@@ -167,10 +168,10 @@ export default class RegisterModal extends Component {
           <div className={styles.terms}>
             By proceeding, you agree to our <a href="/terms">Terms of Service</a> and confirm you have read our <a href="/privacy">Privacy Policy</a>.
           </div>
-          <button onClick={this.handleSubmit} className={isFormValid ? `${PRIMARY}` : `${TERTIARY}`} style={{ width: '100%', cursor: 'pointer', height: '45px', marginTop: '30px', marginBottom: '30px' }}>REGISTER</button>
+          <button onClick={this.handleSubmit} className={isFormValid ? `${PRIMARY}` : `${TERTIARY}`} style={{ width: '100%', cursor: 'pointer', height: '45px', marginTop: '30px', marginBottom: '30px', fontSize: '1.2em' }}>REGISTER</button>
         </div>
 
-      </Modal><ConfirmationModal
+      </ModalWithHiddenCloseButton><ConfirmationModal
           isOpen={showConfirmationModal}
           onClose={this.handleConfirmationClose}
           eventDetails={eventDetails} /></>
