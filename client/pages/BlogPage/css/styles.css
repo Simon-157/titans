@@ -1,7 +1,7 @@
 .blogPageWrapper {
   background: linear-gradient(118.88deg, #01131a -2.2%, #002e2a 115.26%);
   background-blend-mode: luminosity;
-  /* font-family: "Space Grotesk"; */
+
   font-family: "Gilroy";
 }
 
@@ -122,7 +122,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* max-width: 90%; */
 
 }
 

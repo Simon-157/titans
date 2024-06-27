@@ -38,7 +38,7 @@
       width: 100%;
       .scroll {
         position: relative;
-        padding-left: 35%;
+        padding-left: 32%;
         padding-right: 5%;
 
         .circle{
@@ -146,8 +146,9 @@
   }
 }
 
-/* CAFES AROUND YOU STYLES */
 
+
+/* CAFES AROUND YOU STYLES */
 .scrollUp {
   display: flex;
   justify-content: flex-end;
@@ -225,7 +226,7 @@
 
 // Responsive styles
 
-@media (max-width: 1200px) {
+@media (max-width: 1210px) {
   .mainContent {
     .title {
       font-size: 64px;
@@ -239,6 +240,8 @@
       align-items: center;
       justify-content: center;
       gap: 40px;
+      margin: 20px;
+      
       .feature {
         h3 {
           font-size: 24px;
@@ -268,7 +271,9 @@
   }
 }
 
-@media (max-width: 1000px) {
+
+
+@media (max-width: 1100px) {
   .mainContent {
     .subtitle {
       font-weight: 600;
@@ -278,14 +283,15 @@
     .features {
       flex-direction: column;
       justify-content: center;
-      /* width: 100%; */
+      width: 100%;
       /* justify-content: ; */
       gap: 20px;
 
       .feature {
         margin: 0 8px;
         /* text-align: left; */
-        width: 600px;
+        width: 700px !important;
+
 
         h3 {
           font-weight: 600;
@@ -335,12 +341,16 @@
     }
 
     .container {
-      padding: 10px;
+      padding: 5px;
     }
 
     .features {
       flex-direction: column;
       justify-content: center;
+
+      .feature{
+        width: 500px !important;
+      }
     }
 
     .images {
@@ -350,8 +360,8 @@
 
       .mainImage {
         img {
-          width: 500px;
-          height: 400px;
+          width: 600px;
+          height: 500px;
         }
       }
     }
@@ -396,8 +406,8 @@
 
       .mainImage {
         img {
-          width: 300px;
-          height: 200px;
+          width: 100%;
+          height: 400px;
         }
       }
     }

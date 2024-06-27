@@ -109,13 +109,14 @@
     transform: translateY(-5px);
   }
 
-  .tagCard {
+
+    .tagCard {
     padding: 3px;
     text-align: center;
-    /* width: 60%; */
-    margin: 0px 40px;
+    margin: 0px 60px;
     background-color: #f0761f;
     border-radius: 10px 10px 0px 0px;
+    color: #fff;
   }
 
   .cafeCard {
@@ -126,8 +127,12 @@
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
-    border: 1px solid #3fbab2;
     cursor: pointer;
+    border: 1px solid transparent;
+    border-image-source: radial-gradient(69.43% 69.43% at 50% 50%, #f7d391 0%, rgba(255, 255, 255, 0) 100%),
+                         radial-gradient(60% 51.57% at 50% 50%, #f1a413 0%, rgba(227, 205, 75, 0) 100%),
+                         radial-gradient(54.8% 53% at 50% 50%, #151515 0%, rgba(21, 21, 21, 0.432) 100%);
+    border-image-slice: 1;
 
     .image {
       width: 100%;
@@ -150,6 +155,14 @@
         margin: 0;
         color: #7a8a9a;
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .cafeCardWrapper {
+    .tagCard {
+      margin: 0 20px;
     }
   }
 }

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './css/regionfilter.css';
-import Select from '../../components/Select';
-import { FILLED, PRIMARY, SECONDARY, TERTIARY } from '../../../defaults';
+import styles from '../css/regionfilter.css';
+import Select from '../../../components/Select';
+import { FILLED, PRIMARY, SECONDARY, TERTIARY } from '../../../../defaults';
 
 class RegionFilter extends Component {
   constructor(props) {

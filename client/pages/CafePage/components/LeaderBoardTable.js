@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './css/leaderboardtable.css';
+import styles from '../css/leaderboardtable.css';
 
 
 

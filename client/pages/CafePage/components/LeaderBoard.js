@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import styles from "./css/leaderboard.css";
+import styles from "../css/leaderboard.css";
 import { CIRCLE } from "react-google-maps/lib/constants";
-import { TERTIARY } from "../../../defaults";
+import { TERTIARY } from "../../../../defaults";
 
 class Leaderboard extends Component {
   render() {

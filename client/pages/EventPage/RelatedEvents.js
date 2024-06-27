@@ -21,7 +21,7 @@ class RelatedEvents extends Component {
             <button
               className={`${TERTIARY}`}
               onClick={loadMoreEvents}
-              style={{ height: '45px' }}
+              style={{ height: '45px', padding:'30px'}}
             >
               MORE EVENTS
             </button>

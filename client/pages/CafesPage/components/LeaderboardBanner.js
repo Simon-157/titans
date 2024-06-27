@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import styles from './css/banner.css';
-import { TERTIARY } from '../../../defaults';
+import styles from '../css/banner.css';
+import { TERTIARY } from '../../../../defaults';
 
 class LeaderboardBanner extends Component {
   render() {

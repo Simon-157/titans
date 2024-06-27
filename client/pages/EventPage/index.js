@@ -5,7 +5,7 @@ import RelatedEvents from './RelatedEvents';
 import Footer from '../EventsPage/Footer';
 import styles from './css/styles.css';
 import { events } from './data';
-import RegionFilter from '../CafesPage/RegionFilter';
+import RegionFilter from '../CafesPage/components/RegionFilter';
 
 class SingleEventPage extends Component {
     constructor(props) {

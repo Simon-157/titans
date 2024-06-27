@@ -3,6 +3,7 @@ import styles from "./css/styles.css";
 import PromoCard from "./PromoCard";
 import { SECONDARY, TERTIARY } from "../../../defaults";
 import GoogleMaps from "../../components/GoogleMaps";
+import { withRouter } from "react-router-dom";
 
 class EventDetails extends Component {
     render() {
@@ -85,4 +86,4 @@ class EventDetails extends Component {
     }
 }
 
-export default EventDetails;
+export default withRouter(EventDetails);

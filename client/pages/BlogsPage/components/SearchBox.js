@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import styles from './css/styles.css';
-import { CIRCLE, SECONDARY } from '../../../defaults';
+import styles from '../css/styles.css';
+import { CIRCLE, SECONDARY } from '../../../../defaults';
 
 class SearchBox extends Component {
   render() {

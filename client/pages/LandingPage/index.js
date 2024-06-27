@@ -2,8 +2,8 @@ import React from 'react';
 import styles from './css/styles.css';
 import Navbar from '../EventsPage/NavBar';
 import { PRIMARY } from 'defaults';
-import CafeList from '../CafesPage/CafeList';
-import RegionFilter from '../CafesPage/RegionFilter';
+import CafeList from '../CafesPage/components/CafeList';
+import RegionFilter from '../CafesPage/components/RegionFilter';
 import { cafes } from '../CafesPage/data';
 import HeaderSection from '../EventsPage/HeaderSection';
 import Footer from '../EventsPage/Footer';
@@ -18,7 +18,7 @@ class LandingPage extends React.Component {
             isMobile: window.innerWidth <= 768,
             region1: 'see all regions',
             region2: 'see all regions',
-            visibleCafes: 4,
+            visibleCafes: 3,
             visibleEvents: 4,
             mainImage: "/img/langing_pageImage1.png",
             sideImages: [
@@ -72,7 +72,7 @@ class LandingPage extends React.Component {
 
 
     loadMoreCafes = () => {
-        this.setState((prevState) => ({ visibleCafes: prevState.visibleCafes + 4 }));
+        this.setState((prevState) => ({ visibleCafes: prevState.visibleCafes + 3 }));
     };
 
     loadMoreEvents = () => {

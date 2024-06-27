@@ -28,6 +28,8 @@ class PromoCard extends Component {
       isRegisterModalOpen: !prevState.isRegisterModalOpen,
     }));
   };
+
+  
   render() {
     const { isRegisterModalOpen, isSocialShareModalOpen, eventUrl } = this.state;
     return (

@@ -3,10 +3,10 @@ import { cafes } from "./data";
 import styles from "./css/styles.css";
 import Navbar from "../EventsPage/NavBar";
 import HeaderSection from "../EventsPage/HeaderSection";
-import LeaderboardBanner from "./LeaderboardBanner";
+import LeaderboardBanner from "./components/LeaderboardBanner";
 import Footer from "../EventsPage/Footer";
-import CafeList from "./CafeList";
-import RegionFilter from "./RegionFilter";
+import CafeList from "./components/CafeList";
+import RegionFilter from "./components/RegionFilter";
 import SearchBox from "../EventsPage/SearchBox";
 
 class AllCafes extends Component {
@@ -15,7 +15,7 @@ class AllCafes extends Component {
     this.state = {
       searchQuery: "",
       region: "see all regions",
-      visibleCafes: 12,
+      visibleCafes: 6,
     };
   }
 
@@ -29,7 +29,7 @@ class AllCafes extends Component {
 
   loadMoreCafes = () => {
     this.setState((prevState) => ({
-      visibleCafes: prevState.visibleCafes + 12,
+      visibleCafes: prevState.visibleCafes + 6,
     }));
   };
 
@@ -53,7 +53,7 @@ class AllCafes extends Component {
         <LeaderboardBanner />
         <div className={styles.allCafes}>
           <section className={styles.searchSection}>
-            <div className={styles.searchBox}>
+            <div style={{margin:"40px 0px"}}>
               <SearchBox />
             </div>
 
@@ -61,11 +61,11 @@ class AllCafes extends Component {
               <img src="/img/box-icon.png" alt="box icon" />
               <h1>All Cafés</h1>
             </header>
+          </section>
             <RegionFilter
               currentRegion={region}
               onRegionChange={this.handleRegionChange}
             />
-          </section>
           <CafeList
             cafes={filteredCafes}
             visibleCafes={visibleCafes}

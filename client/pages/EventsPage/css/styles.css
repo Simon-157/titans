@@ -274,7 +274,7 @@
   height: 54px !important;
   border-radius: 30px !important;
   width: 350px !important;
-  font-size: 1.6em !important;
+  font-size: 1.2em !important;
   font-weight: bold !important;
   color: #45e5e578;
   text-align: left !important;
@@ -362,12 +362,12 @@
     margin-right: 0;
   }
 
-  .regionSearch__input {
+  .regionSearch__input{
     padding: 5px;
   }
 
   .regionSearch__button {
-    padding: 5px;
+    padding: 12px;
   }
 
   .regionSearch__button img {

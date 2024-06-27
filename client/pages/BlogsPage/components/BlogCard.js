@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import styles from './css/styles.css';
-import { timeAgo } from '../utils';
+import styles from '../css/styles.css';
+import { timeAgo } from '../../utils';
 
 class BlogCard extends Component {
   render() {

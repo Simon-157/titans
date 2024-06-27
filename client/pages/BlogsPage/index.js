@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import MainBlogCard from './MainBlogCard';
-import BlogList from './BlogList';
+import MainBlogCard from './components/MainBlogCard';
 import styles from './css/styles.css';
 import Navbar from '../EventsPage/NavBar';
-import OtherBlogList from './OtherBlogs';
+import OtherBlogList from './components/OtherBlogs';
 import Footer from '../EventsPage/Footer';
-import SearchBox from './SearchBox';
+import SearchBox from './components/SearchBox';
 import { blogsData } from './dummyData';
 import { blogData } from './data';
+import BlogList from './components/BlogList';
 
 class BlogsPage extends Component {
     // TODO:Oncomponent mount; FETCH the most recent blog posts from the server as the latestBlog, 4 recentBlogs, and allBlogs state from the api endpoints

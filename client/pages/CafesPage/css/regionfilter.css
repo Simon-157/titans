@@ -1,5 +1,3 @@
-
-
 .regionFilters {
   display: flex;
   justify-content: center;
@@ -38,46 +36,7 @@
     }
   }
 
-  /* @media (max-width: 768px) {
-    .regionFilters {
-      align-items: center;
-      background: none;
-      border-bottom: none;
-
-      .regionSearch {
-        flex-direction: column;
-        gap: 10px;
-        height: auto;
-      }
-
-      .regionSearch__dropdown {
-        width: 100% !important;
-      }
-    }
-  } */
 }
-
-
-/* RegionSearch styles */
-/* .regionFiltersMobile {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  width: 100%;
-  
-  .regionSearch{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-    .regionSearch__dropdown {
-    width: 250px !important;
-    height: 54px !important;
-    font-size: 1.6em !important;
-  }
-  }
-} */
-
 
 
 /* RegionSearch styles */
@@ -105,3 +64,5 @@
   height: 54px !important;
   font-size: 1.6em !important;
 }
+
+

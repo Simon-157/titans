@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 import { timeAgo } from "../utils";
 import Navbar from "../EventsPage/NavBar";
 import { events } from "../EventsPage/data";
-import RegionFilter from "../CafesPage/RegionFilter";
+import RegionFilter from "../CafesPage/components/RegionFilter";
 import RelatedEvents from "../EventPage/RelatedEvents";
 import Footer from "../EventsPage/Footer";
 

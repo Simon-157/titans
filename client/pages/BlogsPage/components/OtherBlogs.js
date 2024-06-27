@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './css/others.css';
+import styles from '../css/others.css';
 
 class Card extends Component {
   render() {

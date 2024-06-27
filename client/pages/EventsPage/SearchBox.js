@@ -14,6 +14,7 @@ class SearchBox extends Component {
 
             <div className={styles.regionSearch__inputContainer}>
                 <Input
+                    
                     className={styles.regionSearch__input}
                     type="text"
                     placeholder={`Search ${locationPath}`}

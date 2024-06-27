@@ -36,7 +36,7 @@
     }
 
     .location {
-      color: #3fbab2;
+      color: #45E6E6;
       font-size: 14px;
       font-weight: bold;
       margin-bottom: 10px;
@@ -44,7 +44,7 @@
 
     .title {
       font-size: 32px;
-      font-weight: 800;
+      font-weight: 700;
       margin-bottom: 10px;
     }
 
@@ -221,7 +221,7 @@
 
 
     }
-  @media (max-width: 1100px) {
+  @media (max-width: 1200px) {
     flex-direction: column-reverse;
     /* height: auto; */
 

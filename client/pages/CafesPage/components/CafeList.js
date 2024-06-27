@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CafeCard from './CafeCard';
-import styles from './css/grid.css';
-import { TERTIARY } from '../../../defaults';
+import styles from '../css/grid.css';
+import { TERTIARY } from '../../../../defaults';
 import { Link } from 'react-router-dom';
 
 class CafeList extends Component {
@@ -23,7 +23,7 @@ class CafeList extends Component {
             <button
               className={`${TERTIARY}`}
               onClick={loadMoreCafes}
-              style={{ height: '45px', marginTop: '30px', marginBottom: '30px' }}
+              style={{ height: '50px', margin:'30px 0px', padding:'30px'}}
             >
               More Cafés
             </button>

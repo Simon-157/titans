@@ -132,9 +132,9 @@
 
 .qrCodeContainer {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   gap: 30px;
-  margin: auto;
+  margin:0 auto;
 
   .qrCode {
     display: flex;
@@ -158,22 +158,37 @@
   .bottomSec {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 10px 0px;
-    gap: 10px;
+    /* width: 100px !important; */
+
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding: 10px 0px; 
+    gap: 10px; 
 
     p {
       text-align: center;
       font-size: 16px;
     }
   }
+
+
+
+  }
+.giveaway {
+  display: flex;
+  justify-content: center;
+  /* width: 600px; */
+  text-align: left;
 }
 
-.giveaway {
-  width: 450px;
-  text-align: left;
+
+.download{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+
 }
 
 .promoDescription {
@@ -217,6 +232,8 @@
 
   .qrCodeContainer {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .qrCode {
@@ -224,11 +241,12 @@
   }
 
   .bottomSec {
+    width: 100%;
     padding: 20px;
   }
 
   .giveaway {
-    width: 100%;
+    max-width: 500px;
     text-align: center;
 
   }
@@ -274,6 +292,7 @@
   }
 
   .bottomSec {
+    width: 100%;
     p {
       font-size: 14px;
     }

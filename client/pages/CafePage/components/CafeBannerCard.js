@@ -1,10 +1,27 @@
 import React, { Component } from 'react';
-import styles from './css/cafe_banner.css';
-import { PRIMARY, SECONDARY } from '../../../defaults';
+import styles from '../css/cafe_banner.css';
+import { PRIMARY, SECONDARY } from '../../../../defaults';
+import ConfirmationModal from './ConfirmationModal';
 
 
 class CafeBannerCard extends Component {
+
+    state = {
+        isConfirmModalOpen: false,
+        cafeUrl: window.location.href
+    };
+
+
+    toggleConfirmModal = () => {
+        this.setState((prevState) => ({
+            isConfirmModalOpen: !prevState.isConfirmModalOpen,
+        }));
+    };
+
     render() {
+
+        const { isConfirmModalOpen, cafeUrl } = this.state;
+
         return (
             <main className={styles.customCard}>
                 <section className={styles.cardLeft}>
@@ -26,7 +43,7 @@ class CafeBannerCard extends Component {
                         </p>
                         <div className={styles.buttons}>
                             <div className={styles.join}>
-                                <button className={` ${PRIMARY} ${styles.joinButton}`}>JOIN REIGN OF TITANS LEADER BOARD</button>
+                                <button className={` ${PRIMARY} ${styles.joinButton}`} onClick={this.toggleConfirmModal}>JOIN REIGN OF TITANS LEADER BOARD</button>
 
                             </div>
 
@@ -76,7 +93,7 @@ class CafeBannerCard extends Component {
                                 <span className={styles.text}>HTTPS://WWW.ASGARD-BAR.COM/</span>
                             </div>
                             <div className={styles.infoItem}>
-                                <span className={styles.icon}><img src='/img/markericon.png' width={26} height={24}/></span>
+                                <span className={styles.icon}><img src='/img/markericon.png' width={26} height={24} /></span>
                                 <span className={styles.text}>90 FETTER LN, HOLBORN, PRAGUE EC4A 1JP, CZECH REPUBLIC</span>
                             </div>
                         </div>
@@ -93,6 +110,11 @@ class CafeBannerCard extends Component {
                 <section className={styles.cardRight}>
                     <img src="/img/cafebanner.png" alt="Titan" />
                 </section>
+                <ConfirmationModal
+                    isOpen={isConfirmModalOpen}
+                    onClose={this.toggleConfirmModal}
+                    cafeUrl={cafeUrl}
+                />
             </main>
         );
     }
