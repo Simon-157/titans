@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styles from "../css/confirmation_modal.css";
 import Modal from "../../../components/Modal";
 import { CIRCLE, FILLED, SECONDARY, TERTIARY } from "../../../../defaults";
+import ModalWithHiddenCloseButton from "./ModalHighOrder";
 
 export default class ConfirmationModal extends Component {
     static propTypes = {
@@ -19,7 +20,7 @@ export default class ConfirmationModal extends Component {
         }
 
         return (
-            <Modal
+            <ModalWithHiddenCloseButton
                 onClose={onClose}
                 className={styles.modal}
                 wrapClassName={styles.wrap}
@@ -74,7 +75,7 @@ export default class ConfirmationModal extends Component {
                         </div>
                     </div>
                 </div>
-            </Modal>
+            </ModalWithHiddenCloseButton>
         );
     }
 }
