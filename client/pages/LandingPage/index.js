@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './css/styles.css';
-import Navbar from '../EventsPage/NavBar';
+import Navbar from '../EventsPage/components/NavBar';
 import { PRIMARY } from 'defaults';
 import CafeList from '../CafesPage/components/CafeList';
 import RegionFilter from '../CafesPage/components/RegionFilter';
 import { cafes } from '../CafesPage/data';
-import HeaderSection from '../EventsPage/HeaderSection';
-import Footer from '../EventsPage/Footer';
+import HeaderSection from '../EventsPage/components/HeaderSection';
+import Footer from '../EventsPage/components/Footer';
 import { CIRCLE, SECONDARY, TERTIARY } from '../../../defaults';
 import RelatedEvents from '../EventPage/RelatedEvents';
 import { events } from '../EventsPage/data';
@@ -116,7 +116,7 @@ class LandingPage extends React.Component {
         });
 
         return (
-            
+
             <div className={styles.landingPage} >
                 <div className={styles.container}>
 
@@ -133,7 +133,7 @@ class LandingPage extends React.Component {
                                 <div className={styles.scroll}>
                                     <button
                                         className={`${CIRCLE} ${TERTIARY}`}
-                                        
+
                                         onClick={this.handleScrollDownButtonClick}
                                     >
                                         <img src="/img/scrolldown.svg" alt="scroll" height={50} style={{ marginBottom: "40px" }} />
@@ -174,14 +174,14 @@ class LandingPage extends React.Component {
                             <img src='/img/box-icon.png' alt="box icon" />
                             <h1> Events Around You</h1>
                         </header>
-                        <HeaderSection />
+                        <div className={styles.headerSectionWrapper}>
+                            <HeaderSection />
+                        </div>
                         <div className={styles.regionfilter}>
-
-                        <RegionFilter currentRegion={region2} onRegionChange={this.handleRegion2Change} />
+                            <RegionFilter currentRegion={region2} onRegionChange={this.handleRegion2Change} />
                         </div>
                     </section>
                     <div className={styles.eventsAround}>
-
                         <RelatedEvents events={filteredEvents} visibleEvents={visibleEvents} loadMoreEvents={this.loadMoreEvents} />
                     </div>
                 </div>
@@ -192,11 +192,12 @@ class LandingPage extends React.Component {
                             <img src='/img/box-icon.png' alt="box icon" />
                             <h1> Cafés Around You</h1>
                         </header>
-                        <HeaderSection />
-                            <div className={styles.regionfilter}>
-
-                        <RegionFilter currentRegion={region1} onRegionChange={this.handleRegion1Change} />
-                            </div>
+                        <div className={styles.headerSectionWrapper}>
+                            <HeaderSection />
+                        </div>
+                        <div className={styles.regionfilter}>
+                            <RegionFilter currentRegion={region1} onRegionChange={this.handleRegion1Change} />
+                        </div>
                     </section>
                     <CafeList cafes={filteredCafes} visibleCafes={visibleCafes} loadMoreCafes={this.loadMoreCafes} />
                 </div>

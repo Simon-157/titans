@@ -310,7 +310,7 @@
 
 
 
-  @media (max-width: 568px) {
+  @media (max-width: 590px) {
     .cardLeft {
         padding: 20px !important;
       
@@ -322,8 +322,8 @@
         width: 100%;
 
         button{
-            width: max-content !important;
-            font-size: 1.0em !important;
+            width: max-content ;
+            font-size: 0.9em !important;
         }
 
         .join {

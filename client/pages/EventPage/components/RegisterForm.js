@@ -69,7 +69,7 @@ export default class RegisterModal extends Component {
     const isFormValid = Object.keys(errors).length === 0;
     this.setState({ isFormValid });
   };
-
+i
   handleSubmit = (e) => {
     e.preventDefault();
     this.setState({ isSubmitted: true }, () => {
@@ -271,3 +271,4 @@ export default class RegisterModal extends Component {
     );
   }
 }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    

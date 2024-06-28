@@ -254,12 +254,7 @@
     }
 
     .images {
-      .sideImages {
-        img {
-          /* width: 300px;
-          height: 250px; */
-        }
-      }
+      
 
       .mainImage {
         img {
@@ -349,7 +344,9 @@
       justify-content: center;
 
       .feature{
+        flex: none;
         width: 500px !important;
+
       }
     }
 
@@ -369,6 +366,9 @@
 }
 
 @media (max-width: 590px) {
+  .headerSectionWrapper{
+    padding: 0px 22px;
+  }
   .mainContent {
     .playButton {
       padding: 10px 20px;
@@ -387,13 +387,16 @@
 
       .feature {
         width: 440px !important;
-
+        padding: 0px 10px;
+        
         h3 {
-          font-size: 28px !important;
+          margin: 0px 15px;
+          font-size: 22px !important;
           font-weight: 600;
         }
-
+        
         p {
+          margin: 0 15px;
           font-size: 16px;
         }
       }

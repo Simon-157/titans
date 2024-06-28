@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import styles from "./css/styles.css";
-import { SECONDARY, TERTIARY } from "../../../defaults";
+import styles from "../css/styles.css";
+import { SECONDARY, TERTIARY } from "../../../../defaults";
 import SearchBox from "./SearchBox";
-import Select from "../../components/Select";
+import Select from "../../../components/Select";
 
 class SearchBar extends Component {
   constructor(props) {

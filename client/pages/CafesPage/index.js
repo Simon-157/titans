@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { cafes } from "./data";
 import styles from "./css/styles.css";
-import Navbar from "../EventsPage/NavBar";
-import HeaderSection from "../EventsPage/HeaderSection";
+import Navbar from "../EventsPage/components/NavBar";
+import HeaderSection from "../EventsPage/components/HeaderSection";
 import LeaderboardBanner from "./components/LeaderboardBanner";
-import Footer from "../EventsPage/Footer";
+import Footer from "../EventsPage/components/Footer";
 import CafeList from "./components/CafeList";
 import RegionFilter from "./components/RegionFilter";
-import SearchBox from "../EventsPage/SearchBox";
+import SearchBox from "../EventsPage/components/SearchBox";
 
 class AllCafes extends Component {
   constructor(props) {

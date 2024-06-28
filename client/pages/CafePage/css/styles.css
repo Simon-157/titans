@@ -67,6 +67,13 @@
   }
 
 
-
+  @media (max-width: 590px) {
+    
+    .header{
+      h2{
+        font-size: 24px;
+      }
+    }
+  }
 
 }

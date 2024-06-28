@@ -3,11 +3,11 @@ import { blogsData } from "./dummyData";
 import styles from "./css/styles.css";
 import { withRouter } from "react-router-dom";
 import { timeAgo } from "../utils";
-import Navbar from "../EventsPage/NavBar";
+import Navbar from "../EventsPage/components/NavBar";
 import { events } from "../EventsPage/data";
 import RegionFilter from "../CafesPage/components/RegionFilter";
 import RelatedEvents from "../EventPage/RelatedEvents";
-import Footer from "../EventsPage/Footer";
+import Footer from "../EventsPage/components/Footer";
 
 class BlogDetail extends Component {
   // TODO: Based on the blogId in the url, make a query to the server to get the blog data using the blogId instead of using the dummy data from ./data

@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import CafeDetails from "./components/CafeDetails";
 import { cafe } from "./data";
 import CafeBannerCard from "./components/CafeBannerCard";
 import styles from "./css/styles.css";
-import Navbar from "../EventsPage/NavBar";
+import Navbar from "../EventsPage/components/NavBar";
 import CafeEvents from "./components/CafeEvents";
 import Leaderboard from "./components/LeaderBoard";
 import DetailedLeaderboard from "./components/LeaderBoardTable";
 import { SECONDARY } from "../../../defaults";
+import Footer from "../EventsPage/components/Footer";
 
 class CafeDetailsPage extends Component {
   render() {
@@ -33,6 +33,7 @@ class CafeDetailsPage extends Component {
           <Leaderboard />
         </section>
         <DetailedLeaderboard />
+        <Footer />
       </main>
     );
   }

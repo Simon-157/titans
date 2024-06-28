@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import EventCard from '../EventsPage/EventCard';
+import EventCard from '../EventsPage/components/EventCard';
 import styles from './css/styles.css';
 import { SECONDARY, TERTIARY } from 'defaults';
 

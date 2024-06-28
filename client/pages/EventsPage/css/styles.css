@@ -166,9 +166,9 @@
   /* margin: 20px 0; */
   font-family: "Gilroy";
   font-weight: 700;
-  font-size: 1.7em;
+  font-size: 1.5em;
   height: 50px;
-  padding: 40px;
+  padding: 30px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -341,7 +341,7 @@
   }
 }
 
-@media (max-width: 558px) {
+@media (max-width: 590px) {
   .headerSection__title {
     font-size: 1.5em;
   }
@@ -357,7 +357,7 @@
 
   .regionSearch__dropdown,
   .regionSearch__inputContainer {
-    width: 390px !important;
+    width: 360px !important;
     padding: 5px;
     margin-right: 0;
   }
@@ -368,6 +368,7 @@
 
   .regionSearch__button {
     padding: 12px;
+    right: 25px;
   }
 
   .regionSearch__button img {

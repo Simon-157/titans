@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styles from "../css/styles.css";
 import { SECONDARY, TERTIARY } from "defaults";
-import EventCard from "../../EventsPage/EventCard";
+import EventCard from "../../EventsPage/components/EventCard";
 
 class CafeEvents extends Component {
   render() {

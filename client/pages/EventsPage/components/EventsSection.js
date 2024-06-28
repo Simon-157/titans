@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import EventCard from './EventCard';
-import styles from './css/styles.css';
-import { events } from './data';
+import styles from '../css/styles.css';
+import { events } from '../data';
 
 class EventsSection extends Component {
   constructor(props) {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import styles from './css/styles.css';
-import { FILLED, PRIMARY, SECONDARY, TERTIARY } from '../../../defaults';
-import RegisterModal from '../EventPage/components/RegisterForm';
-import SocialShareModal from '../EventPage/components/SocialShareModal';
+import styles from '../css/styles.css';
+import { FILLED, PRIMARY, SECONDARY, TERTIARY } from '../../../../defaults';
+import RegisterModal from '../../EventPage/components/RegisterForm';
+import SocialShareModal from '../../EventPage/components/SocialShareModal';
 
 class TimerSection extends Component {
 

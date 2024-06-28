@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import MainBlogCard from './components/MainBlogCard';
 import styles from './css/styles.css';
-import Navbar from '../EventsPage/NavBar';
+import Navbar from '../EventsPage/components/NavBar';
 import OtherBlogList from './components/OtherBlogs';
-import Footer from '../EventsPage/Footer';
-import SearchBox from './components/SearchBox';
+import Footer from '../EventsPage/components/Footer';
+import SearchBox from '../EventsPage/components/SearchBox';
 import { blogsData } from './dummyData';
 import { blogData } from './data';
 import BlogList from './components/BlogList';
@@ -23,7 +23,9 @@ class BlogsPage extends Component {
         return (
             <main className={styles.app}>
                 <Navbar /><div className={styles.blogspageWrapper}>
-                    <SearchBox />
+                    <div style={{margin:"40px 0px"}}>
+                        <SearchBox />
+                    </div>
                     <div className={styles.allBlogsPage}>
                         <MainBlogCard blog={latestBlog} />
                         <BlogList blogs={recentBlogs} />

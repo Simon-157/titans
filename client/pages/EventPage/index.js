@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Navbar from '../EventsPage/NavBar';
+import Navbar from '../EventsPage/components/NavBar';
 import EventDetails from './EventDetails';
 import RelatedEvents from './RelatedEvents';
-import Footer from '../EventsPage/Footer';
+import Footer from '../EventsPage/components/Footer';
 import styles from './css/styles.css';
 import { events } from './data';
 import RegionFilter from '../CafesPage/components/RegionFilter';

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import styles from './css/styles.css';
+import styles from '../css/styles.css';
 
 class HeaderSection extends Component {
   

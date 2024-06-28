@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import EventsSection from './EventsSection';
-import Footer from './Footer';
+import EventsSection from './components/EventsSection';
+import Footer from './components/Footer';
 import styles from './css/styles.css';
-import HeaderSection from './HeaderSection';
-import SearchBar from './SearchBar';
-import Navbar from './NavBar';
-import TimerSection from './TimerSection';
+import HeaderSection from './components/HeaderSection';
+import SearchBar from './components/SearchBar';
+import Navbar from './components/NavBar';
+import TimerSection from './components/TimerSection';
 
 class EventsPage extends Component {
   render() {

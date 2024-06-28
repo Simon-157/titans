@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import styles from './css/styles.css';
+import styles from '../css/styles.css';
 import cx from 'classnames';
-import { CIRCLE, SECONDARY } from '../../../defaults';
+import { CIRCLE, SECONDARY } from '../../../../defaults';
 import { Link } from 'react-router-dom';
 
 class Navbar extends Component {
