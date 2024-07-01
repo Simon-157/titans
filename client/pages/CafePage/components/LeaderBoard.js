@@ -4,6 +4,10 @@ import { CIRCLE } from "react-google-maps/lib/constants";
 import { TERTIARY } from "../../../../defaults";
 
 class Leaderboard extends Component {
+  handleScrollUpButtonClick = () => {
+    this.props.backButtonRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   render() {
     const leaderboardData = [
       { rank: "1ST", name: "Sp3ct3r", medal: "/img/gold.svg" },
@@ -24,15 +28,19 @@ class Leaderboard extends Component {
               a cash prize pool of €10,500!
             </p>
           </div>
-              <span className={styles.scrollUp}>
-                    <button
-                        className={`${CIRCLE} ${TERTIARY}`}
-                        style={{ width: "50px", height: "50px", padding: "5px" ,  }}
-                        onClick={this.handleScrollUpButtonClick}
-                    >
-                        <img src="/img/scrollup.svg" alt="scroll" style={{ width: "25px", height: "25px", marginTop: "20px" }}/>
-                    </button>
-                </span>
+          <span className={styles.scrollUp}>
+            <button
+              className={`${CIRCLE} ${TERTIARY}`}
+              style={{ width: "50px", height: "50px", padding: "5px" }}
+              onClick={this.handleScrollUpButtonClick}
+            >
+              <img
+                src="/img/scrollup.svg"
+                alt="scroll"
+                style={{ width: "25px", height: "25px", marginTop: "20px" }}
+              />
+            </button>
+          </span>
         </div>
         <div className={styles.topRanks}>
           {leaderboardData.map((player) => (

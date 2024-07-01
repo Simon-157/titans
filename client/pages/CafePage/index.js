@@ -10,12 +10,17 @@ import { SECONDARY } from "../../../defaults";
 import Footer from "../EventsPage/components/Footer";
 
 class CafeDetailsPage extends Component {
+  constructor(props) {
+    super(props);
+    this.backButtonRef = React.createRef();
+  }
+
   render() {
     return (
       <main className={styles.cafePageWrapper}>
         <Navbar />
 
-        <div className={styles.back}>
+        <div className={styles.back} ref={this.backButtonRef}>
           <button
             className={SECONDARY}
             style={{ height: "40px", fontSize: "1em", padding: "25px" }}
@@ -30,7 +35,7 @@ class CafeDetailsPage extends Component {
         <section className={styles.cafeDetails}>
           <CafeBannerCard cafe={cafe} />
           <CafeEvents events={cafe.events} />
-          <Leaderboard />
+          <Leaderboard backButtonRef={this.backButtonRef} />
         </section>
         <DetailedLeaderboard />
         <Footer />
